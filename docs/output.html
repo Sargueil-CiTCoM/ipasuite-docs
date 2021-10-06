@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation &mdash; Shape-CE  documentation</title>
+  <title>Output and Reports &mdash; Shape-CE  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -17,8 +17,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Configuration" href="configuration.html" />
-    <link rel="prev" title="Requirements" href="requirements.html" /> 
+    <link rel="next" title="Troubleshooting" href="troubleshooting.html" />
+    <link rel="prev" title="Run the pipeline" href="run.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,11 +41,16 @@
 <li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="requirements.html">Requirements</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="run.html">Run the pipeline</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Output and Reports</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#normalized-reactivity">Normalized Reactivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aggregated-reactivity">Aggregated Reactivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#structures">Structures</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="output.html">Output and Reports</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Go further</span></p>
 <ul>
@@ -68,9 +73,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Installation</li>
+      <li>Output and Reports</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/install.md.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/output.md.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -78,29 +83,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="tex2jax_ignore mathjax_ignore section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h1>
-<ul class="simple">
-<li><p>Install <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a></p></li>
-<li><p>Create a new github repository using this workflow <a class="reference external" href="https://help.github.com/en/articles/creating-a-repository-from-a-template">as a template</a>.</p></li>
-<li><p>Clone your repository</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone --recurse-submodules https://path.to/your/repository/shape-ce
+  <div class="tex2jax_ignore mathjax_ignore section" id="output-and-reports">
+<h1>Output and Reports<a class="headerlink" href="#output-and-reports" title="Permalink to this headline"></a></h1>
+<p>While running are generate figures in <code class="docutils literal notranslate"><span class="pre">results/figures</span></code></p>
+<p>to access all figures and information about snakemake execution, you can execute</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">shape</span><span class="o">-</span><span class="n">ce</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">report</span> <span class="n">report</span><span class="o">.</span><span class="n">html</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>From repository root, create conda environnement</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env create --name snakemake --file workflow/envs/snakemake.yml
-</pre></div>
+<p>Then open the generate report in your web browser</p>
+<p>Description of mains figures generated :</p>
+<div class="section" id="normalized-reactivity">
+<h2>Normalized Reactivity<a class="headerlink" href="#normalized-reactivity" title="Permalink to this headline"></a></h2>
+<p>Normalized reactivity for each methods
+<img alt="Normalized reactivity for each methods" src="_images/normreact.png" /></p>
 </div>
-<ul class="simple">
-<li><p>Start conda environement</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">activate</span> <span class="n">snakemake</span>
-<span class="c1"># or </span>
-<span class="n">conda</span> <span class="n">activate</span> <span class="n">snakemake</span>
-</pre></div>
+<div class="section" id="aggregated-reactivity">
+<h2>Aggregated Reactivity<a class="headerlink" href="#aggregated-reactivity" title="Permalink to this headline"></a></h2>
+<p>Detailed information about how was perform aggregation
+<img alt="Detailed information about how was perform aggregation" src="_images/aggreact.full.png" /></p>
+<p>Resulting aggregated reactivity
+<img alt="Resulting aggregated reactivity" src="_images/aggreact.png" /></p>
+</div>
+<div class="section" id="structures">
+<h2>Structures<a class="headerlink" href="#structures" title="Permalink to this headline"></a></h2>
+<p>Structure drawing generated through VARNA
+<img alt="Structure drawing generated through VARNA" src="_images/varna.png" /></p>
 </div>
 </div>
 
@@ -108,8 +115,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="requirements.html" class="btn btn-neutral float-left" title="Requirements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="configuration.html" class="btn btn-neutral float-right" title="Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="run.html" class="btn btn-neutral float-left" title="Run the pipeline" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="troubleshooting.html" class="btn btn-neutral float-right" title="Troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
