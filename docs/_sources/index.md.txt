@@ -12,6 +12,8 @@ It relies on :
 
 The workflow will enable you to generate structure data for a RNA fragment analysed using SHAPE with a arbitrary set of conditions (Temperature, Magnesium, Probes.)
 
+The workflow is available at https://github.com/CiTCoM-Lab/shape-ce
+
 ```{toctree}
 :maxdepth: 2
 :caption: Getting started
