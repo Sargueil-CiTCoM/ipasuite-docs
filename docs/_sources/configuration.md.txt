@@ -6,16 +6,13 @@ The workflow contains 2 configuration files
 - `config/samples.tsv` That contains informations about samples and replicates
 
 ## Workflow configuration 
-`config/config.yaml` contains all informations necessary to execute the workflow. 
+`config.yaml` contains all informations necessary to execute the workflow. 
 
-To get started, copy `config/config.tpl.yaml` into `config/config.yaml`
-
-```bash
-cp config/config.tpl.yaml config/config.yaml
-```
+you can generate configs file with a new project using `shapece init`
 
 You will get a fully commented `config.yaml` file to help you during configuration
 
+You can also use `shapece config` to configure with gui interface.
 
 In order to get started with your project, you might look at thoses sections of
 `config.yaml`:
@@ -33,10 +30,13 @@ rawdata
 : If you want to import files from previous analysis, you should modify this section
 
 qushape
-: Input the configuration used with your capillary sequencer. (Channels and ddNTP) 
+: Input the configuration used with your capillary sequencer. (Channels) 
 
 ipanemap
 : Configure the execution conditions for IPANEMAP
+
+footprint
+: Configure the excutions of diffential analysisk
 
 Others sections can stay untouch depending of your needs
 
@@ -58,6 +58,9 @@ id (string)
 
 rna_id (string)
 : The identifier for RNA fragment used in this experiment, as declare in the `sequences` section of `config.yaml`
+
+ddNTP (enum: ddA, ddT, ddG, ddC)
+: Which ddNTP what use for the sequencing condition of capillary eletrophorese
 
 date (date)
 : Date of the experiment. use ISO 8601 format YYYY-MM-DD 

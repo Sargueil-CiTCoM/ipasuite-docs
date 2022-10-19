@@ -82,18 +82,19 @@
 <h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline"></a></h1>
 <p>In order to use the pipeline you will have to follow those steps :</p>
 <ol class="simple">
-<li><p>Install conda and set up your git repository</p></li>
-<li><p>Choose your conditions and pipeline parameters in <code class="docutils literal notranslate"><span class="pre">config/config.yaml</span></code></p></li>
-<li><p>Fill up your experiments in <code class="docutils literal notranslate"><span class="pre">config/samples.tsv</span></code> specifing where to find your raw data
+<li><p>Install shape-ce <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-c</span> <span class="pre">bioconda</span> <span class="pre">shapece</span></code></p></li>
+<li><p>Generate your project folder <code class="docutils literal notranslate"><span class="pre">shapece</span> <span class="pre">init</span> <span class="pre">[name</span> <span class="pre">of</span> <span class="pre">your</span> <span class="pre">project]</span></code></p></li>
+<li><p>Configure your pipeline using user interface <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">[name</span> <span class="pre">of</span> <span class="pre">your</span> <span class="pre">project];</span> <span class="pre">shapece</span> <span class="pre">config</span></code> or edit config.yaml</p></li>
+<li><p>Fill up your experiments in <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> specifing where to find your raw data
 and QuShape projects if you already treated some experiments</p></li>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">./shape-ce.sh</span> <span class="pre">all_qushape</span></code></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">shapece</span> <span class="pre">run</span></code></p></li>
 <li><p>Open your generated .qushape file in results/2-qushape and perform the qushape
 analysis and save the complete analysis</p></li>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">./shape-ce.sh</span></code></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">shapece</span> <span class="pre">run</span></code> again.</p></li>
 </ol>
 <p>You will find your structure data in results/5.3-structure and results/05.4-varna treated
-with ipanemap as set up in your <code class="docutils literal notranslate"><span class="pre">config/config.yaml</span></code></p>
-<p>Data will be organized using a <code class="docutils literal notranslate"><span class="pre">config/samples.tsv</span></code> and configured using <code class="docutils literal notranslate"><span class="pre">config/config.yaml</span></code> , and be feeded to IPANEMAP with a fully configured set of conditions.</p>
+with ipanemap as set up in your <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code></p>
+<p>Data will be organized using a <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> and configured using <code class="docutils literal notranslate"><span class="pre">config/config.yaml</span></code> , and be feeded to IPANEMAP with a fully configured set of conditions.</p>
 </div>
 
 

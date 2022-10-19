@@ -2,21 +2,9 @@
 
 - Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
 
-- Create a new github repository using this workflow [as a template](https://help.github.com/en/articles/creating-a-repository-from-a-template).
-
-- Clone your repository 
-```bash
-git clone --recurse-submodules https://path.to/your/repository/shape-ce
-
+- In the conda environnement of your choice install the shapece package :
+``` bash
+conda install shapece -c conda-forge -c bioconda
 ```
 
-- From repository root, create conda environnement
-```bash
-conda env create --name snakemake --file workflow/envs/snakemake.yml
-```
-- Start conda environement
-```
-source activate snakemake
-# or 
-conda activate snakemake
-```
+Your will need to install QuShape separatly and add QuShape binary path to your $PATH

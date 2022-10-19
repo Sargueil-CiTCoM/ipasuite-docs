@@ -103,12 +103,10 @@
 </ul>
 <div class="section" id="workflow-configuration">
 <h2>Workflow configuration<a class="headerlink" href="#workflow-configuration" title="Permalink to this headline"></a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">config/config.yaml</span></code> contains all informations necessary to execute the workflow.</p>
-<p>To get started, copy <code class="docutils literal notranslate"><span class="pre">config/config.tpl.yaml</span></code> into <code class="docutils literal notranslate"><span class="pre">config/config.yaml</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp config/config.tpl.yaml config/config.yaml
-</pre></div>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> contains all informations necessary to execute the workflow.</p>
+<p>you can generate configs file with a new project using <code class="docutils literal notranslate"><span class="pre">shapece</span> <span class="pre">init</span></code></p>
 <p>You will get a fully commented <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file to help you during configuration</p>
+<p>You can also use <code class="docutils literal notranslate"><span class="pre">shapece</span> <span class="pre">config</span></code> to configure with gui interface.</p>
 <p>In order to get started with your project, you might look at thoses sections of
 <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code>:</p>
 <dl class="simple myst">
@@ -120,9 +118,11 @@
 </dd>
 <dt>rawdata</dt><dd><p>If you want to import files from previous analysis, you should modify this section</p>
 </dd>
-<dt>qushape</dt><dd><p>Input the configuration used with your capillary sequencer. (Channels and ddNTP)</p>
+<dt>qushape</dt><dd><p>Input the configuration used with your capillary sequencer. (Channels)</p>
 </dd>
 <dt>ipanemap</dt><dd><p>Configure the execution conditions for IPANEMAP</p>
+</dd>
+<dt>footprint</dt><dd><p>Configure the excutions of diffential analysisk</p>
 </dd>
 </dl>
 <p>Others sections can stay untouch depending of your needs</p>
@@ -139,6 +139,8 @@
 <dt>id (string)</dt><dd><p>a unique number to identity experiment</p>
 </dd>
 <dt>rna_id (string)</dt><dd><p>The identifier for RNA fragment used in this experiment, as declare in the <code class="docutils literal notranslate"><span class="pre">sequences</span></code> section of <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code></p>
+</dd>
+<dt>ddNTP (enum: ddA, ddT, ddG, ddC)</dt><dd><p>Which ddNTP what use for the sequencing condition of capillary eletrophorese</p>
 </dd>
 <dt>date (date)</dt><dd><p>Date of the experiment. use ISO 8601 format YYYY-MM-DD</p>
 </dd>

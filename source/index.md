@@ -1,6 +1,6 @@
 # Introduction 
 
-Shape-CE workflow intend to provide automation in the data treatment of SHAPE Capillary Electrophorese.
+RNAsique workflow intend to provide automation in the data treatment of SHAPE Capillary Electrophorese.
 
 It relies on : 
 
@@ -12,8 +12,9 @@ It relies on :
 
 The workflow will enable you to generate structure data for a RNA fragment analysed using SHAPE with a arbitrary set of conditions (Temperature, Magnesium, Probes.)
 
-The workflow is available at [https://github.com/CiTCoM-Lab/shape-ce](https://github.com/CiTCoM-Lab/shape-ce)
-The source code for this documetation is available at [https://github.com/CiTCoM-Lab/shape-ce-docs](https://github.com/CiTCoM-Lab/shape-ce-docs)
+The workflow is available at [https://github.com/Sargueil-CiTCoM/shape-ce](https://github.com/Sargueil-CiTCoM/shape-ce)
+
+The source code for this documentation is available at [https://github.com/SargueilCiTCoM/shape-ce-docs](https://github.com/Sargueil-CiTCoM/shape-ce-docs)
 
 ```{toctree}
 :maxdepth: 2
