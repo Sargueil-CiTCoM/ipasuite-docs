@@ -1,3 +1,3 @@
 # shape-ce-docs
 
-Documentation for https://github.com/CiTCoM-Lab/shape-ce snakemake pipeline
+Documentation for https://github.com/Sargueil-CiTCoM/shape-ce snakemake pipeline
