@@ -45,7 +45,6 @@
 <li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Run the pipeline</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#general-information">General information</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#in-practice">In practice</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="output.html">Output and Reports</a></li>
@@ -93,43 +92,11 @@
 <li><p>If QuShape projects does not exist, it will created using sequencer data.</p></li>
 <li><p>If QuShape projects exists, it will try extract reactivity and go on until structures are generated</p></li>
 </ul>
-<p>Simplest way to run the pipeline is to launch <code class="docutils literal notranslate"><span class="pre">./shape-ce.sh</span></code> from the root of your project</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate snakemake 
-<span class="c1"># or</span>
-<span class="nb">source</span> activate snakemake
-
-./shape-ce.sh
-<span class="c1"># or</span>
-snakemake -j8 --use-conda --keep-going
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate <span class="o">[</span>your env<span class="o">]</span> 
+shapece run
 </pre></div>
 </div>
-<p>It will run <code class="docutils literal notranslate"><span class="pre">snakemake</span></code> with 8 threads, using conda and do as much treatment it can.
-At the end of snakemake run, it will output logs if they contains informations.</p>
-<p>In order to control when the pipeline will stop during the treatement, you can make it stop at intermediate steps :</p>
-<p>To stop after generating QuShape project : <code class="docutils literal notranslate"><span class="pre">./shape-ce.sh</span> <span class="pre">all_qushape</span></code>
-To stop after sample aggregation (before IPANEMAP) : <code class="docutils literal notranslate"><span class="pre">./shape-ce.sh</span> <span class="pre">all_aggregate</span></code></p>
-</div>
-<div class="section" id="in-practice">
-<h2>In practice<a class="headerlink" href="#in-practice" title="Permalink to this headline"></a></h2>
-<ol class="simple">
-<li><p>Open an terminal / console</p></li>
-<li><p>Got to your git repository</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> path/to/project/
-</pre></div>
-</div>
-<ol class="simple">
-<li><p>run qushape projects generator</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">shape</span><span class="o">-</span><span class="n">ce</span><span class="o">.</span><span class="n">sh</span> <span class="n">all_qushape</span>
-</pre></div>
-</div>
-<ol class="simple">
-<li><p>Open each new qushape project with QuShape and perform data treatment until reactivity step (no reactivity export needed)</p></li>
-<li><p>run again
-<code class="docutils literal notranslate"><span class="pre">./shape-ce.sh</span></code></p></li>
-</ol>
-<p>You will find generated structure in <code class="docutils literal notranslate"><span class="pre">results/5.3-structure</span></code> and varna file in <code class="docutils literal notranslate"><span class="pre">results/5.4-varna</span></code></p>
+<p>At the end of snakemake run, it will output logs if they contains informations.</p>
 </div>
 </div>
 
