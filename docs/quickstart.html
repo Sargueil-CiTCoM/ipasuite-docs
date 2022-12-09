@@ -39,7 +39,11 @@
               <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Quickstart</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="requirements.html">Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
@@ -81,20 +85,35 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="quickstart">
 <h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline"></a></h1>
 <p>In order to use the pipeline you will have to follow those steps :</p>
+<div class="section" id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline"></a></h2>
 <ol class="simple">
-<li><p>Install shape-ce <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-c</span> <span class="pre">bioconda</span> <span class="pre">shapece</span></code></p></li>
-<li><p>Generate your project folder <code class="docutils literal notranslate"><span class="pre">shapece</span> <span class="pre">init</span> <span class="pre">[name</span> <span class="pre">of</span> <span class="pre">your</span> <span class="pre">project]</span></code></p></li>
-<li><p>Configure your pipeline using user interface <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">[name</span> <span class="pre">of</span> <span class="pre">your</span> <span class="pre">project];</span> <span class="pre">shapece</span> <span class="pre">config</span></code> or edit config.yaml</p></li>
+<li><p>Install and setup Miniconda : https://docs.conda.io/en/latest/miniconda.html</p></li>
+<li><p>Create a conda environment for QuShape and install it : <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">qushape</span> <span class="pre">-c</span> <span class="pre">free</span> <span class="pre">-c</span> <span class="pre">sargueil-citcom</span> <span class="pre">qushape</span></code></p></li>
+<li><p>(recommended) Create a conda environnent <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">rnasique</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-c</span> <span class="pre">bioconda</span></code> for rnasique and activate your environment <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">rnasique</span></code></p></li>
+<li><p>Install shape-ce <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-c</span> <span class="pre">bioconda</span> <span class="pre">rnasique</span></code></p></li>
+</ol>
+<p>sudo apt install libdb-dev</p>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<ol class="simple">
+<li><p>(recommended) Activate your environment <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">rnasique</span></code></p></li>
+<li><p>Generate your project folder <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">init</span> <span class="pre">[name</span> <span class="pre">of</span> <span class="pre">your</span> <span class="pre">project]</span></code></p></li>
+<li><p>Configure your pipeline using user interface <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">[name</span> <span class="pre">of</span> <span class="pre">your</span> <span class="pre">project];</span> <span class="pre">rnasique</span> <span class="pre">config</span></code> or edit config.yaml</p></li>
 <li><p>Fill up your experiments in <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> specifing where to find your raw data
 and QuShape projects if you already treated some experiments</p></li>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">shapece</span> <span class="pre">run</span></code></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">run</span></code></p></li>
 <li><p>Open your generated .qushape file in results/2-qushape and perform the qushape
-analysis and save the complete analysis</p></li>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">shapece</span> <span class="pre">run</span></code> again.</p></li>
+analysis then save the complete analysis
+In another terminal
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">qushape;</span> <span class="pre">qushape</span></code></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">run</span></code> again.</p></li>
 </ol>
 <p>You will find your structure data in results/5.3-structure and results/05.4-varna treated
 with ipanemap as set up in your <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code></p>
 <p>Data will be organized using a <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> and configured using <code class="docutils literal notranslate"><span class="pre">config/config.yaml</span></code> , and be feeded to IPANEMAP with a fully configured set of conditions.</p>
+</div>
 </div>
 
 

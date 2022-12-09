@@ -79,10 +79,11 @@ In order to generate unambiguous file name, you must also add the conditions in 
 #### Examples :
 
 probe (string)
-: Which probe was used in this sample (1M7, BzCN, NMIA, etc.)
+: Which probe was used in this sample (1M7, BzCN, NMIA, DMS, etc.)
 
 temperature (int)
-: At which temperature was made the probing
+: temperature At which probing was
+performed 
 
 magnesium (string)
 : Did the sample buffer contained Magnesium during probing (Mg / noMg)?

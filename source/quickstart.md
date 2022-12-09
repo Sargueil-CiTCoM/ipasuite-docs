@@ -8,6 +8,8 @@ In order to use the pipeline you will have to follow those steps :
    -c bioconda` for rnasique and activate your environment `conda activate rnasique`
 4. Install shape-ce `conda install -c conda-forge -c bioconda rnasique` 
 
+sudo apt install libdb-dev
+
 ## Usage
 1. (recommended) Activate your environment `conda activate rnasique`
 2. Generate your project folder `rnasique init [name of your project]`
