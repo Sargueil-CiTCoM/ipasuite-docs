@@ -17,8 +17,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Output and Reports" href="output.html" />
-    <link rel="prev" title="Configuration" href="configuration.html" /> 
+    <link rel="next" title="Advanced Configuration" href="configuration.html" />
+    <link rel="prev" title="Installation" href="install.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,14 +39,16 @@
               <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="requirements.html">Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Run the pipeline</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#general-information">General information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-by-step">Step by step</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-importation">Data importation</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Advanced Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="output.html">Output and Reports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
@@ -83,20 +85,38 @@
              
   <div class="tex2jax_ignore mathjax_ignore section" id="run-the-pipeline">
 <h1>Run the pipeline<a class="headerlink" href="#run-the-pipeline" title="Permalink to this headline"></a></h1>
-<div class="section" id="general-information">
-<h2>General information<a class="headerlink" href="#general-information" title="Permalink to this headline"></a></h2>
-<p>Once you configured your pipeline it is time to launch it.</p>
-<p>Snakemake will try to go forward with all step available :</p>
+<ol>
+<li><p>(recommended) Activate your environment <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">rnasique</span></code></p></li>
+<li><p>Generate your project folder <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">init</span> <span class="pre">[name</span> <span class="pre">of</span> <span class="pre">your</span> <span class="pre">project]</span></code></p></li>
+<li><p>Configure your pipeline using the <span class="xref myst">configurator</span>  <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">[name</span> <span class="pre">of</span> <span class="pre">your</span> <span class="pre">project];</span> <span class="pre">rnasique</span> <span class="pre">config</span></code> or edit config.yaml (<a class="reference internal" href="configuration.html"><span class="doc std std-doc">See configuration</span></a>)</p></li>
+<li><p>Fill up your experiments in <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> specifing where to find your raw data (<a class="reference internal" href="configuration.html"><span class="doc std std-doc">See configuration</span></a>)
+and QuShape projects if you already treated some experiments</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">run</span></code></p></li>
+<li><p>Open your generated .qushape file in results/2-qushape and perform the qushape analysis then save the complete analysis</p>
+<p><em>In another terminal</em>
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">qushape;</span> <span class="pre">qushape</span></code></p>
+</li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">run</span></code> again.</p></li>
+</ol>
+<p>You will find your structure data in results/5.3-structure and results/05.4-varna treated
+with ipanemap as set up in your configuration file</p>
+<p>Data will be organized using a <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> and configured using <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> , and be feeded to IPANEMAP with a fully configured set of conditions.</p>
+<div class="section" id="step-by-step">
+<h2>Step by step<a class="headerlink" href="#step-by-step" title="Permalink to this headline"></a></h2>
+<div class="section" id="data-importation">
+<h3>Data importation<a class="headerlink" href="#data-importation" title="Permalink to this headline"></a></h3>
+<p>If no input file are found in  <code class="docutils literal notranslate"><span class="pre">resources/1.1-fluo-ceq8000</span></code> or <code class="docutils literal notranslate"><span class="pre">resources/1.2-fluo-ce</span></code> rnasique will try to import them using a path constructed as following : <code class="docutils literal notranslate"><span class="pre">raw_data:prefix_path</span></code> from <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> concatenated with <code class="docutils literal notranslate"><span class="pre">probe_file</span></code> and <code class="docutils literal notranslate"><span class="pre">control_file</span></code> column from <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code>.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> <code class="docutils literal notranslate"><span class="pre">qushape_file</span></code> column is filled, and no QuShape file are found in <code class="docutils literal notranslate"><span class="pre">results/2.1-qushape</span></code>, rnasique will import qushape files using a path constructed as following : <code class="docutils literal notranslate"><span class="pre">raw_data:prefix_path</span></code> from <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> concatenated with <code class="docutils literal notranslate"><span class="pre">qushape_file</span></code> column from <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code>.</p>
+<p>:::{warning}
+Importing QuShape file created outside of rnasique is discouraged. However, it can be useful start using RNASique
+after your project begun.</p>
+<p>If you do so, you must unsure that you used the exact same sequence file as provided in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> and that data are coherents between the <code class="docutils literal notranslate"><span class="pre">qushape</span></code> section of your <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code>, columns of <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> (ex: ddNTP column, rt_start and rt_stop)
+:::</p>
 <ul class="simple">
-<li><p>If input file are missing it will try to import them using <code class="docutils literal notranslate"><span class="pre">rawdata:prefix_path</span></code> from <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> concatenated with <code class="docutils literal notranslate"><span class="pre">probe_file</span></code> and <code class="docutils literal notranslate"><span class="pre">control_file</span></code> column from <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code></p></li>
 <li><p>If QuShape projects does not exist, it will created using sequencer data.</p></li>
 <li><p>If QuShape projects exists, it will try extract reactivity and go on until structures are generated</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate <span class="o">[</span>your env<span class="o">]</span> 
-shapece run
-</pre></div>
 </div>
-<p>At the end of snakemake run, it will output logs if they contains informations.</p>
 </div>
 </div>
 
@@ -104,8 +124,8 @@ shapece run
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="configuration.html" class="btn btn-neutral float-left" title="Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="output.html" class="btn btn-neutral float-right" title="Output and Reports" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="install.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="configuration.html" class="btn btn-neutral float-right" title="Advanced Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -21,11 +21,10 @@ The source code for this documentation is available at [https://github.com/Sargu
 :caption: Getting started
 
 self
-quickstart
 requirements
 install
-configuration
 run
+configuration
 output
 troubleshooting
 ```

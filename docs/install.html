@@ -17,7 +17,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Configuration" href="configuration.html" />
+    <link rel="next" title="Run the pipeline" href="run.html" />
     <link rel="prev" title="Requirements" href="requirements.html" /> 
 </head>
 
@@ -39,11 +39,10 @@
               <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="requirements.html">Requirements</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="run.html">Run the pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Advanced Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="output.html">Output and Reports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
@@ -80,14 +79,13 @@
              
   <div class="tex2jax_ignore mathjax_ignore section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h1>
-<ul class="simple">
-<li><p>Install <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a></p></li>
-<li><p>In the conda environnement of your choice install the shapece package :</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install shapece -c conda-forge -c bioconda
-</pre></div>
-</div>
-<p>Your will need to install QuShape separatly and add QuShape binary path to your $PATH</p>
+<ol class="simple">
+<li><p>On debian, install libdb-dev <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">libdb-dev</span></code></p></li>
+<li><p>Install and setup Miniconda : https://docs.conda.io/en/latest/miniconda.html</p></li>
+<li><p>Create a conda environment for QuShape and install it : <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">qushape</span> <span class="pre">-c</span> <span class="pre">free</span> <span class="pre">-c</span> <span class="pre">sargueil-citcom</span> <span class="pre">qushape</span></code></p></li>
+<li><p>(recommended) Create a conda environnent for rnasique <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">rnasique</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-c</span> <span class="pre">bioconda</span></code> and activate your environment <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">rnasique</span></code></p></li>
+<li><p>Install RNASique <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-c</span> <span class="pre">bioconda</span> <span class="pre">rnasique</span></code></p></li>
+</ol>
 </div>
 
 
@@ -95,7 +93,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="requirements.html" class="btn btn-neutral float-left" title="Requirements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="configuration.html" class="btn btn-neutral float-right" title="Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="run.html" class="btn btn-neutral float-right" title="Run the pipeline" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
