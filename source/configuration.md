@@ -1,4 +1,4 @@
-# Advanced Configuration 
+# Configuration 
 
 
 The workflow contains 2 configuration files
@@ -15,8 +15,11 @@ You will get a fully commented `config.yaml` file to help you during configurati
 
 You can also use `shapece config` to configure with gui interface.
 
+![alt text](/home/fxlyonnet/repos/rnasique/rnasique/workflow/docs/source/configurator.png)
+
+
 In order to get started with your project, you might look at thoses sections of
-`config.yaml`:
+`config.yaml` or in the local web configurator:
 
 sequences
 : List the RNA molecules used in this project, and the path to there sequence
