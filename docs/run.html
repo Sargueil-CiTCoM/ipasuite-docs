@@ -44,6 +44,14 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Run the pipeline</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#step-by-step">Step by step</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#data-importation">Data importation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-conversion">Data conversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qushape-project-generation">QuShape project generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qushape">QuShape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qushape-reactivity-extraction">QuShape reactivity extraction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reactivity-normalization">Reactivity Normalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reactivity-aggregation">Reactivity Aggregation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#structure-generation-ipanemap">Structure generation - IPANEMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#footprinting">Footprinting</a></li>
 </ul>
 </li>
 </ul>
@@ -116,6 +124,40 @@ after your project begun.</p>
 <li><p>If QuShape projects does not exist, it will created using sequencer data.</p></li>
 <li><p>If QuShape projects exists, it will try extract reactivity and go on until structures are generated</p></li>
 </ul>
+</div>
+<div class="section" id="data-conversion">
+<h3>Data conversion<a class="headerlink" href="#data-conversion" title="Permalink to this headline"></a></h3>
+<p>Files from CEQ8015 sequencer must converted to be used with QuShape. Headers are removed to obtain a tabular file</p>
+</div>
+<div class="section" id="qushape-project-generation">
+<h3>QuShape project generation<a class="headerlink" href="#qushape-project-generation" title="Permalink to this headline"></a></h3>
+<p>To avoid QuShape manual setting, A complete QuShape project is generated, with <code class="docutils literal notranslate"><span class="pre">probe_file</span></code> <code class="docutils literal notranslate"><span class="pre">control_file</span></code>, <code class="docutils literal notranslate"><span class="pre">sequence</span></code> , <code class="docutils literal notranslate"><span class="pre">ddNTP</span></code> and a reference project if set in the sample file.
+All QuShape options used for generation are controlable through the <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file</p>
+</div>
+<div class="section" id="qushape">
+<h3>QuShape<a class="headerlink" href="#qushape" title="Permalink to this headline"></a></h3>
+<p>While most of the pipeline is automated, this is the only manual step.
+User must open eache QuShape project, and perform treatement up to the reactivity step.</p>
+<p>Once the file is treated, the pipeline will be able to extract reactivity which will be use in the further steps.</p>
+</div>
+<div class="section" id="qushape-reactivity-extraction">
+<h3>QuShape reactivity extraction<a class="headerlink" href="#qushape-reactivity-extraction" title="Permalink to this headline"></a></h3>
+<p>Reactivity is retrieved from QuShape project.</p>
+</div>
+<div class="section" id="reactivity-normalization">
+<h3>Reactivity Normalization<a class="headerlink" href="#reactivity-normalization" title="Permalink to this headline"></a></h3>
+</div>
+<div class="section" id="reactivity-aggregation">
+<h3>Reactivity Aggregation<a class="headerlink" href="#reactivity-aggregation" title="Permalink to this headline"></a></h3>
+</div>
+<div class="section" id="structure-generation-ipanemap">
+<h3>Structure generation - IPANEMAP<a class="headerlink" href="#structure-generation-ipanemap" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>Added reactivity</p></li>
+</ul>
+</div>
+<div class="section" id="footprinting">
+<h3>Footprinting<a class="headerlink" href="#footprinting" title="Permalink to this headline"></a></h3>
 </div>
 </div>
 </div>
