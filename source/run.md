@@ -1,15 +1,27 @@
 # Run the pipeline
 
-1. (recommended) Activate your environment `conda activate rnasique`
+
+## Initialize your project
+
+1. Activate your environment `conda activate rnasique`
 2. Generate your project folder `rnasique init [name of your project]`
+
+Since you generated your project, you can access it [TODO] explain acccess
+
+## Configure your project
+
 2. Configure your pipeline using the [configurator](configurator)  `cd [name of your project]; rnasique config` or edit config.yaml ([See configuration](configuration))
 3. Fill up your experiments in `samples.tsv` specifing where to find your raw data ([See configuration](configuration))
    and QuShape projects if you already treated some experiments
+
+## Run pipeline
+
 4. Run `rnasique run`
 5. Open your generated .qushape file in results/2-qushape and perform the qushape analysis then save the complete analysis 
    
    *In another terminal*
    ```conda activate qushape; qushape```
+   Once you finish your analysis, you can close QuShape, and the terminal you just opened
 6. Run `rnasique run` again.
 
 You will find your structure data in results/5.3-structure and results/05.4-varna treated
