@@ -12,7 +12,7 @@ It relies on :
 
 The workflow will enable you to generate structure data for a RNA fragment analysed using SHAPE with a arbitrary set of conditions (Temperature, Magnesium, Probes.)
 
-The workflow is available at [https://github.com/Sargueil-CiTCoM/shape-ce](https://github.com/Sargueil-CiTCoM/shape-ce)
+The workflow is available at [https://github.com/Sargueil-CiTCoM/rnasique](https://github.com/Sargueil-CiTCoM/rnasique).
 
 The source code for this documentation is available at [https://github.com/SargueilCiTCoM/shape-ce-docs](https://github.com/Sargueil-CiTCoM/shape-ce-docs)
 

@@ -10,7 +10,7 @@ Since you generated your project, you can access it [TODO] explain acccess
 
 ## Configure your project
 
-2. Configure your pipeline using the [configurator](configurator)  `cd [name of your project]; rnasique config` or edit config.yaml ([See configuration](configuration))
+2. Configure your pipeline using the [configurator](configuration)  `cd [name of your project]; rnasique config` 
 3. Fill up your experiments in `samples.tsv` specifing where to find your raw data ([See configuration](configuration))
    and QuShape projects if you already treated some experiments
 
