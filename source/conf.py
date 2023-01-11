@@ -19,7 +19,7 @@ print(sys.path)
 
 # -- Project information -----------------------------------------------------
 
-project = "Shape-CE"
+project = "RNASique"
 copyright = "2021, François-Xavier Lyonnet du Moutier"
 author = "François-Xavier Lyonnet du Moutier"
 
