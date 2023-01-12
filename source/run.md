@@ -16,13 +16,11 @@ Since you generated your project, you can access it [TODO] explain acccess
 
 ## Run pipeline
 
-4. Run `rnasique run`
-5. Open your generated .qushape file in results/2-qushape and perform the qushape analysis then save the complete analysis 
-   
-   *In another terminal*
-   ```conda activate qushape; qushape```
-   Once you finish your analysis, you can close QuShape, and the terminal you just opened
-6. Run `rnasique run` again.
+4. Run `rnasique qushape` it will run the first part of the workflow and open QuShape
+   for each file to treat. You must follow every step of QuShape, up to reactivity
+   and save. You Can follow [Tutorial for QuShape from Weeks
+   lab](QuShape_Tutorial.pdf) and the [Sargueil Team version]()
+6. Run `rnasique run`
 
 You will find your structure data in results/5.3-structure and results/05.4-varna treated
 with ipanemap as set up in your configuration file
