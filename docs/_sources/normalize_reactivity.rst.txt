@@ -1,4 +1,4 @@
-normalize\_reactivity.py
+normalize\_reactivity
 ============================
 
 .. automodule:: rnasique.workflow.scripts.tools.normalize_reactivity

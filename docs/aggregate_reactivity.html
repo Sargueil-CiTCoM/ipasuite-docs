@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>aggregate_reactivity.py &mdash; RNASique  documentation</title>
+  <title>aggregate_reactivity &mdash; RNASique  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,7 +19,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="ceq8000_to_tsv module" href="ceq8000_to_tsv.html" />
+    <link rel="next" title="ceq8000_to_tsv" href="ceq8000_to_tsv.html" />
     <link rel="prev" title="Pipeline scripts references" href="modules.html" /> 
 </head>
 
@@ -53,14 +53,14 @@
 <li class="toctree-l1"><a class="reference internal" href="config_yaml_ref.html">Workflow configuration reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="folders.html">Folder structure</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Pipeline scripts references</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">aggregate_reactivity.py</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">aggregate_reactivity</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#rnasique.workflow.scripts.tools.aggregate_reactivity.aggregate"><code class="docutils literal notranslate"><span class="pre">aggregate()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="ceq8000_to_tsv.html">ceq8000_to_tsv module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="normalize_reactivity.html">normalize_reactivity.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qushape_extract_reactivity.html">qushape_extract_reactivity module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qushape_proj_generator.html">qushape_proj_generator module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ceq8000_to_tsv.html">ceq8000_to_tsv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="normalize_reactivity.html">normalize_reactivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qushape_extract_reactivity.html">qushape_extract_reactivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qushape_proj_generator.html">qushape_proj_generator</a></li>
 </ul>
 </li>
 </ul>
@@ -80,7 +80,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="modules.html">Pipeline scripts references</a> &raquo;</li>
-      <li>aggregate_reactivity.py</li>
+      <li>aggregate_reactivity</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/aggregate_reactivity.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -91,7 +91,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="module-rnasique.workflow.scripts.tools.aggregate_reactivity">
-<span id="aggregate-reactivity-py"></span><h1>aggregate_reactivity.py<a class="headerlink" href="#module-rnasique.workflow.scripts.tools.aggregate_reactivity" title="Permalink to this heading"></a></h1>
+<span id="aggregate-reactivity"></span><h1>aggregate_reactivity<a class="headerlink" href="#module-rnasique.workflow.scripts.tools.aggregate_reactivity" title="Permalink to this heading"></a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="rnasique.workflow.scripts.tools.aggregate_reactivity.aggregate">
 <span class="sig-prename descclassname"><span class="pre">rnasique.workflow.scripts.tools.aggregate_reactivity.</span></span><span class="sig-name descname"><span class="pre">aggregate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">*files:</span> <span class="pre">[&lt;class</span> <span class="pre">'str'&gt;],</span> <span class="pre">output:</span> <span class="pre">str,</span> <span class="pre">shape_output=None,</span> <span class="pre">map_output=None,</span> <span class="pre">normcol='simple_norm_reactivity',</span> <span class="pre">min_ndata_perc:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.5,</span> <span class="pre">min_nsubdata_perc:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.66,</span> <span class="pre">max_mean_perc:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.682,</span> <span class="pre">min_dispersion:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.05,</span> <span class="pre">fullplot:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">plot:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">plot_title:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">err_on_dup:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rnasique.workflow.scripts.tools.aggregate_reactivity.aggregate" title="Permalink to this definition"></a></dt>
@@ -127,7 +127,7 @@ max_mean_perc represent this mean percentage.</p></li>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="modules.html" class="btn btn-neutral float-left" title="Pipeline scripts references" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="ceq8000_to_tsv.html" class="btn btn-neutral float-right" title="ceq8000_to_tsv module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ceq8000_to_tsv.html" class="btn btn-neutral float-right" title="ceq8000_to_tsv" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

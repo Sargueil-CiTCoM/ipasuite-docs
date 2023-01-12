@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>normalize_reactivity.py &mdash; RNASique  documentation</title>
+  <title>normalize_reactivity &mdash; RNASique  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="qushape_extract_reactivity module" href="qushape_extract_reactivity.html" />
-    <link rel="prev" title="ceq8000_to_tsv module" href="ceq8000_to_tsv.html" /> 
+    <link rel="next" title="qushape_extract_reactivity" href="qushape_extract_reactivity.html" />
+    <link rel="prev" title="ceq8000_to_tsv" href="ceq8000_to_tsv.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -53,16 +53,16 @@
 <li class="toctree-l1"><a class="reference internal" href="config_yaml_ref.html">Workflow configuration reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="folders.html">Folder structure</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Pipeline scripts references</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="aggregate_reactivity.html">aggregate_reactivity.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ceq8000_to_tsv.html">ceq8000_to_tsv module</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">normalize_reactivity.py</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aggregate_reactivity.html">aggregate_reactivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ceq8000_to_tsv.html">ceq8000_to_tsv</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">normalize_reactivity</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#rnasique.workflow.scripts.tools.normalize_reactivity.compute_interquart_norm_term"><code class="docutils literal notranslate"><span class="pre">compute_interquart_norm_term()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rnasique.workflow.scripts.tools.normalize_reactivity.compute_simple_norm_term"><code class="docutils literal notranslate"><span class="pre">compute_simple_norm_term()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rnasique.workflow.scripts.tools.normalize_reactivity.normalize_all"><code class="docutils literal notranslate"><span class="pre">normalize_all()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="qushape_extract_reactivity.html">qushape_extract_reactivity module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qushape_proj_generator.html">qushape_proj_generator module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qushape_extract_reactivity.html">qushape_extract_reactivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qushape_proj_generator.html">qushape_proj_generator</a></li>
 </ul>
 </li>
 </ul>
@@ -82,7 +82,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="modules.html">Pipeline scripts references</a> &raquo;</li>
-      <li>normalize_reactivity.py</li>
+      <li>normalize_reactivity</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/normalize_reactivity.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -93,7 +93,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="module-rnasique.workflow.scripts.tools.normalize_reactivity">
-<span id="normalize-reactivity-py"></span><h1>normalize_reactivity.py<a class="headerlink" href="#module-rnasique.workflow.scripts.tools.normalize_reactivity" title="Permalink to this heading"></a></h1>
+<span id="normalize-reactivity"></span><h1>normalize_reactivity<a class="headerlink" href="#module-rnasique.workflow.scripts.tools.normalize_reactivity" title="Permalink to this heading"></a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="rnasique.workflow.scripts.tools.normalize_reactivity.compute_interquart_norm_term">
 <span class="sig-prename descclassname"><span class="pre">rnasique.workflow.scripts.tools.normalize_reactivity.</span></span><span class="sig-name descname"><span class="pre">compute_interquart_norm_term</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'corr_areaRX'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#rnasique.workflow.scripts.tools.normalize_reactivity.compute_interquart_norm_term" title="Permalink to this definition"></a></dt>
@@ -185,8 +185,8 @@ is not considered as significant, and removed</p></li>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="ceq8000_to_tsv.html" class="btn btn-neutral float-left" title="ceq8000_to_tsv module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="qushape_extract_reactivity.html" class="btn btn-neutral float-right" title="qushape_extract_reactivity module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ceq8000_to_tsv.html" class="btn btn-neutral float-left" title="ceq8000_to_tsv" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="qushape_extract_reactivity.html" class="btn btn-neutral float-right" title="qushape_extract_reactivity" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

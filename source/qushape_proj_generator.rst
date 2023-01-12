@@ -1,4 +1,4 @@
-qushape\_proj\_generator module
+qushape\_proj\_generator
 ===============================
 
 .. automodule:: rnasique.workflow.scripts.tools.qushape_proj_generator
