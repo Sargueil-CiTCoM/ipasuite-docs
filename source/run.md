@@ -4,9 +4,11 @@
 ## Initialize your project
 
 1. Activate your environment `conda activate rnasique`
-2. Generate your project folder `rnasique init [name of your project]`
+2. Generate your project folder `rnasique init [project]`
 
-Since you generated your project, you can access it [TODO] explain acccess
+A project folder will be created with all the necessary files for workflow execution
+You can access this folder by a file browser or doing `cd [name of your project]`
+
 
 ## Configure your project
 
@@ -22,7 +24,7 @@ Since you generated your project, you can access it [TODO] explain acccess
    lab](QuShape_Tutorial.pdf) and the [Sargueil Team version]()
 6. Run `rnasique run`
 
-You will find your structure data in results/5.3-structure and results/05.4-varna treated
+You will find your structure data in results/5.3-structure and results/5.4-varna treated
 with ipanemap as set up in your configuration file
 
 Data will be organized using a `samples.tsv` and configured using `config.yaml` , and be feeded to IPANEMAP with a fully configured set of conditions.

@@ -49,7 +49,7 @@ Others sections can stay untouch depending of your needs
 To go futher : [](config_yaml_ref)
 -->
 
-## 2. Samples declaration
+## 2. Fill in `samples.tsv`
 
 1. Open your project folder using a file browser
 2. Open samples.tsv in libreoffice calc.

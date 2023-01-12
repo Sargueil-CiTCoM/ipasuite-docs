@@ -5,7 +5,6 @@ To run the pipeline on your project, you must fill in 2 configuration files
 - `config.yaml` Which contains general configuration
 - `samples.tsv` That contains informations about samples and replicates
 
-[TODO] format protocol
 
 ## 1. Fill in `config.yaml` 
 
@@ -13,7 +12,7 @@ Once you generated your project using `rnasique init [project]` and enter your p
 
 Launch `rnasique config`. Fill in the form into your webbrowser and save.
 
-![alt text](configurator.png)
+![An illustration of the configurator web interface](configurator.png)
 
 More information in ![Advanced configuration](config_yaml_ref.md)
 
@@ -49,7 +48,7 @@ Others sections can stay untouch depending of your needs
 To go futher : [](config_yaml_ref)
 -->
 
-## 2. Samples declaration
+## 2. Fill in `samples.tsv`
 
 1. Open your project folder using a file browser
 2. Open samples.tsv in libreoffice calc.
