@@ -9,3 +9,7 @@ Pipeline scripts references
    normalize_reactivity
    qushape_extract_reactivity
    qushape_proj_generator
+   footprint
+   shift_reactivity
+   split_fasta
+   varna_wrapper
