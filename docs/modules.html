@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pipeline scripts references &mdash; Shape-CE  documentation</title>
+  <title>Pipeline scripts references &mdash; RNASique  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -13,7 +13,9 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -26,7 +28,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Shape-CE
+            <a href="index.html" class="icon icon-home"> RNASique
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -66,7 +68,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Shape-CE</a>
+          <a href="index.html">RNASique</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -85,17 +87,41 @@
            <div itemprop="articleBody">
              
   <div class="section" id="pipeline-scripts-references">
-<h1>Pipeline scripts references<a class="headerlink" href="#pipeline-scripts-references" title="Permalink to this headline"></a></h1>
-<p>shape-ce pipeline use a serie of internal scripts that can be used independantly</p>
-<p>All those scripts are publish in the “tools” repository</p>
-<p>[TODO] : github repository</p>
+<h1>Pipeline scripts references<a class="headerlink" href="#pipeline-scripts-references" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="aggregate_reactivity.html">aggregate_reactivity.py</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ceq8000_to_tsv.html">ceq8000_to_tsv module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="normalize_reactivity.html">normalize_reactivity.py</a></li>
-<li class="toctree-l1"><a class="reference internal" href="qushape_extract_reactivity.html">qushape_extract_reactivity module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="qushape_proj_generator.html">qushape_proj_generator module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate_reactivity.html">aggregate_reactivity.py</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aggregate_reactivity.html#rnasique.workflow.scripts.tools.aggregate_reactivity.aggregate"><code class="docutils literal notranslate"><span class="pre">aggregate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ceq8000_to_tsv.html">ceq8000_to_tsv module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ceq8000_to_tsv.html#rnasique.workflow.scripts.tools.ceq8000_to_tsv.all_to_tsv"><code class="docutils literal notranslate"><span class="pre">all_to_tsv()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ceq8000_to_tsv.html#rnasique.workflow.scripts.tools.ceq8000_to_tsv.get_start_line"><code class="docutils literal notranslate"><span class="pre">get_start_line()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ceq8000_to_tsv.html#rnasique.workflow.scripts.tools.ceq8000_to_tsv.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ceq8000_to_tsv.html#rnasique.workflow.scripts.tools.ceq8000_to_tsv.to_tsv"><code class="docutils literal notranslate"><span class="pre">to_tsv()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="normalize_reactivity.html">normalize_reactivity.py</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="normalize_reactivity.html#rnasique.workflow.scripts.tools.normalize_reactivity.compute_interquart_norm_term"><code class="docutils literal notranslate"><span class="pre">compute_interquart_norm_term()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="normalize_reactivity.html#rnasique.workflow.scripts.tools.normalize_reactivity.compute_simple_norm_term"><code class="docutils literal notranslate"><span class="pre">compute_simple_norm_term()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="normalize_reactivity.html#rnasique.workflow.scripts.tools.normalize_reactivity.normalize_all"><code class="docutils literal notranslate"><span class="pre">normalize_all()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="qushape_extract_reactivity.html">qushape_extract_reactivity module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="qushape_extract_reactivity.html#rnasique.workflow.scripts.tools.qushape_extract_reactivity.check_qushape_using_correct_rna"><code class="docutils literal notranslate"><span class="pre">check_qushape_using_correct_rna()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="qushape_extract_reactivity.html#rnasique.workflow.scripts.tools.qushape_extract_reactivity.extract_reactivity"><code class="docutils literal notranslate"><span class="pre">extract_reactivity()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="qushape_extract_reactivity.html#rnasique.workflow.scripts.tools.qushape_extract_reactivity.getProjData"><code class="docutils literal notranslate"><span class="pre">getProjData()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="qushape_extract_reactivity.html#rnasique.workflow.scripts.tools.qushape_extract_reactivity.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="qushape_extract_reactivity.html#rnasique.workflow.scripts.tools.qushape_extract_reactivity.plot_reactivity"><code class="docutils literal notranslate"><span class="pre">plot_reactivity()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="qushape_proj_generator.html">qushape_proj_generator module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="qushape_proj_generator.html#rnasique.workflow.scripts.tools.qushape_proj_generator.createDProject"><code class="docutils literal notranslate"><span class="pre">createDProject()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="qushape_proj_generator.html#rnasique.workflow.scripts.tools.qushape_proj_generator.createQuShapeFile"><code class="docutils literal notranslate"><span class="pre">createQuShapeFile()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="qushape_proj_generator.html#rnasique.workflow.scripts.tools.qushape_proj_generator.getProjData"><code class="docutils literal notranslate"><span class="pre">getProjData()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="qushape_proj_generator.html#rnasique.workflow.scripts.tools.qushape_proj_generator.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>

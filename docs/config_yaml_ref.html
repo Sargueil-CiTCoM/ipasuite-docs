@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Workflow configuration reference &mdash; Shape-CE  documentation</title>
+  <title>Workflow configuration reference &mdash; RNASique  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -13,7 +13,9 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -26,7 +28,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Shape-CE
+            <a href="index.html" class="icon icon-home"> RNASique
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -59,7 +61,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Shape-CE</a>
+          <a href="index.html">RNASique</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -77,14 +79,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="tex2jax_ignore mathjax_ignore section" id="workflow-configuration-reference">
-<h1>Workflow configuration reference<a class="headerlink" href="#workflow-configuration-reference" title="Permalink to this headline"></a></h1>
+  <div class="section" id="workflow-configuration-reference">
+<h1>Workflow configuration reference<a class="headerlink" href="#workflow-configuration-reference" title="Permalink to this heading"></a></h1>
 <dl>
 <dt>samples</dt><dd><p>path to the samples.tsv file that contains
 one row per sample. It can be parsed easily via pandas and opened by
 libreoffice and excel
 Typically:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">samples</span><span class="p">:</span> <span class="s">&quot;config/samples.tsv&quot;</span> 
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">samples</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;config/samples.tsv&quot;</span><span class="w"> </span>
 </pre></div>
 </div>
 </dd>
@@ -93,19 +95,19 @@ The fasta file should contain a description line containing the origin of the se
 all “rna_id” column value in samples.tsv must have a corresponding line in this section.</p>
 <p><em>Example:</em></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sequences</span><span class="p">:</span>
-  <span class="nt">sequence_id_1</span><span class="p">:</span> <span class="s">&quot;resources/sequence1.fa&quot;</span>
-  <span class="nt">sequence_id_2</span><span class="p">:</span> <span class="s">&quot;resources/sequence2.fa&quot;</span>
-  <span class="nt">sequence_id_3</span><span class="p">:</span> <span class="s">&quot;resources/sequence3.fa&quot;</span>
+<span class="w">  </span><span class="nt">sequence_id_1</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;resources/sequence1.fa&quot;</span>
+<span class="w">  </span><span class="nt">sequence_id_2</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;resources/sequence2.fa&quot;</span>
+<span class="w">  </span><span class="nt">sequence_id_3</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;resources/sequence3.fa&quot;</span>
 </pre></div>
 </div>
 </dd>
 <dt>conditions</dt><dd><p>List each condition here, each item in this line must correspond to a column of the samples.tsv file, and be also putted into format -&gt; condition
 <em>Example:</em></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">conditions</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">probe</span> 
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">temperature</span> 
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">magnesium</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">probe</span><span class="w"> </span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">temperature</span><span class="w"> </span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">magnesium</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 </pre></div>
 </div>
 </dd>
@@ -119,27 +121,27 @@ All variable conditions should be referenced here
 Name of the conditions must correspond a column header in the samples.tsv file</p>
 <p><em>Example:</em></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">format</span><span class="p">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">...</span>
-  <span class="l l-Scalar l-Scalar-Plain">condition</span><span class="p p-Indicator">:</span> <span class="s">&quot;{probe}_{temperature}_{magnesium}&quot;</span>
-  <span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">condition</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{probe}_{temperature}_{magnesium}&quot;</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 </pre></div>
 </div>
 </dd>
 <dt>control_condition</dt><dd><p>Same as condition but for control data. {control} will be replaced by the rawdata-&gt;control variable content</p>
 <p><em>Example:</em></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">format</span><span class="p">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">...</span>
-  <span class="l l-Scalar l-Scalar-Plain">control_condition</span><span class="p p-Indicator">:</span> <span class="s">&quot;{control}_of_{probe}_{temperature}C_{magnesium}&quot;</span>
-  <span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">control_condition</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{control}_of_{probe}_{temperature}C_{magnesium}&quot;</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 </pre></div>
 </div>
 </dd>
 <dt>message</dt><dd><p>Format use to create comprehensible Snakemake message when running workflow. conditions must be prefixed with “wildcards.”</p>
 <p><em>Example:</em></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">format</span><span class="p">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">...</span>
-  <span class="l l-Scalar l-Scalar-Plain">message</span><span class="p p-Indicator">:</span> <span class="s">&quot;{wildcards.rna_id}</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">{wildcards.probe}</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">{wildcards.temperature}°C</span><span class="nv"> </span><span class="s">{wildcards.magnesium}&quot;</span>
-  <span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">message</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{wildcards.rna_id}</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">{wildcards.probe}</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">{wildcards.temperature}°C</span><span class="nv"> </span><span class="s">{wildcards.magnesium}&quot;</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 </pre></div>
 </div>
 </dd>
@@ -150,9 +152,9 @@ Name of the conditions must correspond a column header in the samples.tsv file</
 <dt>path_prefix</dt><dd><p>Path to the folder containing Raw experimental data, it will be prefixed to “control_file” and “probe_file” to auto import data from this folder. Absolute path, and relative path from project root are accepted.</p>
 <p>*Example:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">rawdata</span><span class="p">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">...</span>
-  <span class="l l-Scalar l-Scalar-Plain">path_prefix</span><span class="p p-Indicator">:</span> <span class="s">&quot;path/to/my/raw/data/folder</span>
-  <span class="s">...</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">path_prefix</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;path/to/my/raw/data/folder</span>
+<span class="w">  </span><span class="s">...</span>
 </pre></div>
 </div>
 </dd>
@@ -160,18 +162,18 @@ Name of the conditions must correspond a column header in the samples.tsv file</
 Accepted values : “fluo-ceq8000” or “fluo-ce”</p>
 <p><em>Example:</em></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">rawdata</span><span class="p">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">...</span>
-  <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="s">&quot;fluo-ceq8000&quot;</span>
-  <span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;fluo-ceq8000&quot;</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 </pre></div>
 </div>
 </dd>
 <dt>control</dt><dd><p>Name of the control</p>
 <p><em>Example:</em></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">rawdata</span><span class="p">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">...</span>
-  <span class="l l-Scalar l-Scalar-Plain">control</span><span class="p p-Indicator">:</span> <span class="s">&quot;DMSO&quot;</span>
-  <span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">control</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;DMSO&quot;</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 </pre></div>
 </div>
 </dd>
@@ -183,56 +185,73 @@ project. those informations must be identical to the configuration of your
 capillary sequencer</p>
 <p><code class="docutils literal notranslate"><span class="pre">channel</span></code> section corresponds to the definition of sequencer channels
 used for this project, here, channel start at index 0: channel 1
-correspond to value 0</p>
-<p><em>Example:</em></p>
+correspond to value 0
+<code class="docutils literal notranslate"><span class="pre">use_subsequence</span></code> boolean tells if want the pipeline to manage RNA longer that what
+your sequencer can manage, in which case, you use multiple reverse transcription
+primer, in order to have several starting point for your sequencing. And you want the
+workflow to assemble those subsequence into a full RNA.
+<code class="docutils literal notranslate"><span class="pre">run_qushape</span></code> you can ask the workflow to launch qushape while running. you
+must also fill in <code class="docutils literal notranslate"><span class="pre">run_qushape_conda_env</span></code> with the conda env containing
+qushape
+<code class="docutils literal notranslate"><span class="pre">check_integrity</span></code> true by default, and highly recommanded to stay true. With true, the workflow will check if the sequence inside the
+QuShape File is the same as the sequence declared in sample.tsv and config.yaml. If
+you use QuShape file not generated by the workflow, you might have QuShape File with a
+another sequence (Longer for example). In which case the test will fail. Only if you
+know what your are doing you might want to disable this test. Warning: wrong sequences can
+lead to incoherent data, duplicated entry in output file and other inconsistancy.
+<em>Example:</em></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">qushape</span><span class="p">:</span>
- <span class="nt">channels</span><span class="p">:</span>
-   <span class="nt">RX</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span> <span class="c1"># Channel 1</span>
-   <span class="nt">RXS1</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span> <span class="c1"># Channel 3</span>
-   <span class="nt">BG</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span> <span class="c1"># Channel 1</span>
-   <span class="nt">BGS1</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span> <span class="c1"># Channel 3</span>
+<span class="w"> </span><span class="nt">check_integrity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w"> </span><span class="nt">use_subsequence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w"> </span><span class="nt">run_qushape</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w"> </span><span class="nt">run_qushape_conda_env</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qushape</span>
+<span class="w"> </span><span class="nt">channels</span><span class="p">:</span>
+<span class="w">   </span><span class="nt">RX</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"> </span><span class="c1"># Channel 1</span>
+<span class="w">   </span><span class="nt">RXS1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"> </span><span class="c1"># Channel 3</span>
+<span class="w">   </span><span class="nt">BG</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"> </span><span class="c1"># Channel 1</span>
+<span class="w">   </span><span class="nt">BGS1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"> </span><span class="c1"># Channel 3</span>
 </pre></div>
 </div>
 </dd>
 <dt>normalization</dt><dd><p>Reactivity Normalization configuration</p>
 <p>items in this sections are equivalent of the flags available when running</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python workflow/scripts/tools/normalize_reactivity.py --help
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>workflow/scripts/tools/normalize_reactivity.py<span class="w"> </span>--help
 </pre></div>
 </div>
 <p>you can refer to this for more accurate information</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">normalization</span><span class="p">:</span>
-  <span class="c1"># Which nucleotide are reactive to the shape probe</span>
-  <span class="nt">reactive_nucleotides</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;A&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;C&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;G&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;U&quot;</span><span class="p p-Indicator">]</span>
-  <span class="c1"># All value above this percentile are considered as outliers, preliminarly to all other treatments.</span>
-  <span class="nt">stop_percentile</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">90.</span> 
-  <span class="c1"># Value below this threshold are considered non-reactive (0.0)</span>
-  <span class="nt">low_norm_reactivity_threshold</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-0.3</span>
-  <span class="c1"># Which normalizations methods will be used, several are accepted. Autorized values are : simple, interquartile</span>
-  <span class="nt">norm_methods</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">simple</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">interquartile</span>
-  <span class="c1"># oulier threshold for simple normalization method</span>
-  <span class="nt">simple_outlier_percentile</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">98.</span>
-  <span class="c1"># percentile of values averaged to create the normalization term</span>
-  <span class="nt">simple_norm_term_avg_percentile</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">90.</span>
+<span class="w">  </span><span class="c1"># Which nucleotide are reactive to the shape probe</span>
+<span class="w">  </span><span class="nt">reactive_nucleotides</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;A&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;G&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;U&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="c1"># All value above this percentile are considered as outliers, preliminarly to all other treatments.</span>
+<span class="w">  </span><span class="nt">stop_percentile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">90.</span><span class="w"> </span>
+<span class="w">  </span><span class="c1"># Value below this threshold are considered non-reactive (0.0)</span>
+<span class="w">  </span><span class="nt">low_norm_reactivity_threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-0.3</span>
+<span class="w">  </span><span class="c1"># Which normalizations methods will be used, several are accepted. Autorized values are : simple, interquartile</span>
+<span class="w">  </span><span class="nt">norm_methods</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">simple</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">interquartile</span>
+<span class="w">  </span><span class="c1"># oulier threshold for simple normalization method</span>
+<span class="w">  </span><span class="nt">simple_outlier_percentile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">98.</span>
+<span class="w">  </span><span class="c1"># percentile of values averaged to create the normalization term</span>
+<span class="w">  </span><span class="nt">simple_norm_term_avg_percentile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">90.</span>
 </pre></div>
 </div>
 </dd>
 <dt>aggregate</dt><dd><p>Replicate Aggregation configuration</p>
 <p>items in this sections are equivalent of the flags available when running</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python workflow/scripts/tools/aggregate_reactivity.py --help
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>workflow/scripts/tools/aggregate_reactivity.py<span class="w"> </span>--help
 </pre></div>
 </div>
 <p>you can refer to this for more accurate information</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">aggregate</span><span class="p">:</span>
-  <span class="nt">norm_method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">simple</span> <span class="c1"># or interquartile </span>
-  
-  <span class="c1"># You can specify the name of the column used for normalization instead of the normalization method </span>
-  <span class="c1">#norm_column: &quot;simple_norm_reactivity&quot; #  </span>
-  <span class="nt">min_ndata_perc</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.5</span>
-  <span class="nt">min_nsubdata_perc</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.66</span>
-  <span class="nt">max_mean_perc</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.682</span>
-  <span class="nt">min_dispersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.05</span>
+<span class="w">  </span><span class="nt">norm_method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">simple</span><span class="w"> </span><span class="c1"># or interquartile </span>
+<span class="w">  </span>
+<span class="w">  </span><span class="c1"># You can specify the name of the column used for normalization instead of the normalization method </span>
+<span class="w">  </span><span class="c1">#norm_column: &quot;simple_norm_reactivity&quot; #  </span>
+<span class="w">  </span><span class="nt">min_ndata_perc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
+<span class="w">  </span><span class="nt">min_nsubdata_perc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.66</span>
+<span class="w">  </span><span class="nt">max_mean_perc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.682</span>
+<span class="w">  </span><span class="nt">min_dispersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.05</span>
 </pre></div>
 </div>
 </dd>
@@ -242,27 +261,27 @@ combine conditions as input for ipanemap. the <code class="docutils literal notr
 so.</p>
 <p><em>Example:</em></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ipanemap</span><span class="p">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">...</span>
-  <span class="l l-Scalar l-Scalar-Plain">pools</span><span class="p p-Indicator">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1M7_noMg_37C</span>
-      <span class="nt">rna_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sequence1</span> 
-      <span class="nt">conditions</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="nt">temperature</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">37</span>
-          <span class="nt">magnesium</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">noMg</span>
-          <span class="nt">probe</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1M7</span>
-    <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">allProbe_noMg_37C</span>
-      <span class="nt">rna_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sequence1</span> 
-      <span class="nt">conditions</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="nt">temperature</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">37</span> 
-          <span class="nt">magnesium</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">noMg</span>
-          <span class="nt">probe</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1M7</span>
-        <span class="p p-Indicator">-</span> <span class="nt">temperature</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">37</span> 
-          <span class="nt">magnesium</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">noMg</span>
-          <span class="nt">probe</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">NMIA</span>
-        <span class="p p-Indicator">-</span> <span class="nt">temperature</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">37</span> 
-          <span class="nt">magnesium</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">noMg</span>
-          <span class="nt">probe</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">BzCN</span>
-  <span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">pools</span><span class="p p-Indicator">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1M7_noMg_37C</span>
+<span class="w">      </span><span class="nt">rna_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sequence1</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">conditions</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">37</span>
+<span class="w">          </span><span class="nt">magnesium</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">noMg</span>
+<span class="w">          </span><span class="nt">probe</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1M7</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">allProbe_noMg_37C</span>
+<span class="w">      </span><span class="nt">rna_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sequence1</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">conditions</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">37</span><span class="w"> </span>
+<span class="w">          </span><span class="nt">magnesium</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">noMg</span>
+<span class="w">          </span><span class="nt">probe</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1M7</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">37</span><span class="w"> </span>
+<span class="w">          </span><span class="nt">magnesium</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">noMg</span>
+<span class="w">          </span><span class="nt">probe</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NMIA</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">37</span><span class="w"> </span>
+<span class="w">          </span><span class="nt">magnesium</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">noMg</span>
+<span class="w">          </span><span class="nt">probe</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BzCN</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 </pre></div>
 </div>
 <p>each run of IPANEMAP can be entirerly configure.
@@ -302,17 +321,17 @@ the content of ipanemap config file. Please refer to IPANEMAP documentation</p>
 <p>Intermediary folder naming is fully customable,</p>
 <p><em>Default values:</em></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">folders</span><span class="p">:</span>
-  <span class="nt">fluo-ceq8000</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.1-fluo-ceq8000</span>
-  <span class="nt">fluo-ce</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.2-fluo-ce</span>
-  <span class="nt">qushape</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2-qushape</span>
-  <span class="nt">reactivity</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3.1-reactivity</span>
-  <span class="nt">normreact</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3.2-normreact</span>
-  <span class="nt">aggreact</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4.1-aggreact</span>
-  <span class="nt">aggreact-ipanemap</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4.2-aggreact-ipanemap</span>  
-  <span class="nt">ipanemap-config</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5.1-ipanemap-config</span>
-  <span class="nt">ipanemap-out</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5.2-ipanemap-out</span>
-  <span class="nt">structure</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5.3-structure</span>
-  <span class="nt">varna</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5.4-varna</span>
+<span class="w">  </span><span class="nt">fluo-ceq8000</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.1-fluo-ceq8000</span>
+<span class="w">  </span><span class="nt">fluo-ce</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.2-fluo-ce</span>
+<span class="w">  </span><span class="nt">qushape</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2-qushape</span>
+<span class="w">  </span><span class="nt">reactivity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.1-reactivity</span>
+<span class="w">  </span><span class="nt">normreact</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.2-normreact</span>
+<span class="w">  </span><span class="nt">aggreact</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.1-aggreact</span>
+<span class="w">  </span><span class="nt">aggreact-ipanemap</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.2-aggreact-ipanemap</span><span class="w">  </span>
+<span class="w">  </span><span class="nt">ipanemap-config</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.1-ipanemap-config</span>
+<span class="w">  </span><span class="nt">ipanemap-out</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.2-ipanemap-out</span>
+<span class="w">  </span><span class="nt">structure</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.3-structure</span>
+<span class="w">  </span><span class="nt">varna</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.4-varna</span>
 </pre></div>
 </div>
 </dd>

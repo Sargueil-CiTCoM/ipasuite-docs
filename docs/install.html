@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation &mdash; Shape-CE  documentation</title>
+  <title>Installation &mdash; RNASique  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -13,7 +13,9 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -26,7 +28,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Shape-CE
+            <a href="index.html" class="icon icon-home"> RNASique
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -40,7 +42,14 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="requirements.html">Requirements</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-usage">Basic usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#use-qushape">Use qushape :</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Use qushape :</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="run.html">Run the pipeline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="output.html">Output and Reports</a></li>
@@ -59,7 +68,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Shape-CE</a>
+          <a href="index.html">RNASique</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -77,15 +86,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="tex2jax_ignore mathjax_ignore section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h1>
-<ol class="simple">
-<li><p>On debian, install libdb-dev <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">libdb-dev</span></code></p></li>
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
+<ol class="arabic simple">
 <li><p>Install and setup Miniconda : https://docs.conda.io/en/latest/miniconda.html</p></li>
-<li><p>Create a conda environment for QuShape and install it : <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">qushape</span> <span class="pre">-c</span> <span class="pre">free</span> <span class="pre">-c</span> <span class="pre">sargueil-citcom</span> <span class="pre">qushape</span></code></p></li>
-<li><p>(recommended) Create a conda environnent for rnasique <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">rnasique</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-c</span> <span class="pre">bioconda</span></code> and activate your environment <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">rnasique</span></code></p></li>
-<li><p>Install RNASique <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-c</span> <span class="pre">bioconda</span> <span class="pre">rnasique</span></code></p></li>
+<li><p>Open a terminal</p></li>
+<li><p>If you are using debian, install libdb-dev : <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">libdb-dev</span></code></p></li>
+<li><p>Install QuShape : <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">qushape</span> <span class="pre">-c</span> <span class="pre">free</span> <span class="pre">-c</span> <span class="pre">sargueil-citcom</span> <span class="pre">qushape</span></code></p></li>
+<li><p>Install RNASique <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">rnasique</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-c</span> <span class="pre">bioconda</span> <span class="pre">-c</span> <span class="pre">sargueil-citcom</span> <span class="pre">rnasique</span></code></p></li>
 </ol>
+<div class="section" id="basic-usage">
+<h2>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this heading"></a></h2>
+<div class="section" id="use-qushape">
+<h3>Use qushape :<a class="headerlink" href="#use-qushape" title="Permalink to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Open a terminal</p></li>
+<li><p>Enter qushape conda env : <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">qushape</span></code></p></li>
+<li><p>Launch QuShape : <code class="docutils literal notranslate"><span class="pre">qushape</span></code></p></li>
+</ol>
+</div>
+<div class="section" id="id1">
+<h3>Use qushape :<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Open a terminal</p></li>
+<li><p>Enter rnasique conda env : <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">rnasique</span></code></p></li>
+<li><p>Launch an RNASique command : <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">[command]</span></code>
+You can list available command using : <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">--help</span></code></p></li>
+</ol>
+</div>
+</div>
 </div>
 
 

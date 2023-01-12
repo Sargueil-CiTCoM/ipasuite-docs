@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Configuration &mdash; Shape-CE  documentation</title>
+  <title>Configuration &mdash; RNASique  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -13,7 +13,9 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -26,7 +28,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Shape-CE
+            <a href="index.html" class="icon icon-home"> RNASique
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -43,20 +45,8 @@
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="run.html">Run the pipeline</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#workflow-configuration">Workflow configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#samples-declaration">Samples declaration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#mandatory-columns">Mandatory columns</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#conditions-columns">Conditions columns</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#examples">Examples :</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#optional-columns">Optional columns</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#other-columns">Other columns</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id1">Examples</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#fill-in-config-yaml">1. Fill in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#samples-declaration">2. Samples declaration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="output.html">Output and Reports</a></li>
@@ -75,7 +65,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Shape-CE</a>
+          <a href="index.html">RNASique</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -93,102 +83,120 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="tex2jax_ignore mathjax_ignore section" id="configuration">
-<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h1>
-<p>The workflow contains 2 configuration files</p>
+  <div class="section" id="configuration">
+<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h1>
+<p>To run the pipeline on your project, you must fill in 2 configuration files</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">config/config.yml</span></code> Which contains general configuration for the workflow</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">config/samples.tsv</span></code> That contains informations about samples and replicates</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> Which contains general configuration</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> That contains informations about samples and replicates</p></li>
 </ul>
-<div class="section" id="workflow-configuration">
-<h2>Workflow configuration<a class="headerlink" href="#workflow-configuration" title="Permalink to this headline"></a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> contains all informations necessary to execute the workflow.</p>
-<p>you can generate configs file with a new project using <code class="docutils literal notranslate"><span class="pre">shapece</span> <span class="pre">init</span></code></p>
-<p>You will get a fully commented <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file to help you during configuration</p>
-<p>You can also use <code class="docutils literal notranslate"><span class="pre">shapece</span> <span class="pre">config</span></code> to configure with gui interface.</p>
-<p><img alt="alt text" src="home/fxlyonnet/repos/rnasique/rnasique/workflow/docs/source/configurator.png" /></p>
-<p>In order to get started with your project, you might look at thoses sections of
-<code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> or in the local web configurator:</p>
-<dl class="simple myst">
-<dt>sequences</dt><dd><p>List the RNA molecules used in this project, and the path to there sequence</p>
-</dd>
-<dt>conditions</dt><dd><p>List the experimental conditions which will be explored in this project</p>
-</dd>
-<dt>format</dt><dd><p>Choose how the files will be named, in relation the your <code class="docutils literal notranslate"><span class="pre">conditions</span></code> section</p>
-</dd>
-<dt>rawdata</dt><dd><p>If you want to import files from previous analysis, you should modify this section</p>
-</dd>
-<dt>qushape</dt><dd><p>Input the configuration used with your capillary sequencer. (Channels)</p>
-</dd>
-<dt>ipanemap</dt><dd><p>Configure the execution conditions for IPANEMAP</p>
-</dd>
-<dt>footprint</dt><dd><p>Configure the excutions of diffential analysisk</p>
-</dd>
-</dl>
-<p>Others sections can stay untouch depending of your needs</p>
-<p>To go futher : <a class="reference internal" href="config_yaml_ref.html"><span class="doc std std-doc">Workflow configuration reference</span></a></p>
+<p>[TODO] format protocol</p>
+<div class="section" id="fill-in-config-yaml">
+<h2>1. Fill in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code><a class="headerlink" href="#fill-in-config-yaml" title="Permalink to this heading"></a></h2>
+<p>Once you generated your project using <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">init</span> <span class="pre">[project]</span></code> and enter your project using <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">[project]</span></code></p>
+<p>Launch <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code>. Fill in the form into your webbrowser and save.</p>
+<p><img alt="alt text" src="_images/configurator.png" /></p>
+<p>More information in <img alt="Advanced configuration" src="_images/config_yaml_ref.md" /></p>
+<!-- 
+In order to get started with your project, you might look at thoses sections of
+`config.yaml` or in the local web configurator:
+
+sequences
+: List the RNA molecules used in this project, and the path to there sequence
+
+conditions
+: List the experimental conditions which will be explored in this project
+
+format
+: Choose how the files will be named, in relation the your `conditions` section
+
+rawdata
+: If you want to import files from previous analysis, you should modify this section
+
+qushape
+: Input the configuration used with your capillary sequencer. (Channels) 
+
+ipanemap
+: Configure the execution conditions for IPANEMAP
+
+footprint
+: Configure the excutions of diffential analysisk
+
+Others sections can stay untouch depending of your needs
+
+To go futher : [](config_yaml_ref)
+-->
 </div>
 <div class="section" id="samples-declaration">
-<h2>Samples declaration<a class="headerlink" href="#samples-declaration" title="Permalink to this headline"></a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">.tsv</span></code> file is a tabular file format that you can open either with a text editor or an spreadsheet program</p>
-<p>This file contains each experiment with related information. One line per experiment.</p>
-<p>A <code class="docutils literal notranslate"><span class="pre">config/samples.tpl.tsv</span></code> is available, and can be used as a model for your project</p>
-<div class="section" id="mandatory-columns">
-<h3>Mandatory columns<a class="headerlink" href="#mandatory-columns" title="Permalink to this headline"></a></h3>
+<h2>2. Samples declaration<a class="headerlink" href="#samples-declaration" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Open your project folder using a file browser</p></li>
+<li><p>Open samples.tsv in libreoffice calc.</p></li>
+<li><p>Create conditions columns and comments columns</p>
+<p>For each condition declared in <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code> you must create a column with the same
+identifier in samples.tsv</p>
+</li>
+</ol>
+<p>You can add as many columns to your <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> as you wish, to help you classify and
+caracterize your data. Each column must have un unique name. Those “comments” columns may contains arbitrary value, including empty on.</p>
+<ol class="arabic" start="3">
+<li><p>Create a row for each of your experiments:
+For each experiment, you must create a corresponding row, and fill in the following
+informations</p>
 <dl class="simple myst">
 <dt>id (string)</dt><dd><p>a unique number to identity experiment</p>
 </dd>
-<dt>rna_id (string)</dt><dd><p>The identifier for RNA fragment used in this experiment, as declare in the <code class="docutils literal notranslate"><span class="pre">sequences</span></code> section of <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code></p>
+<dt>rna_id (string)</dt><dd><p>The identifier for RNA fragment used in this experiment, as declare in the <code class="docutils literal notranslate"><span class="pre">sequences</span></code> section using <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code></p>
 </dd>
 <dt>ddNTP (enum: ddA, ddT, ddG, ddC)</dt><dd><p>Which ddNTP what use for the sequencing condition of capillary eletrophorese</p>
 </dd>
-<dt>date (date)</dt><dd><p>Date of the experiment. use ISO 8601 format YYYY-MM-DD</p>
+<dt>date (date)</dt><dd><p>Date of the experiment. use YYYY-MM-DD</p>
 </dd>
 <dt>replicate (integer)</dt><dd><p>Replicate number for the given experiment</p>
 </dd>
 </dl>
-</div>
-<div class="section" id="conditions-columns">
-<h3>Conditions columns<a class="headerlink" href="#conditions-columns" title="Permalink to this headline"></a></h3>
-<p>For each type of experimental condition, you must declare it in the <code class="docutils literal notranslate"><span class="pre">condition_names</span></code> of <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file the name declared in the config file must be the same as the on in <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code>
-In order to generate unambiguous file name, you must also add the conditions in the <code class="docutils literal notranslate"><span class="pre">format</span></code> section</p>
-<div class="section" id="examples">
-<h4>Examples :<a class="headerlink" href="#examples" title="Permalink to this headline"></a></h4>
+</li>
+</ol>
+<p>You must also fill every condition column.</p>
+<p>A missing value one of the mandatory or condition column will lead to a error when launching <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">run</span></code></p>
+<ol class="arabic simple" start="4">
+<li><p>Fill in file information</p></li>
+</ol>
+<p>For each row, you must give information about where to find raw data :</p>
 <dl class="simple myst">
-<dt>probe (string)</dt><dd><p>Which probe was used in this sample (1M7, BzCN, NMIA, DMS, etc.)</p>
+<dt>probe_file (relative file path)</dt><dd><p>relative path to the external sequencing file corresponding to this shape sample. if this field is filled in and no file is present for this sample in <code class="docutils literal notranslate"><span class="pre">results/1.1-fluo-ce</span></code> rnasique will try to import this file. <code class="docutils literal notranslate"><span class="pre">path_prefix</span></code> (from <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code>) is prefixed to the content of the to construct fullpath.</p>
 </dd>
-<dt>temperature (int)</dt><dd><p>temperature At which probing was
-performed</p>
-</dd>
-<dt>magnesium (string)</dt><dd><p>Did the sample buffer contained Magnesium during probing (Mg / noMg)?</p>
-</dd>
-<dt>interaction (string)</dt><dd><p>What other molecule/RNA was present with the probed RNA during the probing step.</p>
-</dd>
-</dl>
-</div>
-</div>
-<div class="section" id="optional-columns">
-<h3>Optional columns<a class="headerlink" href="#optional-columns" title="Permalink to this headline"></a></h3>
-<dl class="simple myst">
-<dt>probe_file (relative file path)</dt><dd><p>relative path to the external file fluo-ce file corresponding to this shape sample. if this field is filled in and no file is present for this sample in <code class="docutils literal notranslate"><span class="pre">resources/1.1-fluo-ce</span></code> snakemake will try to import this file. <code class="docutils literal notranslate"><span class="pre">rawdata-&gt;path_prefix</span></code> (from <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code>) is prefixed to the content of the to construct fullpath.</p>
-</dd>
-<dt>control_file (relative file path)</dt><dd><p>relative path to the external file fluo-ce file corresponding to the control file of this shape sample. If this field is filled in and no file is present for this sample in <code class="docutils literal notranslate"><span class="pre">resources/1.1-fluo-ce</span></code> snakemake will try to import this file. <code class="docutils literal notranslate"><span class="pre">rawdata-&gt;path_prefix</span></code> (from <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code>) is prefixed to the content of the to construct fullpath.</p>
+<dt>control_file (relative file path)</dt><dd><p>relative path to the external file sequencing file corresponding to the control file of this shape sample. If this field is filled in and no file is present for this sample in <code class="docutils literal notranslate"><span class="pre">results/1.1-fluo-ce</span></code> rnasique will try to import this file. <code class="docutils literal notranslate"><span class="pre">path_prefix</span></code> (from <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code>) is prefixed to the content of the to construct fullpath.</p>
 </dd>
 <dt>reference_qushape_file (file path)</dt><dd><p>Reference QuShape project : will be used in QuShape to pre-generate peak calling and alignment</p>
 </dd>
-</dl>
-</div>
-<div class="section" id="other-columns">
-<h3>Other columns<a class="headerlink" href="#other-columns" title="Permalink to this headline"></a></h3>
-<p>You can add as many columns to your <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> as you wish, to help you classify and caracterize your data. Each column must have un unique name.</p>
-<div class="section" id="id1">
-<h4>Examples<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h4>
-<dl class="simple myst">
-<dt>experimenter</dt><dd><p>Who performed the sample acquisition</p>
+<dt>qushape_file (relative file path)</dt><dd><p>QuShape project : If you already treated the data outside rnasique, and want to import
+those data, you can fillup this field.  If this field is filled in and no file is present for this sample in <code class="docutils literal notranslate"><span class="pre">results/2-qushape</span></code> rnasique will try to import this file. <code class="docutils literal notranslate"><span class="pre">path_prefix</span></code> (from <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code>) is prefixed to the content of the to construct fullpath. This field overwrite probe_file and control_file</p>
 </dd>
 </dl>
-</div>
-</div>
+<!--
+For each type of experimental condition, you must declare it in the `condition_names` of `config.yaml` file the name declared in the config file must be the same as the on in `samples.tsv`
+In order to generate unambiguous file name, you must also add the conditions in the `format` section
+
+
+
+#### Examples :
+
+probe (string)
+: Which probe was used in this sample (1M7, BzCN, NMIA, DMS, etc.)
+
+temperature (int)
+: temperature At which probing was
+performed 
+
+magnesium (string)
+: Did the sample buffer contained Magnesium during probing (Mg / noMg)?
+
+interaction (string)
+: What other molecule/RNA was present with the probed RNA during the probing step.
+
+### Optional columns
+-->
 </div>
 </div>
 

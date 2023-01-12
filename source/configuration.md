@@ -13,7 +13,7 @@ Once you generated your project using `rnasique init [project]` and enter your p
 
 Launch `rnasique config`. Fill in the form into your webbrowser and save.
 
-![alt text](/home/fxlyonnet/repos/rnasique/rnasique/workflow/docs/source/configurator.png)
+![alt text](configurator.png)
 
 More information in ![Advanced configuration](config_yaml_ref.md)
 

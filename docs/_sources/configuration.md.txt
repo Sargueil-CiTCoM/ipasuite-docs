@@ -1,23 +1,25 @@
 # Configuration 
 
+To run the pipeline on your project, you must fill in 2 configuration files
 
-The workflow contains 2 configuration files
+- `config.yaml` Which contains general configuration
+- `samples.tsv` That contains informations about samples and replicates
 
-- `config/config.yml` Which contains general configuration for the workflow
-- `config/samples.tsv` That contains informations about samples and replicates
+[TODO] format protocol
 
-## Workflow configuration 
-`config.yaml` contains all informations necessary to execute the workflow. 
+## 1. Fill in `config.yaml` 
 
-you can generate configs file with a new project using `shapece init`
+Once you generated your project using `rnasique init [project]` and enter your project using `cd [project]`
 
-You will get a fully commented `config.yaml` file to help you during configuration
+Launch `rnasique config`. Fill in the form into your webbrowser and save.
 
-You can also use `shapece config` to configure with gui interface.
+![alt text](configurator.png)
 
-![alt text](/home/fxlyonnet/repos/rnasique/rnasique/workflow/docs/source/configurator.png)
+More information in ![Advanced configuration](config_yaml_ref.md)
 
 
+
+<!-- 
 In order to get started with your project, you might look at thoses sections of
 `config.yaml` or in the local web configurator:
 
@@ -45,38 +47,65 @@ footprint
 Others sections can stay untouch depending of your needs
 
 To go futher : [](config_yaml_ref)
+-->
+
+## 2. Samples declaration
+
+1. Open your project folder using a file browser
+2. Open samples.tsv in libreoffice calc.
+3. Create conditions columns and comments columns
+
+    For each condition declared in `rnasique config` you must create a column with the same
+identifier in samples.tsv
+
+You can add as many columns to your `samples.tsv` as you wish, to help you classify and
+caracterize your data. Each column must have un unique name. Those "comments" columns may contains arbitrary value, including empty on.
+
+3. Create a row for each of your experiments:
+For each experiment, you must create a corresponding row, and fill in the following
+informations
+
+    id (string)
+    : a unique number to identity experiment
+    
+    rna_id (string)
+    : The identifier for RNA fragment used in this experiment, as declare in the `sequences` section using `rnasique config`
+    
+    ddNTP (enum: ddA, ddT, ddG, ddC)
+    : Which ddNTP what use for the sequencing condition of capillary eletrophorese
+    
+    date (date)
+    : Date of the experiment. use YYYY-MM-DD 
+    
+    replicate (integer)
+    : Replicate number for the given experiment
+
+You must also fill every condition column.
+
+A missing value one of the mandatory or condition column will lead to a error when launching `rnasique run`
+
+4. Fill in file information
+
+For each row, you must give information about where to find raw data :
+
+probe_file (relative file path)
+: relative path to the external sequencing file corresponding to this shape sample. if this field is filled in and no file is present for this sample in `results/1.1-fluo-ce` rnasique will try to import this file. `path_prefix` (from `rnasique config`) is prefixed to the content of the to construct fullpath.
+
+control_file (relative file path)
+: relative path to the external file sequencing file corresponding to the control file of this shape sample. If this field is filled in and no file is present for this sample in `results/1.1-fluo-ce` rnasique will try to import this file. `path_prefix` (from `rnasique config`) is prefixed to the content of the to construct fullpath.
 
 
-## Samples declaration
 
-`.tsv` file is a tabular file format that you can open either with a text editor or an spreadsheet program
+reference_qushape_file (file path)
+: Reference QuShape project : will be used in QuShape to pre-generate peak calling and alignment
 
-This file contains each experiment with related information. One line per experiment.
+qushape_file (relative file path)
+: QuShape project : If you already treated the data outside rnasique, and want to import
+those data, you can fillup this field.  If this field is filled in and no file is present for this sample in `results/2-qushape` rnasique will try to import this file. `path_prefix` (from `rnasique config`) is prefixed to the content of the to construct fullpath. This field overwrite probe_file and control_file
 
-A `config/samples.tpl.tsv` is available, and can be used as a model for your project
-
-### Mandatory columns
-
-id (string)
-: a unique number to identity experiment
-
-rna_id (string)
-: The identifier for RNA fragment used in this experiment, as declare in the `sequences` section of `config.yaml`
-
-ddNTP (enum: ddA, ddT, ddG, ddC)
-: Which ddNTP what use for the sequencing condition of capillary eletrophorese
-
-date (date)
-: Date of the experiment. use ISO 8601 format YYYY-MM-DD 
-
-replicate (integer)
-: Replicate number for the given experiment
-
-
-### Conditions columns
+<!--
 For each type of experimental condition, you must declare it in the `condition_names` of `config.yaml` file the name declared in the config file must be the same as the on in `samples.tsv`
 In order to generate unambiguous file name, you must also add the conditions in the `format` section
-
 
 
 
@@ -96,21 +125,6 @@ interaction (string)
 : What other molecule/RNA was present with the probed RNA during the probing step.
 
 ### Optional columns
-
-probe_file (relative file path)
-: relative path to the external file fluo-ce file corresponding to this shape sample. if this field is filled in and no file is present for this sample in `resources/1.1-fluo-ce` snakemake will try to import this file. `rawdata->path_prefix` (from `config.yaml`) is prefixed to the content of the to construct fullpath.
-
-control_file (relative file path)
-: relative path to the external file fluo-ce file corresponding to the control file of this shape sample. If this field is filled in and no file is present for this sample in `resources/1.1-fluo-ce` snakemake will try to import this file. `rawdata->path_prefix` (from `config.yaml`) is prefixed to the content of the to construct fullpath.
-
-reference_qushape_file (file path)
-: Reference QuShape project : will be used in QuShape to pre-generate peak calling and alignment
-
-### Other columns
-You can add as many columns to your `samples.tsv` as you wish, to help you classify and caracterize your data. Each column must have un unique name.
+-->
 
 
-#### Examples
-
-experimenter
-: Who performed the sample acquisition

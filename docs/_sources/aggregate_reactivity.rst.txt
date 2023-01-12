@@ -1,6 +1,6 @@
 aggregate\_reactivity.py
 ========================
 
-.. automodule:: aggregate_reactivity
+.. automodule:: rnasique.workflow.scripts.tools.aggregate_reactivity
    :members:
    :show-inheritance:

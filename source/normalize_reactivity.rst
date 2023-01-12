@@ -1,6 +1,6 @@
 normalize\_reactivity.py
 ============================
 
-.. automodule:: normalize_reactivity
+.. automodule:: rnasique.workflow.scripts.tools.normalize_reactivity
    :members:
    :show-inheritance:

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>qushape_proj_generator module &mdash; Shape-CE  documentation</title>
+  <title>qushape_proj_generator module &mdash; RNASique  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -13,7 +13,9 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -25,7 +27,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Shape-CE
+            <a href="index.html" class="icon icon-home"> RNASique
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -54,7 +56,13 @@
 <li class="toctree-l2"><a class="reference internal" href="ceq8000_to_tsv.html">ceq8000_to_tsv module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="normalize_reactivity.html">normalize_reactivity.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qushape_extract_reactivity.html">qushape_extract_reactivity module</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">qushape_proj_generator module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">qushape_proj_generator module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rnasique.workflow.scripts.tools.qushape_proj_generator.createDProject"><code class="docutils literal notranslate"><span class="pre">createDProject()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rnasique.workflow.scripts.tools.qushape_proj_generator.createQuShapeFile"><code class="docutils literal notranslate"><span class="pre">createQuShapeFile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rnasique.workflow.scripts.tools.qushape_proj_generator.getProjData"><code class="docutils literal notranslate"><span class="pre">getProjData()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rnasique.workflow.scripts.tools.qushape_proj_generator.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -65,7 +73,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Shape-CE</a>
+          <a href="index.html">RNASique</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -84,8 +92,44 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="qushape-proj-generator-module">
-<h1>qushape_proj_generator module<a class="headerlink" href="#qushape-proj-generator-module" title="Permalink to this headline"></a></h1>
+  <div class="section" id="module-rnasique.workflow.scripts.tools.qushape_proj_generator">
+<span id="qushape-proj-generator-module"></span><h1>qushape_proj_generator module<a class="headerlink" href="#module-rnasique.workflow.scripts.tools.qushape_proj_generator" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="rnasique.workflow.scripts.tools.qushape_proj_generator.createDProject">
+<span class="sig-prename descclassname"><span class="pre">rnasique.workflow.scripts.tools.qushape_proj_generator.</span></span><span class="sig-name descname"><span class="pre">createDProject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rxfile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bgfile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'output.qushape'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refseq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refproj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ddNTP</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ddC'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rnasique.workflow.scripts.tools.qushape_proj_generator.createDProject" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rnasique.workflow.scripts.tools.qushape_proj_generator.createQuShapeFile">
+<span class="sig-prename descclassname"><span class="pre">rnasique.workflow.scripts.tools.qushape_proj_generator.</span></span><span class="sig-name descname"><span class="pre">createQuShapeFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rxfile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bgfile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'output.qushape'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refseq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refproj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'BG':</span> <span class="pre">0,</span> <span class="pre">'BGS1':</span> <span class="pre">2,</span> <span class="pre">'RX':</span> <span class="pre">0,</span> <span class="pre">'RXS1':</span> <span class="pre">2}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ddNTP</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'ddC'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'never'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rnasique.workflow.scripts.tools.qushape_proj_generator.createQuShapeFile" title="Permalink to this definition"></a></dt>
+<dd><p>createQuShapeFile.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rxfile</strong> (<em>str</em>) – rxfile</p></li>
+<li><p><strong>bgfile</strong> (<em>str</em>) – bgfile</p></li>
+<li><p><strong>output</strong> (<em>str</em>) – output</p></li>
+<li><p><strong>refseq</strong> (<em>str</em>) – refseq</p></li>
+<li><p><strong>refproj</strong> (<em>str</em>) – refproj</p></li>
+<li><p><strong>channels</strong> – channels</p></li>
+<li><p><strong>ddNTP</strong> (<em>str</em>) – ddNTP</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – path</p></li>
+<li><p><strong>overwrite</strong> – overwrite file (never / untreated / always)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rnasique.workflow.scripts.tools.qushape_proj_generator.getProjData">
+<span class="sig-prename descclassname"><span class="pre">rnasique.workflow.scripts.tools.qushape_proj_generator.</span></span><span class="sig-name descname"><span class="pre">getProjData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rnasique.workflow.scripts.tools.qushape_proj_generator.getProjData" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rnasique.workflow.scripts.tools.qushape_proj_generator.main">
+<span class="sig-prename descclassname"><span class="pre">rnasique.workflow.scripts.tools.qushape_proj_generator.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rnasique.workflow.scripts.tools.qushape_proj_generator.main" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 </div>
 
 
