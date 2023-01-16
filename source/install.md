@@ -18,3 +18,15 @@
 2. Enter rnasique conda env : `conda activate rnasique`
 3. Launch an RNASique command : `rnasique [command]`
 You can list available command using : `rnasique --help`
+
+## Update
+
+RNASique
+```bash
+conda update -n rnasique rnasique -c Sargueil-CiTCoM -c conda-forge -c bioconda 
+```
+
+QuShape
+```bash
+conda update -n qushape qushape -c Sargueil-CiTCoM -c free 
+```

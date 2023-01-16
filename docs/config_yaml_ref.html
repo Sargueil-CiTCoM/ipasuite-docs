@@ -86,7 +86,7 @@
 one row per sample. It can be parsed easily via pandas and opened by
 libreoffice and excel
 Typically:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">samples</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;config/samples.tsv&quot;</span><span class="w"> </span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">samples</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;config/samples.tsv&quot;</span>
 </pre></div>
 </div>
 </dd>
@@ -104,8 +104,8 @@ all “rna_id” column value in samples.tsv must have a corresponding line in t
 <dt>conditions</dt><dd><p>List each condition here, each item in this line must correspond to a column of the samples.tsv file, and be also putted into format -&gt; condition
 <em>Example:</em></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">conditions</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">probe</span><span class="w"> </span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">temperature</span><span class="w"> </span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">probe</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">temperature</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">magnesium</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 </pre></div>
@@ -223,7 +223,7 @@ lead to incoherent data, duplicated entry in output file and other inconsistancy
 <span class="w">  </span><span class="c1"># Which nucleotide are reactive to the shape probe</span>
 <span class="w">  </span><span class="nt">reactive_nucleotides</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;A&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;G&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;U&quot;</span><span class="p p-Indicator">]</span>
 <span class="w">  </span><span class="c1"># All value above this percentile are considered as outliers, preliminarly to all other treatments.</span>
-<span class="w">  </span><span class="nt">stop_percentile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">90.</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">stop_percentile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">90.</span>
 <span class="w">  </span><span class="c1"># Value below this threshold are considered non-reactive (0.0)</span>
 <span class="w">  </span><span class="nt">low_norm_reactivity_threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-0.3</span>
 <span class="w">  </span><span class="c1"># Which normalizations methods will be used, several are accepted. Autorized values are : simple, interquartile</span>
@@ -244,10 +244,10 @@ lead to incoherent data, duplicated entry in output file and other inconsistancy
 </div>
 <p>you can refer to this for more accurate information</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">aggregate</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">norm_method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">simple</span><span class="w"> </span><span class="c1"># or interquartile </span>
-<span class="w">  </span>
-<span class="w">  </span><span class="c1"># You can specify the name of the column used for normalization instead of the normalization method </span>
-<span class="w">  </span><span class="c1">#norm_column: &quot;simple_norm_reactivity&quot; #  </span>
+<span class="w">  </span><span class="nt">norm_method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">simple</span><span class="w"> </span><span class="c1"># or interquartile</span>
+
+<span class="w">  </span><span class="c1"># You can specify the name of the column used for normalization instead of the normalization method</span>
+<span class="w">  </span><span class="c1">#norm_column: &quot;simple_norm_reactivity&quot; #</span>
 <span class="w">  </span><span class="nt">min_ndata_perc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
 <span class="w">  </span><span class="nt">min_nsubdata_perc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.66</span>
 <span class="w">  </span><span class="nt">max_mean_perc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.682</span>
@@ -264,21 +264,21 @@ so.</p>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">pools</span><span class="p p-Indicator">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1M7_noMg_37C</span>
-<span class="w">      </span><span class="nt">rna_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sequence1</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">rna_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sequence1</span>
 <span class="w">      </span><span class="nt">conditions</span><span class="p">:</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">37</span>
 <span class="w">          </span><span class="nt">magnesium</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">noMg</span>
 <span class="w">          </span><span class="nt">probe</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1M7</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">allProbe_noMg_37C</span>
-<span class="w">      </span><span class="nt">rna_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sequence1</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">rna_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sequence1</span>
 <span class="w">      </span><span class="nt">conditions</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">37</span><span class="w"> </span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">37</span>
 <span class="w">          </span><span class="nt">magnesium</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">noMg</span>
 <span class="w">          </span><span class="nt">probe</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1M7</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">37</span><span class="w"> </span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">37</span>
 <span class="w">          </span><span class="nt">magnesium</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">noMg</span>
 <span class="w">          </span><span class="nt">probe</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NMIA</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">37</span><span class="w"> </span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">37</span>
 <span class="w">          </span><span class="nt">magnesium</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">noMg</span>
 <span class="w">          </span><span class="nt">probe</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BzCN</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
@@ -327,7 +327,7 @@ the content of ipanemap config file. Please refer to IPANEMAP documentation</p>
 <span class="w">  </span><span class="nt">reactivity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.1-reactivity</span>
 <span class="w">  </span><span class="nt">normreact</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.2-normreact</span>
 <span class="w">  </span><span class="nt">aggreact</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.1-aggreact</span>
-<span class="w">  </span><span class="nt">aggreact-ipanemap</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.2-aggreact-ipanemap</span><span class="w">  </span>
+<span class="w">  </span><span class="nt">aggreact-ipanemap</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.2-aggreact-ipanemap</span>
 <span class="w">  </span><span class="nt">ipanemap-config</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.1-ipanemap-config</span>
 <span class="w">  </span><span class="nt">ipanemap-out</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.2-ipanemap-out</span>
 <span class="w">  </span><span class="nt">structure</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.3-structure</span>
