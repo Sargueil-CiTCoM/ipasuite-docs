@@ -45,7 +45,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#basic-usage">Basic usage</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#use-qushape">Use qushape :</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Use qushape :</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-rnasique">Use rnasique :</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#update">Update</a></li>
@@ -58,6 +58,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Go further</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="stepbystep.html">Step by step Description</a></li>
 <li class="toctree-l1"><a class="reference internal" href="config_yaml_ref.html">Workflow configuration reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="folders.html">Folder structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">Pipeline scripts references</a></li>
@@ -93,8 +94,8 @@
 <li><p>Install and setup Miniconda : https://docs.conda.io/en/latest/miniconda.html</p></li>
 <li><p>Open a terminal</p></li>
 <li><p>If you are using debian, install libdb-dev : <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">libdb-dev</span></code></p></li>
-<li><p>Install QuShape : <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">qushape</span> <span class="pre">-c</span> <span class="pre">free</span> <span class="pre">-c</span> <span class="pre">sargueil-citcom</span> <span class="pre">qushape</span></code></p></li>
-<li><p>Install RNASique <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">rnasique</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-c</span> <span class="pre">bioconda</span> <span class="pre">-c</span> <span class="pre">sargueil-citcom</span> <span class="pre">rnasique</span></code></p></li>
+<li><p>Install QuShape : <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">qushape</span> <span class="pre">-c</span> <span class="pre">free</span> <span class="pre">-c</span> <span class="pre">sargueil-citcom</span> <span class="pre">qushape</span></code></p></li>
+<li><p>Install RNASique <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">rnasique</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-c</span> <span class="pre">bioconda</span> <span class="pre">-c</span> <span class="pre">sargueil-citcom</span> <span class="pre">rnasique</span></code></p></li>
 </ol>
 <div class="section" id="basic-usage">
 <h2>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this heading"></a></h2>
@@ -106,8 +107,8 @@
 <li><p>Launch QuShape : <code class="docutils literal notranslate"><span class="pre">qushape</span></code></p></li>
 </ol>
 </div>
-<div class="section" id="id1">
-<h3>Use qushape :<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<div class="section" id="use-rnasique">
+<h3>Use rnasique :<a class="headerlink" href="#use-rnasique" title="Permalink to this heading"></a></h3>
 <ol class="arabic simple">
 <li><p>Open a terminal</p></li>
 <li><p>Enter rnasique conda env : <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">rnasique</span></code></p></li>
@@ -118,14 +119,8 @@ You can list available command using : <code class="docutils literal notranslate
 </div>
 <div class="section" id="update">
 <h2>Update<a class="headerlink" href="#update" title="Permalink to this heading"></a></h2>
-<p>RNASique</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>update<span class="w"> </span>-n<span class="w"> </span>rnasique<span class="w"> </span>rnasique<span class="w"> </span>-c<span class="w"> </span>Sargueil-CiTCoM<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>-c<span class="w"> </span>bioconda<span class="w"> </span>
-</pre></div>
-</div>
-<p>QuShape</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>update<span class="w"> </span>-n<span class="w"> </span>qushape<span class="w"> </span>qushape<span class="w"> </span>-c<span class="w"> </span>Sargueil-CiTCoM<span class="w"> </span>-c<span class="w"> </span>free<span class="w"> </span>
-</pre></div>
-</div>
+<p>RNASique <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">-n</span> <span class="pre">rnasique</span> <span class="pre">rnasique</span> <span class="pre">-c</span> <span class="pre">Sargueil-CiTCoM</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-c</span> <span class="pre">bioconda</span> </code></p>
+<p>QuShape <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">-n</span> <span class="pre">qushape</span> <span class="pre">qushape</span> <span class="pre">-c</span> <span class="pre">Sargueil-CiTCoM</span> <span class="pre">-c</span> <span class="pre">free</span></code></p>
 </div>
 </div>
 

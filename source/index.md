@@ -32,10 +32,11 @@ troubleshooting
 ```{toctree}
 :maxdepth: 2
 :caption: Go further
-
+stepbystep
 config_yaml_ref
 folders
 modules
+
 ```
 
 

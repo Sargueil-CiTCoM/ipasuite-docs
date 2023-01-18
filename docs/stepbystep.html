@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Step by step Description &mdash; RNASique  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Workflow configuration reference" href="config_yaml_ref.html" />
+    <link rel="prev" title="Troubleshooting" href="troubleshooting.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> RNASique
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run.html">Run the pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output.html">Output and Reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Go further</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Step by step Description</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#data-importation">Data importation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-conversion">Data conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#qushape-project-generation">QuShape project generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#qushape">QuShape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#qushape-reactivity-extraction">QuShape reactivity extraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reactivity-normalization">Reactivity Normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reactivity-aggregation">Reactivity Aggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#structure-generation-ipanemap">Structure generation - IPANEMAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#footprinting">Footprinting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config_yaml_ref.html">Workflow configuration reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="folders.html">Folder structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Pipeline scripts references</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RNASique</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Step by step Description</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/stepbystep.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="step-by-step-description">
+<h1>Step by step Description<a class="headerlink" href="#step-by-step-description" title="Permalink to this heading"></a></h1>
+<div class="section" id="data-importation">
+<h2>Data importation<a class="headerlink" href="#data-importation" title="Permalink to this heading"></a></h2>
+<p>If no input file are found in  <code class="docutils literal notranslate"><span class="pre">resources/1.1-fluo-ceq8000</span></code> or <code class="docutils literal notranslate"><span class="pre">resources/1.2-fluo-ce</span></code> rnasique will try to import them using a path constructed as following : <code class="docutils literal notranslate"><span class="pre">raw_data:prefix_path</span></code> from <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> concatenated with <code class="docutils literal notranslate"><span class="pre">probe_file</span></code> and <code class="docutils literal notranslate"><span class="pre">control_file</span></code> column from <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code>.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> <code class="docutils literal notranslate"><span class="pre">qushape_file</span></code> column is filled, and no QuShape file are found in <code class="docutils literal notranslate"><span class="pre">results/2.1-qushape</span></code>, rnasique will import qushape files using a path constructed as following : <code class="docutils literal notranslate"><span class="pre">raw_data:prefix_path</span></code> from <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> concatenated with <code class="docutils literal notranslate"><span class="pre">qushape_file</span></code> column from <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code>.</p>
+<p>:::{warning}
+Importing QuShape file created outside of rnasique is discouraged. However, it can be useful start using RNASique
+after your project begun.</p>
+<p>If you do so, you must unsure that you used the exact same sequence file as provided in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> and that data are coherents between the <code class="docutils literal notranslate"><span class="pre">qushape</span></code> section of your <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code>, columns of <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> (ex: ddNTP column, rt_start and rt_stop)
+:::</p>
+<ul class="simple">
+<li><p>If QuShape projects does not exist, it will created using sequencer data.</p></li>
+<li><p>If QuShape projects exists, it will try extract reactivity and go on until structures are generated</p></li>
+</ul>
+</div>
+<div class="section" id="data-conversion">
+<h2>Data conversion<a class="headerlink" href="#data-conversion" title="Permalink to this heading"></a></h2>
+<p>Files from CEQ8015 sequencer must converted to be used with QuShape. Headers are removed to obtain a tabular file</p>
+</div>
+<div class="section" id="qushape-project-generation">
+<h2>QuShape project generation<a class="headerlink" href="#qushape-project-generation" title="Permalink to this heading"></a></h2>
+<p>To avoid QuShape manual setting, A complete QuShape project is generated, with <code class="docutils literal notranslate"><span class="pre">probe_file</span></code> <code class="docutils literal notranslate"><span class="pre">control_file</span></code>, <code class="docutils literal notranslate"><span class="pre">sequence</span></code> , <code class="docutils literal notranslate"><span class="pre">ddNTP</span></code> and a reference project if set in the sample file.
+All QuShape options used for generation are controlable through the <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file</p>
+</div>
+<div class="section" id="qushape">
+<h2>QuShape<a class="headerlink" href="#qushape" title="Permalink to this heading"></a></h2>
+<p>While most of the pipeline is automated, this is the only manual step.
+User must open eache QuShape project, and perform treatement up to the reactivity step.</p>
+<p>Once the file is treated, the pipeline will be able to extract reactivity which will be use in the further steps.</p>
+</div>
+<div class="section" id="qushape-reactivity-extraction">
+<h2>QuShape reactivity extraction<a class="headerlink" href="#qushape-reactivity-extraction" title="Permalink to this heading"></a></h2>
+<p>Reactivity is retrieved from QuShape project.</p>
+</div>
+<div class="section" id="reactivity-normalization">
+<h2>Reactivity Normalization<a class="headerlink" href="#reactivity-normalization" title="Permalink to this heading"></a></h2>
+</div>
+<div class="section" id="reactivity-aggregation">
+<h2>Reactivity Aggregation<a class="headerlink" href="#reactivity-aggregation" title="Permalink to this heading"></a></h2>
+</div>
+<div class="section" id="structure-generation-ipanemap">
+<h2>Structure generation - IPANEMAP<a class="headerlink" href="#structure-generation-ipanemap" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Added reactivity</p></li>
+</ul>
+</div>
+<div class="section" id="footprinting">
+<h2>Footprinting<a class="headerlink" href="#footprinting" title="Permalink to this heading"></a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="troubleshooting.html" class="btn btn-neutral float-left" title="Troubleshooting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="config_yaml_ref.html" class="btn btn-neutral float-right" title="Workflow configuration reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, François-Xavier Lyonnet du Moutier.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
