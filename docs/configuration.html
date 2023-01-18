@@ -152,19 +152,17 @@ informations</p>
 <dt>date (date)</dt><dd><p>Date of the experiment. use YYYY-MM-DD</p>
 </dd>
 <dt>replicate (integer)</dt><dd><p>id for the experiment and the given probing condition
-- arbitrary unique integer - this is an identifier, and
-not the number of replicate for the current probing
-condition. Each replicate must be on its own row</p>
+this identifier, allows distinguishing the different replicates for a given condition. Must be unique for a given condition.</p>
 </dd>
 </dl>
 </li>
 </ol>
 <p>If you activated «subsequence», you must also fill in <code class="docutils literal notranslate"><span class="pre">rt_begin_pos</span></code> and <code class="docutils literal notranslate"><span class="pre">rt_end_pos</span></code>:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>rt_begin_pos
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>rt_begin_pos (integer)
 : Position of the first nucleotide after reverse transcriptase primer used for this
 sample
 
-rt_end_pos
+rt_end_pos (integer)
 : Position of the last nucleotide reachable by the reverse transcriptase (which is
 most of the time 0)
 </pre></div>

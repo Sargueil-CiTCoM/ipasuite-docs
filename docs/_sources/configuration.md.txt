@@ -79,17 +79,15 @@ informations
     
     replicate (integer)
     : id for the experiment and the given probing condition
-    - arbitrary unique integer - this is an identifier, and
-      not the number of replicate for the current probing
-      condition. Each replicate must be on its own row
+      this identifier, allows distinguishing the different replicates for a given condition. Must be unique for a given condition.
 
 If you activated «subsequence», you must also fill in `rt_begin_pos` and `rt_end_pos`:
 
-    rt_begin_pos
+    rt_begin_pos (integer)
     : Position of the first nucleotide after reverse transcriptase primer used for this
     sample
 
-    rt_end_pos
+    rt_end_pos (integer)
     : Position of the last nucleotide reachable by the reverse transcriptase (which is
     most of the time 0)
 
