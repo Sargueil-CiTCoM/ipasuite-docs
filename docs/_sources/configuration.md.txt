@@ -6,15 +6,16 @@ To run the pipeline on your project, you must fill in 2 configuration files
 - `samples.tsv` That contains informations about samples and replicates
 
 
-## 1. Fill in `config.yaml` 
+## 1. Fill in `config.yaml`  using `rnasique config`
 
 Once you generated your project using `rnasique init [project]` and enter your project using `cd [project]`
 
 Launch `rnasique config`. Fill in the form into your webbrowser and save.
 
+For detailed information see ![Advanced configuration](config_yaml_ref.md)
+
 ![An illustration of the configurator web interface](configurator.png)
 
-More information in ![Advanced configuration](config_yaml_ref.md)
 
 
 
@@ -54,10 +55,10 @@ To go futher : [](config_yaml_ref)
 2. Open samples.tsv in libreoffice calc.
 3. Create conditions columns and comments columns
 
-    For each condition declared in `rnasique config` you must create a column with the same
+For each condition declared in `rnasique config` you must create a column with the same
 identifier in samples.tsv
 
-You can add as many columns to your `samples.tsv` as you wish, to help you classify and
+In addition, You can add as many columns to your `samples.tsv` as you wish, to help you classify and
 caracterize your data. Each column must have un unique name. Those "comments" columns may contains arbitrary value, including empty on.
 
 3. Create a row for each of your experiments:
@@ -68,22 +69,26 @@ informations
     : a unique number to identity experiment
     
     rna_id (string)
-    : The identifier for RNA fragment used in this experiment, as declare in the `sequences` section using `rnasique config`
+    : The identifier for RNA fragment used in this experiment, as declared in the `sequences` section of `rnasique config`
     
-    ddNTP (enum: ddA, ddT, ddG, ddC)
-    : Which ddNTP what use for the sequencing condition of capillary eletrophorese
+    ddNTP (ddA, ddT, ddG, ddC)
+    : Indicate the ddNTP used for the sequencing condition of capillary eletrophorese
     
     date (date)
     : Date of the experiment. use YYYY-MM-DD 
     
     replicate (integer)
-    : Replicate number for the given experiment
+    : id for the experiment and the given probing condition
+    - arbitrary unique integer - this is an identifier, and
+      not the number of replicate for the current probing
+      condition. Each replicate must be on its own row
 
-If you activated «subsequence», you must also fill ind `rt_begin_pos` and `rt_end_pos`:
+If you activated «subsequence», you must also fill in `rt_begin_pos` and `rt_end_pos`:
 
     rt_begin_pos
     : Position of the first nucleotide after reverse transcriptase primer used for this
     sample
+
     rt_end_pos
     : Position of the last nucleotide reachable by the reverse transcriptase (which is
     most of the time 0)

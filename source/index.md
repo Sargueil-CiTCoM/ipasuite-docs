@@ -10,11 +10,11 @@ It relies on :
 - VARNA. 
 - Custom scripts for file conversion, reactivity normalization and aggregation.
 
-The workflow will enable you to generate structure data for a RNA fragment analysed using SHAPE with a arbitrary set of conditions (Temperature, Magnesium, Probes.)
+The workflow will enable you to generate structure data for a RNA fragment analysed using SHAPE with a set of conditions (Temperature, Magnesium, Probes.)
 
 The workflow is available at [https://github.com/Sargueil-CiTCoM/rnasique](https://github.com/Sargueil-CiTCoM/rnasique).
 
-The source code for this documentation is available at [https://github.com/SargueilCiTCoM/shape-ce-docs](https://github.com/Sargueil-CiTCoM/shape-ce-docs)
+The source code for this documentation is available at [https://github.com/Sargueil-CiTCoM/rnasique-docs](https://github.com/Sargueil-CiTCoM/rnasique-docs)
 
 ```{toctree}
 :maxdepth: 2

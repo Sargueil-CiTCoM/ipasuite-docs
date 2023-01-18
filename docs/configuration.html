@@ -45,7 +45,7 @@
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="run.html">Run the pipeline</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#fill-in-config-yaml">1. Fill in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fill-in-config-yaml-using-rnasique-config">1. Fill in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code>  using <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fill-in-samples-tsv">2. Fill in <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code></a></li>
 </ul>
 </li>
@@ -91,12 +91,12 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> Which contains general configuration</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> That contains informations about samples and replicates</p></li>
 </ul>
-<div class="section" id="fill-in-config-yaml">
-<h2>1. Fill in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code><a class="headerlink" href="#fill-in-config-yaml" title="Permalink to this heading"></a></h2>
+<div class="section" id="fill-in-config-yaml-using-rnasique-config">
+<h2>1. Fill in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code>  using <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code><a class="headerlink" href="#fill-in-config-yaml-using-rnasique-config" title="Permalink to this heading"></a></h2>
 <p>Once you generated your project using <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">init</span> <span class="pre">[project]</span></code> and enter your project using <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">[project]</span></code></p>
 <p>Launch <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code>. Fill in the form into your webbrowser and save.</p>
+<p>For detailed information see <img alt="Advanced configuration" src="_images/config_yaml_ref.md" /></p>
 <p><img alt="An illustration of the configurator web interface" src="_images/configurator.png" /></p>
-<p>More information in <img alt="Advanced configuration" src="_images/config_yaml_ref.md" /></p>
 <!-- 
 In order to get started with your project, you might look at thoses sections of
 `config.yaml` or in the local web configurator:
@@ -129,15 +129,14 @@ To go futher : [](config_yaml_ref)
 </div>
 <div class="section" id="fill-in-samples-tsv">
 <h2>2. Fill in <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code><a class="headerlink" href="#fill-in-samples-tsv" title="Permalink to this heading"></a></h2>
-<ol class="arabic">
+<ol class="arabic simple">
 <li><p>Open your project folder using a file browser</p></li>
 <li><p>Open samples.tsv in libreoffice calc.</p></li>
-<li><p>Create conditions columns and comments columns</p>
+<li><p>Create conditions columns and comments columns</p></li>
+</ol>
 <p>For each condition declared in <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code> you must create a column with the same
 identifier in samples.tsv</p>
-</li>
-</ol>
-<p>You can add as many columns to your <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> as you wish, to help you classify and
+<p>In addition, You can add as many columns to your <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> as you wish, to help you classify and
 caracterize your data. Each column must have un unique name. Those “comments” columns may contains arbitrary value, including empty on.</p>
 <ol class="arabic" start="3">
 <li><p>Create a row for each of your experiments:
@@ -146,21 +145,25 @@ informations</p>
 <dl class="simple myst">
 <dt>id (string)</dt><dd><p>a unique number to identity experiment</p>
 </dd>
-<dt>rna_id (string)</dt><dd><p>The identifier for RNA fragment used in this experiment, as declare in the <code class="docutils literal notranslate"><span class="pre">sequences</span></code> section using <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code></p>
+<dt>rna_id (string)</dt><dd><p>The identifier for RNA fragment used in this experiment, as declared in the <code class="docutils literal notranslate"><span class="pre">sequences</span></code> section of <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code></p>
 </dd>
-<dt>ddNTP (enum: ddA, ddT, ddG, ddC)</dt><dd><p>Which ddNTP what use for the sequencing condition of capillary eletrophorese</p>
+<dt>ddNTP (ddA, ddT, ddG, ddC)</dt><dd><p>Indicate the ddNTP used for the sequencing condition of capillary eletrophorese</p>
 </dd>
 <dt>date (date)</dt><dd><p>Date of the experiment. use YYYY-MM-DD</p>
 </dd>
-<dt>replicate (integer)</dt><dd><p>Replicate number for the given experiment</p>
+<dt>replicate (integer)</dt><dd><p>id for the experiment and the given probing condition
+- arbitrary unique integer - this is an identifier, and
+not the number of replicate for the current probing
+condition. Each replicate must be on its own row</p>
 </dd>
 </dl>
 </li>
 </ol>
-<p>If you activated «subsequence», you must also fill ind <code class="docutils literal notranslate"><span class="pre">rt_begin_pos</span></code> and <code class="docutils literal notranslate"><span class="pre">rt_end_pos</span></code>:</p>
+<p>If you activated «subsequence», you must also fill in <code class="docutils literal notranslate"><span class="pre">rt_begin_pos</span></code> and <code class="docutils literal notranslate"><span class="pre">rt_end_pos</span></code>:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>rt_begin_pos
 : Position of the first nucleotide after reverse transcriptase primer used for this
 sample
+
 rt_end_pos
 : Position of the last nucleotide reachable by the reverse transcriptase (which is
 most of the time 0)
