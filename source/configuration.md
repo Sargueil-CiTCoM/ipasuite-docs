@@ -79,6 +79,17 @@ informations
     replicate (integer)
     : Replicate number for the given experiment
 
+If you activated «subsequence», you must also fill ind `rt_begin_pos` and `rt_end_pos`:
+
+    rt_begin_pos
+    : Position of the first nucleotide after reverse transcriptase primer used for this
+    sample
+    rt_end_pos
+    : Position of the last nucleotide reachable by the reverse transcriptase (which is
+    most of the time 0)
+
+Since Reverse transcription occur from 3' to 5' $`rt_begin_pos` > `rt_end_pos`$
+
 You must also fill every condition column.
 
 A missing value one of the mandatory or condition column will lead to a error when launching `rnasique run`
