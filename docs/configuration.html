@@ -50,13 +50,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="output.html">Output and Reports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Go further</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="stepbystep.html">Step by step Description</a></li>
 <li class="toctree-l1"><a class="reference internal" href="config_yaml_ref.html">Workflow configuration reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="folders.html">Folder structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">Pipeline scripts references</a></li>
 </ul>
 
@@ -157,7 +157,7 @@ this identifier, allows distinguishing the different replicates for a given cond
 </dl>
 </li>
 </ol>
-<p>If you activated «subsequence», you must also fill in <code class="docutils literal notranslate"><span class="pre">rt_begin_pos</span></code> and <code class="docutils literal notranslate"><span class="pre">rt_end_pos</span></code>:</p>
+<p>If you activated «subsequence» in <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code>, you must also fill in <code class="docutils literal notranslate"><span class="pre">rt_begin_pos</span></code> and <code class="docutils literal notranslate"><span class="pre">rt_end_pos</span></code>:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>rt_begin_pos (integer)
 : Position of the first nucleotide after reverse transcriptase primer used for this
 sample
@@ -167,22 +167,22 @@ rt_end_pos (integer)
 most of the time 0)
 </pre></div>
 </div>
-<p>Since Reverse transcription occur from 3’ to 5’ $<code class="docutils literal notranslate"><span class="pre">rt_begin_pos</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">rt_end_pos</span></code>$</p>
-<p>You must also fill every condition column.</p>
-<p>A missing value one of the mandatory or condition column will lead to a error when launching <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">run</span></code></p>
+<p>Since Reverse transcription occur from 3’ to 5’ <code class="docutils literal notranslate"><span class="pre">rt_begin_pos</span> <span class="pre">&gt;</span> <span class="pre">rt_end_pos</span></code></p>
+<p>You must fill in every condition column declared in <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code>.</p>
+<p>(A missing value one of the mandatory or condition column will lead to a error when launching <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">run</span></code>)</p>
 <ol class="arabic simple" start="4">
 <li><p>Fill in file information</p></li>
 </ol>
 <p>For each row, you must give information about where to find raw data :</p>
 <dl class="simple myst">
-<dt>probe_file (relative file path)</dt><dd><p>relative path to the external sequencing file corresponding to this shape sample. if this field is filled in and no file is present for this sample in <code class="docutils literal notranslate"><span class="pre">results/1.1-fluo-ce</span></code> rnasique will try to import this file. <code class="docutils literal notranslate"><span class="pre">path_prefix</span></code> (from <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code>) is prefixed to the content of the to construct fullpath.</p>
+<dt>probe_file (relative file path)</dt><dd><p>relative path to the sequencing file corresponding to this shape sample.</p>
 </dd>
-<dt>control_file (relative file path)</dt><dd><p>relative path to the external file sequencing file corresponding to the control file of this shape sample. If this field is filled in and no file is present for this sample in <code class="docutils literal notranslate"><span class="pre">results/1.1-fluo-ce</span></code> rnasique will try to import this file. <code class="docutils literal notranslate"><span class="pre">path_prefix</span></code> (from <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code>) is prefixed to the content of the to construct fullpath.</p>
+<dt>control_file (relative file path)</dt><dd><p>relative path to the file sequencing file corresponding to the control (DMSO) file of this shape sample.</p>
 </dd>
-<dt>reference_qushape_file (file path)</dt><dd><p>Reference QuShape project : will be used in QuShape to pre-generate peak calling and alignment</p>
+<dt>reference_qushape_file (file path) (optional)</dt><dd><p>If using Reference QuShape project : will be used in QuShape to pre-generate peak calling and alignment</p>
 </dd>
-<dt>qushape_file (relative file path)</dt><dd><p>QuShape project : If you already treated the data outside rnasique, and want to import
-those data, you can fillup this field.  If this field is filled in and no file is present for this sample in <code class="docutils literal notranslate"><span class="pre">results/2-qushape</span></code> rnasique will try to import this file. <code class="docutils literal notranslate"><span class="pre">path_prefix</span></code> (from <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code>) is prefixed to the content of the to construct fullpath. This field overwrite probe_file and control_file</p>
+<dt>qushape_file (relative file path) (optional)</dt><dd><p>QuShape project : If you already treated the data outside rnasique, and want to import
+those data, you can fillup this field.  If this field is filled in and no file is present for this sample in <code class="docutils literal notranslate"><span class="pre">results/2-qushape</span></code> rnasique will try to import this file. <code class="docutils literal notranslate"><span class="pre">path_prefix</span></code> (from <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code>) is prefixed with the content of the to construct fullpath. This field overwrite probe_file and control_file</p>
 </dd>
 </dl>
 <!--

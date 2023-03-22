@@ -1,6 +1,6 @@
 # Step by step Description
 
-
+[Work in progress]
 
 ### Data importation
 If no input file are found in  `resources/1.1-fluo-ceq8000` or `resources/1.2-fluo-ce` rnasique will try to import them using a path constructed as following : `raw_data:prefix_path` from `config.yaml` concatenated with `probe_file` and `control_file` column from `samples.tsv`.

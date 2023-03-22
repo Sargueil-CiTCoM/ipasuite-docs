@@ -26,7 +26,6 @@ install
 run
 configuration
 output
-troubleshooting
 ```
 
 ```{toctree}
@@ -35,6 +34,7 @@ troubleshooting
 stepbystep
 config_yaml_ref
 folders
+troubleshooting
 modules
 
 ```

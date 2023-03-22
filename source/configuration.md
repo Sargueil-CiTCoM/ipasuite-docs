@@ -81,7 +81,7 @@ informations
     : id for the experiment and the given probing condition
       this identifier, allows distinguishing the different replicates for a given condition. Must be unique for a given condition.
 
-If you activated «subsequence», you must also fill in `rt_begin_pos` and `rt_end_pos`:
+If you activated «subsequence» in `rnasique config`, you must also fill in `rt_begin_pos` and `rt_end_pos`:
 
     rt_begin_pos (integer)
     : Position of the first nucleotide after reverse transcriptase primer used for this
@@ -91,30 +91,29 @@ If you activated «subsequence», you must also fill in `rt_begin_pos` and `rt_e
     : Position of the last nucleotide reachable by the reverse transcriptase (which is
     most of the time 0)
 
-Since Reverse transcription occur from 3' to 5' $`rt_begin_pos` > `rt_end_pos`$
+Since Reverse transcription occur from 3' to 5' `rt_begin_pos > rt_end_pos`
 
-You must also fill every condition column.
+You must fill in every condition column declared in `rnasique config`.
 
-A missing value one of the mandatory or condition column will lead to a error when launching `rnasique run`
+
+(A missing value one of the mandatory or condition column will lead to a error when launching `rnasique run`)
 
 4. Fill in file information
 
 For each row, you must give information about where to find raw data :
 
 probe_file (relative file path)
-: relative path to the external sequencing file corresponding to this shape sample. if this field is filled in and no file is present for this sample in `results/1.1-fluo-ce` rnasique will try to import this file. `path_prefix` (from `rnasique config`) is prefixed to the content of the to construct fullpath.
+: relative path to the sequencing file corresponding to this shape sample. 
 
 control_file (relative file path)
-: relative path to the external file sequencing file corresponding to the control file of this shape sample. If this field is filled in and no file is present for this sample in `results/1.1-fluo-ce` rnasique will try to import this file. `path_prefix` (from `rnasique config`) is prefixed to the content of the to construct fullpath.
+: relative path to the file sequencing file corresponding to the control (DMSO) file of this shape sample.
 
+reference_qushape_file (file path) (optional)
+: If using Reference QuShape project : will be used in QuShape to pre-generate peak calling and alignment
 
-
-reference_qushape_file (file path)
-: Reference QuShape project : will be used in QuShape to pre-generate peak calling and alignment
-
-qushape_file (relative file path)
+qushape_file (relative file path) (optional)
 : QuShape project : If you already treated the data outside rnasique, and want to import
-those data, you can fillup this field.  If this field is filled in and no file is present for this sample in `results/2-qushape` rnasique will try to import this file. `path_prefix` (from `rnasique config`) is prefixed to the content of the to construct fullpath. This field overwrite probe_file and control_file
+those data, you can fillup this field.  If this field is filled in and no file is present for this sample in `results/2-qushape` rnasique will try to import this file. `path_prefix` (from `rnasique config`) is prefixed with the content of the to construct fullpath. This field overwrite probe_file and control_file
 
 <!--
 For each type of experimental condition, you must declare it in the `condition_names` of `config.yaml` file the name declared in the config file must be the same as the on in `samples.tsv`

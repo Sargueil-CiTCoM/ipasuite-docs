@@ -20,13 +20,45 @@ You can access this folder by a file browser or doing `cd [name of your project]
 ## Run pipeline
 
 6. Run `rnasique qushape` it will run the first part of the workflow and open QuShape
-   for each file to treat. You must follow every step of QuShape, up to reactivity
-   and save. You Can follow [Tutorial for QuShape from Weeks
-   lab](QuShape_Tutorial.pdf) and the [Sargueil Team version]()
+   for each file to treat. You must follow every step of QuShape
+   and save the QuShape file. You Can follow [Tutorial for QuShape from Weeks
+   lab](QuShape_Tutorial.pdf) or the [Sargueil Team version]()
 7. Run `rnasique run`
 
-You will find your structure data in results/5.3-structure and results/5.4-varna treated
+`rnasique` will generate structure models in results/5.3-structure and results/5.4-varna treated
 with ipanemap as set up in your configuration file
 
-Data will be organized using a `samples.tsv` and configured using `config.yaml` , and be feeded to IPANEMAP with a fully configured set of conditions.
+## In case of trouble :
+
+Two commands can help debugging :
+
+```bash
+rnasique check
+```
+Will check :
+- If some input file are missing
+- If all necessary samples are available to run ipanemap and footprint
+
+```bash
+rnasique log
+```
+Will show pipeline scripts log
+
+## Clean file
+
+at any point, you can clean pipeline files :
+
+```bash
+rnasique clean
+```
+
+It will remove by default all files, figures and logs downstream
+qushape treatement. You can choose from which step to remove
+file using `--from-step`
+
+To only clean log files:
+```bash
+rnasique log --clean
+```
+
 
