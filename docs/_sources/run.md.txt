@@ -38,6 +38,8 @@ rnasique check
 Will check :
 - If some input file are missing
 - If all necessary samples are available to run ipanemap and footprint
+- If samples are duplicated
+- If some raw files are identicals
 
 ```bash
 rnasique log
