@@ -24,3 +24,10 @@ You can list available command using : `rnasique --help`
 RNASique `conda update -n rnasique rnasique -c Sargueil-CiTCoM -c conda-forge -c bioconda `
 
 QuShape `conda update -n qushape qushape -c Sargueil-CiTCoM -c free`
+
+## Using a virtual machine (Windows user)
+
+If your main operating système is Microsoft Windows, 
+you can use RNASique through a virtual machine.
+
+The preferred VM plateform is VirtualBox, with a debian operating system.

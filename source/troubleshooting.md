@@ -1,5 +1,16 @@
 # Troubleshooting
 
+
+## Rnasique fail on wayland.
+
+Due to a bug in python library Matplotlib, rnasique might fail uder Wayland.
+
+in this case, you can still use rnasique with 
+```
+QT_QPA_PLATFORM=xcb rnasique run
+```
+
+
 ## Runtime: Error validating config file.
 
 A problem in your `config.yaml` as been found. 
