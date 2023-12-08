@@ -136,20 +136,26 @@ User must open eache QuShape project, and perform treatement up to the reactivit
 <h2>Reactivity Normalization<a class="headerlink" href="#reactivity-normalization" title="Permalink to this heading"></a></h2>
 <p>Reactivity is Normalized from raw reactivity extracted from QuShape.</p>
 <p>Parameters :</p>
-<p>reactive_nucleotides :
-Nucleotides which are affected by the SHAPE probe used
-low_norm_reactivity_threshold :
-normalized reactivity threshold above which reactivity
+<dl class="simple myst">
+<dt>reactive_nucleotides</dt><dd><p>Nucleotides which are affected by the SHAPE probe used
+low_norm_reactivity_threshold</p>
+</dd>
+<dd><p>normalized reactivity threshold above which reactivity
 is not considered as significant, and then clipped to 0
-stop_percentile:
-(default: 90. )The threshold above which background is estimated
+stop_percentile</p>
+</dd>
+<dd><p>(default: 90. )The threshold above which background is estimated
 to be too high - data above this threshold will be discarded
-simple_outlier_percentile : float
-(default)simple method only - threshold (in percent) above which
+simple_outlier_percentile</p>
+</dd>
+<dd><p>(default)simple method only - threshold (in percent) above which
 reactivity is considered as too high
-simple_norm_term_avg_percentile : float
-simple_method_only - threshold (in percent) above which reactivities
+simple_norm_term_avg_percentile</p>
+</dd>
+<dd><p>simple_method_only - threshold (in percent) above which reactivities
 are used as to calculate normalization term</p>
+</dd>
+</dl>
 <div class="section" id="steps">
 <h3>Steps :<a class="headerlink" href="#steps" title="Permalink to this heading"></a></h3>
 <ol class="arabic simple">
