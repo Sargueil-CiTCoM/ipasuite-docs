@@ -47,15 +47,19 @@ Parameters :
 
 reactive_nucleotides 
 :  Nucleotides which are affected by the SHAPE probe used
+
 low_norm_reactivity_threshold 
 :  normalized reactivity threshold above which reactivity
    is not considered as significant, and then clipped to 0
+
 stop_percentile
 :  (default: 90. )The threshold above which background is estimated
    to be too high - data above this threshold will be discarded
+
 simple_outlier_percentile
 :  (default)simple method only - threshold (in percent) above which
    reactivity is considered as too high
+
 simple_norm_term_avg_percentile
 :  simple_method_only - threshold (in percent) above which reactivities
    are used as to calculate normalization term
