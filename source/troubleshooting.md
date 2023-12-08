@@ -10,6 +10,15 @@ in this case, you can still use rnasique with
 QT_QPA_PLATFORM=xcb rnasique run
 ```
 
+## Use of old qushape file
+
+To use rnasique you must use the .qushapey file format.
+If you got some old qushape file, you must convert them.
+
+To do so, run `rnasique convert_qushape`
+
+Importation using samples.tsv with old .qushape file is not supported
+
 
 ## Runtime: Error validating config file.
 

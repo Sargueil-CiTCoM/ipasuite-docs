@@ -63,4 +63,3 @@ To only clean log files:
 rnasique log --clean
 ```
 
-

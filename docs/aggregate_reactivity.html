@@ -54,7 +54,10 @@
 <li class="toctree-l1"><a class="reference internal" href="folders.html">Folder structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Pipeline scripts references</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">aggregate_reactivity</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">aggregate_reactivity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rnasique.workflow.scripts.tools.aggregate_reactivity.aggregate"><code class="docutils literal notranslate"><span class="pre">aggregate()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="ceq8000_to_tsv.html">ceq8000_to_tsv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="normalize_reactivity.html">normalize_reactivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qushape_extract_reactivity.html">qushape_extract_reactivity</a></li>
@@ -92,8 +95,36 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="aggregate-reactivity">
-<h1>aggregate_reactivity<a class="headerlink" href="#aggregate-reactivity" title="Permalink to this heading"></a></h1>
+  <div class="section" id="module-rnasique.workflow.scripts.tools.aggregate_reactivity">
+<span id="aggregate-reactivity"></span><h1>aggregate_reactivity<a class="headerlink" href="#module-rnasique.workflow.scripts.tools.aggregate_reactivity" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="rnasique.workflow.scripts.tools.aggregate_reactivity.aggregate">
+<span class="sig-prename descclassname"><span class="pre">rnasique.workflow.scripts.tools.aggregate_reactivity.</span></span><span class="sig-name descname"><span class="pre">aggregate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">*files:</span> <span class="pre">[&lt;class</span> <span class="pre">'str'&gt;],</span> <span class="pre">output:</span> <span class="pre">str,</span> <span class="pre">shape_output=None,</span> <span class="pre">map_output=None,</span> <span class="pre">normcol='simple_norm_reactivity',</span> <span class="pre">min_ndata_perc:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.5,</span> <span class="pre">min_nsubdata_perc:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.66,</span> <span class="pre">max_mean_perc:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.682,</span> <span class="pre">min_dispersion:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.05,</span> <span class="pre">fullplot:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">plot:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">plot_title:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">err_on_dup:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rnasique.workflow.scripts.tools.aggregate_reactivity.aggregate" title="Permalink to this definition"></a></dt>
+<dd><p>Aggregate reactivity files together</p>
+<p>Aggregate reactivity between all file in output. Calculate mean and stdev
+for coherent value of reactivity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>files</strong> (<em>[</em><em>str</em><em>]</em>) – Files to aggregate together</p></li>
+<li><p><strong>output</strong> (<em>str</em>) – Output aggregated file</p></li>
+<li><p><strong>ipanemap_output</strong> – Output aggregated file in a compatible format for RNAFold and IPANEMAP</p></li>
+<li><p><strong>normcol</strong> – name of the normalization column in each input file</p></li>
+<li><p><strong>min_ndata_perc</strong> (<em>float</em>) – (default: 0.5) minimum percentage
+(usable data (not -10)/available data).
+below this value, data row is discarded</p></li>
+<li><p><strong>min_nsubdata_perc</strong> (<em>float</em>) – (default: 0.66) When try to find consistant mean on a subsample,
+this value represent minimum (subsample size / avalaible data).
+if below this value, data row is discarded</p></li>
+<li><p><strong>max_mean_perc</strong> (<em>float</em>) – (default: 0.682) in order to be considered as consistant,
+stdev of a row must be below a certain percentage of mean of the row.
+max_mean_perc represent this mean percentage.</p></li>
+<li><p><strong>min_dispersion</strong> (<em>float</em>) – (default: 0.05) the consistancy ratio cannot be below a certain value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 
 

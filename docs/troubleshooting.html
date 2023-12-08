@@ -54,6 +54,7 @@
 <li class="toctree-l1"><a class="reference internal" href="folders.html">Folder structure</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Troubleshooting</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#rnasique-fail-on-wayland">Rnasique fail on wayland.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-of-old-qushape-file">Use of old qushape file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#runtime-error-validating-config-file">Runtime: Error validating config file.</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#forgotten-a-mandatory-element">Forgotten a mandatory element</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mispelled-or-invalid-element">Mispelled or Invalid element</a></li>
@@ -98,6 +99,13 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">QT_QPA_PLATFORM</span><span class="o">=</span><span class="n">xcb</span> <span class="n">rnasique</span> <span class="n">run</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="use-of-old-qushape-file">
+<h2>Use of old qushape file<a class="headerlink" href="#use-of-old-qushape-file" title="Permalink to this heading"></a></h2>
+<p>To use rnasique you must use the .qushapey file format.
+If you got some old qushape file, you must convert them.</p>
+<p>To do so, run <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">convert_qushape</span></code></p>
+<p>Importation using samples.tsv with old .qushape file is not supported</p>
 </div>
 <div class="section" id="runtime-error-validating-config-file">
 <h2>Runtime: Error validating config file.<a class="headerlink" href="#runtime-error-validating-config-file" title="Permalink to this heading"></a></h2>
