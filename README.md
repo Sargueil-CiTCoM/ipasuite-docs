@@ -1,6 +1,6 @@
 # shape-ce-docs
 
-Documentation for https://github.com/Sargueil-CiTCoM/shape-ce snakemake pipeline
+Documentation for https://github.com/Sargueil-CiTCoM/ipasuite snakemake pipeline.
 
 # Build
 ```make html```
