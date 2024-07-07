@@ -21,8 +21,8 @@ You can access this folder by a file browser or doing `cd [name of your project]
 
 6. Run `ipasuite qushape` it will run the first part of the workflow and open QuShape
    for each file to treat. You must follow every step of QuShape
-   and save the QuShape file. You Can follow [Tutorial for QuShape from Weeks
-   lab](QuShape_Tutorial.pdf) or the [Sargueil Team version]()
+   and save the QuShape file. You can follow the [QuShape Tutorial of the Weeks
+   lab](QuShape_Tutorial.pdf) or the version of the Sargueil lab.
 7. Run `ipasuite run`
 
 `ipasuite` will generate structure models in results/5.3-structure and results/5.4-varna treated

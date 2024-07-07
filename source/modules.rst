@@ -12,4 +12,3 @@ Pipeline scripts references
    footprint
    shift_reactivity
    split_fasta
-   varna_wrapper
