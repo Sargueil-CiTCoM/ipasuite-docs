@@ -3,7 +3,7 @@
 Documentation for https://github.com/Sargueil-CiTCoM/ipasuite snakemake pipeline.
 
 An online version of the documentation is hosted at
-https://sargueil-citcom.github.io/ipasuite-docs/install.html:e
+https://sargueil-citcom.github.io/ipasuite-docs/install.html
 
 # Build
 
