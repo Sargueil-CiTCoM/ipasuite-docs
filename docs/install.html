@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation &mdash; RNASique  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>Installation &mdash; Ipanemap Suite  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,11 +30,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> RNASique
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Ipanemap Suite
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -45,7 +51,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#basic-usage">Basic usage</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#use-qushape">Use qushape :</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#use-rnasique">Use rnasique :</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-ipasuite">Use ipasuite :</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#update">Update</a></li>
@@ -71,15 +77,15 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">RNASique</a>
+          <a href="index.html">Ipanemap Suite</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Installation</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/install.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -89,47 +95,45 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
+  <section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
 <ol class="arabic simple">
 <li><p>Install and setup Miniconda : https://docs.conda.io/en/latest/miniconda.html</p></li>
 <li><p>Open a terminal</p></li>
 <li><p>If you are using debian, install libdb-dev : <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">libdb-dev</span></code></p></li>
 <li><p>Install QuShape : <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">qushape</span> <span class="pre">-c</span> <span class="pre">free</span> <span class="pre">-c</span> <span class="pre">sargueil-citcom</span> <span class="pre">qushape</span></code></p></li>
-<li><p>Install RNASique <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">rnasique</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-c</span> <span class="pre">bioconda</span> <span class="pre">-c</span> <span class="pre">sargueil-citcom</span> <span class="pre">rnasique</span></code></p></li>
+<li><p>Install Ipanemap Suite <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">ipasuite</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-c</span> <span class="pre">bioconda</span> <span class="pre">-c</span> <span class="pre">sargueil-citcom</span> <span class="pre">ipasuite</span></code></p></li>
 </ol>
-<div class="section" id="basic-usage">
-<h2>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this heading"></a></h2>
-<div class="section" id="use-qushape">
-<h3>Use qushape :<a class="headerlink" href="#use-qushape" title="Permalink to this heading"></a></h3>
+<section id="basic-usage">
+<h2>Basic usage<a class="headerlink" href="#basic-usage" title="Link to this heading"></a></h2>
+<section id="use-qushape">
+<h3>Use qushape :<a class="headerlink" href="#use-qushape" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
 <li><p>Open a terminal</p></li>
 <li><p>Enter qushape conda env : <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">qushape</span></code></p></li>
 <li><p>Launch QuShape : <code class="docutils literal notranslate"><span class="pre">qushape</span></code></p></li>
 </ol>
-</div>
-<div class="section" id="use-rnasique">
-<h3>Use rnasique :<a class="headerlink" href="#use-rnasique" title="Permalink to this heading"></a></h3>
+</section>
+<section id="use-ipasuite">
+<h3>Use ipasuite :<a class="headerlink" href="#use-ipasuite" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
 <li><p>Open a terminal</p></li>
-<li><p>Enter rnasique conda env : <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">rnasique</span></code></p></li>
-<li><p>Launch an RNASique command : <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">[command]</span></code>
-You can list available command using : <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">--help</span></code></p></li>
+<li><p>Enter ipasuite conda env : <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">ipasuite</span></code></p></li>
+<li><p>Launch an Ipanemap Suite command : <code class="docutils literal notranslate"><span class="pre">ipasuite</span> <span class="pre">[command]</span></code>
+You can list available command using : <code class="docutils literal notranslate"><span class="pre">ipasuite</span> <span class="pre">--help</span></code></p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="update">
-<h2>Update<a class="headerlink" href="#update" title="Permalink to this heading"></a></h2>
-<p>RNASique <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">-n</span> <span class="pre">rnasique</span> <span class="pre">rnasique</span> <span class="pre">-c</span> <span class="pre">Sargueil-CiTCoM</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-c</span> <span class="pre">bioconda</span> </code></p>
+</section>
+</section>
+<section id="update">
+<h2>Update<a class="headerlink" href="#update" title="Link to this heading"></a></h2>
+<p>Ipanemap Suite <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">-n</span> <span class="pre">ipasuite</span> <span class="pre">ipasuite</span> <span class="pre">-c</span> <span class="pre">Sargueil-CiTCoM</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-c</span> <span class="pre">bioconda</span> </code></p>
 <p>QuShape <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">-n</span> <span class="pre">qushape</span> <span class="pre">qushape</span> <span class="pre">-c</span> <span class="pre">Sargueil-CiTCoM</span> <span class="pre">-c</span> <span class="pre">free</span></code></p>
-</div>
-<div class="section" id="using-a-virtual-machine-windows-user">
-<h2>Using a virtual machine (Windows user)<a class="headerlink" href="#using-a-virtual-machine-windows-user" title="Permalink to this heading"></a></h2>
-<p>If your main operating système is Microsoft Windows,
-you can use RNASique through a virtual machine.</p>
-<p>The preferred VM plateform is VirtualBox, with a debian operating system.</p>
-</div>
-</div>
+</section>
+<section id="using-a-virtual-machine-windows-user">
+<h2>Using a virtual machine (Windows user)<a class="headerlink" href="#using-a-virtual-machine-windows-user" title="Link to this heading"></a></h2>
+<p>Users of Microsoft Windows can use Ipanemap Suite through a virtual machine with a Linux (e.g. Debian or Ubuntu) operating system.</p>
+</section>
+</section>
 
 
            </div>
@@ -142,7 +146,7 @@ you can use RNASique through a virtual machine.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, François-Xavier Lyonnet du Moutier.</p>
+    <p>&#169; Copyright 2024, François-Xavier Lyonnet du Moutier, Nan Pan, Sebastian Will.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>aggregate_reactivity &mdash; RNASique  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>aggregate_reactivity &mdash; Ipanemap Suite  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,11 +30,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> RNASique
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Ipanemap Suite
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,7 +61,7 @@
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Pipeline scripts references</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">aggregate_reactivity</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#rnasique.workflow.scripts.tools.aggregate_reactivity.aggregate"><code class="docutils literal notranslate"><span class="pre">aggregate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ipasuite.workflow.scripts.tools.aggregate_reactivity.aggregate"><code class="docutils literal notranslate"><span class="pre">aggregate()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="ceq8000_to_tsv.html">ceq8000_to_tsv</a></li>
@@ -65,7 +71,6 @@
 <li class="toctree-l2"><a class="reference internal" href="footprint.html">footprint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shift_reactivity.html">shift_reactivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="split_fasta.html">split_fasta</a></li>
-<li class="toctree-l2"><a class="reference internal" href="varna_wrapper.html">varna_wrapper</a></li>
 </ul>
 </li>
 </ul>
@@ -76,16 +81,16 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">RNASique</a>
+          <a href="index.html">Ipanemap Suite</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules.html">Pipeline scripts references</a> &raquo;</li>
-      <li>aggregate_reactivity</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Pipeline scripts references</a></li>
+      <li class="breadcrumb-item active">aggregate_reactivity</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/aggregate_reactivity.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -95,19 +100,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="module-rnasique.workflow.scripts.tools.aggregate_reactivity">
-<span id="aggregate-reactivity"></span><h1>aggregate_reactivity<a class="headerlink" href="#module-rnasique.workflow.scripts.tools.aggregate_reactivity" title="Permalink to this heading"></a></h1>
+  <section id="module-ipasuite.workflow.scripts.tools.aggregate_reactivity">
+<span id="aggregate-reactivity"></span><h1>aggregate_reactivity<a class="headerlink" href="#module-ipasuite.workflow.scripts.tools.aggregate_reactivity" title="Link to this heading"></a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="rnasique.workflow.scripts.tools.aggregate_reactivity.aggregate">
-<span class="sig-prename descclassname"><span class="pre">rnasique.workflow.scripts.tools.aggregate_reactivity.</span></span><span class="sig-name descname"><span class="pre">aggregate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">*files:</span> <span class="pre">[&lt;class</span> <span class="pre">'str'&gt;],</span> <span class="pre">output:</span> <span class="pre">str,</span> <span class="pre">shape_output=None,</span> <span class="pre">map_output=None,</span> <span class="pre">normcol='simple_norm_reactivity',</span> <span class="pre">min_ndata_perc:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.5,</span> <span class="pre">min_nsubdata_perc:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.66,</span> <span class="pre">max_mean_perc:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.682,</span> <span class="pre">min_dispersion:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.05,</span> <span class="pre">fullplot:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">plot:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">plot_title:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">err_on_dup:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rnasique.workflow.scripts.tools.aggregate_reactivity.aggregate" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ipasuite.workflow.scripts.tools.aggregate_reactivity.aggregate">
+<span class="sig-prename descclassname"><span class="pre">ipasuite.workflow.scripts.tools.aggregate_reactivity.</span></span><span class="sig-name descname"><span class="pre">aggregate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">*files:</span> <span class="pre">[&lt;class</span> <span class="pre">'str'&gt;],</span> <span class="pre">output:</span> <span class="pre">str,</span> <span class="pre">refseq:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">shape_output=None,</span> <span class="pre">shape_IP_output=None,</span> <span class="pre">map_output=None,</span> <span class="pre">relation_output=None,</span> <span class="pre">normcol='simple_norm_reactivity',</span> <span class="pre">fullplot:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">plot:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">plot_title:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">err_on_dup:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipasuite.workflow.scripts.tools.aggregate_reactivity.aggregate" title="Link to this definition"></a></dt>
 <dd><p>Aggregate reactivity files together</p>
 <p>Aggregate reactivity between all file in output. Calculate mean and stdev
 for coherent value of reactivity</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>files</strong> (<em>[</em><em>str</em><em>]</em>) – Files to aggregate together</p></li>
 <li><p><strong>output</strong> (<em>str</em>) – Output aggregated file</p></li>
+<li><p><strong>refseq</strong> (<em>str</em>) – Sequence file name</p></li>
 <li><p><strong>ipanemap_output</strong> – Output aggregated file in a compatible format for RNAFold and IPANEMAP</p></li>
 <li><p><strong>normcol</strong> – name of the normalization column in each input file</p></li>
 <li><p><strong>min_ndata_perc</strong> (<em>float</em>) – (default: 0.5) minimum percentage
@@ -125,7 +131,7 @@ max_mean_perc represent this mean percentage.</p></li>
 </dl>
 </dd></dl>
 
-</div>
+</section>
 
 
            </div>
@@ -138,7 +144,7 @@ max_mean_perc represent this mean percentage.</p></li>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, François-Xavier Lyonnet du Moutier.</p>
+    <p>&#169; Copyright 2024, François-Xavier Lyonnet du Moutier, Nan Pan, Sebastian Will.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

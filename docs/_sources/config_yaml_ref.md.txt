@@ -1,5 +1,5 @@
 # Workflow configuration reference
 
-```{autoyaml} ../../config/config.tpl.yaml
+```{autoyaml} ipasuite/ipasuite/config/config.tpl.yaml
 ```
 

@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>footprint &mdash; RNASique  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>footprint &mdash; Ipanemap Suite  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,11 +30,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> RNASique
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Ipanemap Suite
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -59,10 +65,12 @@
 <li class="toctree-l2"><a class="reference internal" href="normalize_reactivity.html">normalize_reactivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qushape_extract_reactivity.html">qushape_extract_reactivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qushape_proj_generator.html">qushape_proj_generator</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">footprint</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">footprint</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ipasuite.workflow.scripts.tools.footprint.footprint_ttest"><code class="docutils literal notranslate"><span class="pre">footprint_ttest()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="shift_reactivity.html">shift_reactivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="split_fasta.html">split_fasta</a></li>
-<li class="toctree-l2"><a class="reference internal" href="varna_wrapper.html">varna_wrapper</a></li>
 </ul>
 </li>
 </ul>
@@ -73,16 +81,16 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">RNASique</a>
+          <a href="index.html">Ipanemap Suite</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules.html">Pipeline scripts references</a> &raquo;</li>
-      <li>footprint</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Pipeline scripts references</a></li>
+      <li class="breadcrumb-item active">footprint</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/footprint.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -92,9 +100,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="module-rnasique.workflow.scripts.tools.footprint">
-<span id="footprint"></span><h1>footprint<a class="headerlink" href="#module-rnasique.workflow.scripts.tools.footprint" title="Permalink to this heading"></a></h1>
-</div>
+  <section id="module-ipasuite.workflow.scripts.tools.footprint">
+<span id="footprint"></span><h1>footprint<a class="headerlink" href="#module-ipasuite.workflow.scripts.tools.footprint" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="ipasuite.workflow.scripts.tools.footprint.footprint_ttest">
+<span class="sig-prename descclassname"><span class="pre">ipasuite.workflow.scripts.tools.footprint.</span></span><span class="sig-name descname"><span class="pre">footprint_ttest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cond1_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cond1_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cond2_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cond2_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deviation_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'stdev'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ttest_pvalue_thres</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diff_thres</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratio_thres</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipasuite.workflow.scripts.tools.footprint.footprint_ttest" title="Link to this definition"></a></dt>
+<dd><p>Compares two reactivity profiles (two ‘conditions’)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cond1_path</strong> – aggreact_tsv file of condition 1</p></li>
+<li><p><strong>cond1_name</strong> – name of condition 1</p></li>
+<li><p><strong>cond2_path</strong> – aggreact_tsv file of condition 2</p></li>
+<li><p><strong>cond1_name</strong> – name of condition 2</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>results prepared for plotting by footprint.plot_reactivity()
+footprint_csv (DataFrame): results in table format (to be written to tsv file)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>footprint (DataFrame)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
 
 
            </div>
@@ -107,7 +138,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, François-Xavier Lyonnet du Moutier.</p>
+    <p>&#169; Copyright 2024, François-Xavier Lyonnet du Moutier, Nan Pan, Sebastian Will.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

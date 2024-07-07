@@ -6,11 +6,11 @@ To run the pipeline on your project, you must fill in 2 configuration files
 - `samples.tsv` That contains informations about samples and replicates
 
 
-## 1. Fill in `config.yaml`  using `rnasique config`
+## 1. Fill in `config.yaml`  using `ipasuite config`
 
-Once you generated your project using `rnasique init [project]` and enter your project using `cd [project]`
+Once you generated your project using `ipasuite init [project]` and enter your project using `cd [project]`
 
-Launch `rnasique config`. Fill in the form into your webbrowser and save.
+Launch `ipasuite config`. Fill in the form into your webbrowser and save.
 
 For detailed information see ![Advanced configuration](config_yaml_ref.md)
 
@@ -55,7 +55,7 @@ To go futher : [](config_yaml_ref)
 2. Open samples.tsv in libreoffice calc.
 3. Create conditions columns and comments columns
 
-For each condition declared in `rnasique config` you must create a column with the same
+For each condition declared in `ipasuite config` you must create a column with the same
 identifier in samples.tsv
 
 In addition, You can add as many columns to your `samples.tsv` as you wish, to help you classify and
@@ -69,7 +69,7 @@ informations
     : a unique number to identity experiment
     
     rna_id (string)
-    : The identifier for RNA fragment used in this experiment, as declared in the `sequences` section of `rnasique config`
+    : The identifier for RNA fragment used in this experiment, as declared in the `sequences` section of `ipasuite config`
     
     ddNTP (ddA, ddT, ddG, ddC)
     : Indicate the ddNTP used for the sequencing condition of capillary eletrophorese
@@ -81,7 +81,7 @@ informations
     : id for the experiment and the given probing condition
       this identifier, allows distinguishing the different replicates for a given condition. Must be unique for a given condition.
 
-If you activated «subsequence» in `rnasique config`, you must also fill in `rt_begin_pos` and `rt_end_pos`:
+If you activated «subsequence» in `ipasuite config`, you must also fill in `rt_begin_pos` and `rt_end_pos`:
 
     rt_begin_pos (integer)
     : Position of the first nucleotide after reverse transcriptase primer used for this
@@ -93,10 +93,10 @@ If you activated «subsequence» in `rnasique config`, you must also fill in `rt
 
 Since Reverse transcription occur from 3' to 5' `rt_begin_pos > rt_end_pos`
 
-You must fill in every condition column declared in `rnasique config`.
+You must fill in every condition column declared in `ipasuite config`.
 
 
-(A missing value one of the mandatory or condition column will lead to a error when launching `rnasique run`)
+(A missing value one of the mandatory or condition column will lead to a error when launching `ipasuite run`)
 
 4. Fill in file information
 
@@ -112,8 +112,8 @@ reference_qushape_file (file path) (optional)
 : If using Reference QuShape project : will be used in QuShape to pre-generate peak calling and alignment
 
 qushape_file (relative file path) (optional)
-: QuShape project : If you already treated the data outside rnasique, and want to import
-those data, you can fillup this field.  If this field is filled in and no file is present for this sample in `results/2-qushape` rnasique will try to import this file. `path_prefix` (from `rnasique config`) is prefixed with the content of the to construct fullpath. This field overwrite probe_file and control_file
+: QuShape project : If you already treated the data outside ipasuite, and want to import
+those data, you can fillup this field.  If this field is filled in and no file is present for this sample in `results/2-qushape` ipasuite will try to import this file. `path_prefix` (from `ipasuite config`) is prefixed with the content of the to construct fullpath. This field overwrite probe_file and control_file
 
 <!--
 For each type of experimental condition, you must declare it in the `condition_names` of `config.yaml` file the name declared in the config file must be the same as the on in `samples.tsv`

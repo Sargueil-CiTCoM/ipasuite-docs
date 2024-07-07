@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Configuration &mdash; RNASique  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>Configuration &mdash; Ipanemap Suite  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,11 +30,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> RNASique
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Ipanemap Suite
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -45,7 +51,7 @@
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="run.html">Run the pipeline</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#fill-in-config-yaml-using-rnasique-config">1. Fill in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code>  using <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fill-in-config-yaml-using-ipasuite-config">1. Fill in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code>  using <code class="docutils literal notranslate"><span class="pre">ipasuite</span> <span class="pre">config</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fill-in-samples-tsv">2. Fill in <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code></a></li>
 </ul>
 </li>
@@ -66,15 +72,15 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">RNASique</a>
+          <a href="index.html">Ipanemap Suite</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Configuration</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Configuration</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/configuration.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -84,17 +90,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="configuration">
-<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h1>
+  <section id="configuration">
+<h1>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h1>
 <p>To run the pipeline on your project, you must fill in 2 configuration files</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> Which contains general configuration</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> That contains informations about samples and replicates</p></li>
 </ul>
-<div class="section" id="fill-in-config-yaml-using-rnasique-config">
-<h2>1. Fill in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code>  using <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code><a class="headerlink" href="#fill-in-config-yaml-using-rnasique-config" title="Permalink to this heading"></a></h2>
-<p>Once you generated your project using <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">init</span> <span class="pre">[project]</span></code> and enter your project using <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">[project]</span></code></p>
-<p>Launch <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code>. Fill in the form into your webbrowser and save.</p>
+<section id="fill-in-config-yaml-using-ipasuite-config">
+<h2>1. Fill in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code>  using <code class="docutils literal notranslate"><span class="pre">ipasuite</span> <span class="pre">config</span></code><a class="headerlink" href="#fill-in-config-yaml-using-ipasuite-config" title="Link to this heading"></a></h2>
+<p>Once you generated your project using <code class="docutils literal notranslate"><span class="pre">ipasuite</span> <span class="pre">init</span> <span class="pre">[project]</span></code> and enter your project using <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">[project]</span></code></p>
+<p>Launch <code class="docutils literal notranslate"><span class="pre">ipasuite</span> <span class="pre">config</span></code>. Fill in the form into your webbrowser and save.</p>
 <p>For detailed information see <img alt="Advanced configuration" src="_images/config_yaml_ref.md" /></p>
 <p><img alt="An illustration of the configurator web interface" src="_images/configurator.png" /></p>
 <!-- 
@@ -126,15 +132,15 @@ Others sections can stay untouch depending of your needs
 
 To go futher : [](config_yaml_ref)
 -->
-</div>
-<div class="section" id="fill-in-samples-tsv">
-<h2>2. Fill in <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code><a class="headerlink" href="#fill-in-samples-tsv" title="Permalink to this heading"></a></h2>
+</section>
+<section id="fill-in-samples-tsv">
+<h2>2. Fill in <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code><a class="headerlink" href="#fill-in-samples-tsv" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>Open your project folder using a file browser</p></li>
 <li><p>Open samples.tsv in libreoffice calc.</p></li>
 <li><p>Create conditions columns and comments columns</p></li>
 </ol>
-<p>For each condition declared in <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code> you must create a column with the same
+<p>For each condition declared in <code class="docutils literal notranslate"><span class="pre">ipasuite</span> <span class="pre">config</span></code> you must create a column with the same
 identifier in samples.tsv</p>
 <p>In addition, You can add as many columns to your <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> as you wish, to help you classify and
 caracterize your data. Each column must have un unique name. Those “comments” columns may contains arbitrary value, including empty on.</p>
@@ -145,7 +151,7 @@ informations</p>
 <dl class="simple myst">
 <dt>id (string)</dt><dd><p>a unique number to identity experiment</p>
 </dd>
-<dt>rna_id (string)</dt><dd><p>The identifier for RNA fragment used in this experiment, as declared in the <code class="docutils literal notranslate"><span class="pre">sequences</span></code> section of <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code></p>
+<dt>rna_id (string)</dt><dd><p>The identifier for RNA fragment used in this experiment, as declared in the <code class="docutils literal notranslate"><span class="pre">sequences</span></code> section of <code class="docutils literal notranslate"><span class="pre">ipasuite</span> <span class="pre">config</span></code></p>
 </dd>
 <dt>ddNTP (ddA, ddT, ddG, ddC)</dt><dd><p>Indicate the ddNTP used for the sequencing condition of capillary eletrophorese</p>
 </dd>
@@ -157,7 +163,7 @@ this identifier, allows distinguishing the different replicates for a given cond
 </dl>
 </li>
 </ol>
-<p>If you activated «subsequence» in <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code>, you must also fill in <code class="docutils literal notranslate"><span class="pre">rt_begin_pos</span></code> and <code class="docutils literal notranslate"><span class="pre">rt_end_pos</span></code>:</p>
+<p>If you activated «subsequence» in <code class="docutils literal notranslate"><span class="pre">ipasuite</span> <span class="pre">config</span></code>, you must also fill in <code class="docutils literal notranslate"><span class="pre">rt_begin_pos</span></code> and <code class="docutils literal notranslate"><span class="pre">rt_end_pos</span></code>:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>rt_begin_pos (integer)
 : Position of the first nucleotide after reverse transcriptase primer used for this
 sample
@@ -168,8 +174,8 @@ most of the time 0)
 </pre></div>
 </div>
 <p>Since Reverse transcription occur from 3’ to 5’ <code class="docutils literal notranslate"><span class="pre">rt_begin_pos</span> <span class="pre">&gt;</span> <span class="pre">rt_end_pos</span></code></p>
-<p>You must fill in every condition column declared in <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code>.</p>
-<p>(A missing value one of the mandatory or condition column will lead to a error when launching <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">run</span></code>)</p>
+<p>You must fill in every condition column declared in <code class="docutils literal notranslate"><span class="pre">ipasuite</span> <span class="pre">config</span></code>.</p>
+<p>(A missing value one of the mandatory or condition column will lead to a error when launching <code class="docutils literal notranslate"><span class="pre">ipasuite</span> <span class="pre">run</span></code>)</p>
 <ol class="arabic simple" start="4">
 <li><p>Fill in file information</p></li>
 </ol>
@@ -181,8 +187,8 @@ most of the time 0)
 </dd>
 <dt>reference_qushape_file (file path) (optional)</dt><dd><p>If using Reference QuShape project : will be used in QuShape to pre-generate peak calling and alignment</p>
 </dd>
-<dt>qushape_file (relative file path) (optional)</dt><dd><p>QuShape project : If you already treated the data outside rnasique, and want to import
-those data, you can fillup this field.  If this field is filled in and no file is present for this sample in <code class="docutils literal notranslate"><span class="pre">results/2-qushape</span></code> rnasique will try to import this file. <code class="docutils literal notranslate"><span class="pre">path_prefix</span></code> (from <code class="docutils literal notranslate"><span class="pre">rnasique</span> <span class="pre">config</span></code>) is prefixed with the content of the to construct fullpath. This field overwrite probe_file and control_file</p>
+<dt>qushape_file (relative file path) (optional)</dt><dd><p>QuShape project : If you already treated the data outside ipasuite, and want to import
+those data, you can fillup this field.  If this field is filled in and no file is present for this sample in <code class="docutils literal notranslate"><span class="pre">results/2-qushape</span></code> ipasuite will try to import this file. <code class="docutils literal notranslate"><span class="pre">path_prefix</span></code> (from <code class="docutils literal notranslate"><span class="pre">ipasuite</span> <span class="pre">config</span></code>) is prefixed with the content of the to construct fullpath. This field overwrite probe_file and control_file</p>
 </dd>
 </dl>
 <!--
@@ -208,8 +214,8 @@ interaction (string)
 
 ### Optional columns
 -->
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -222,7 +228,7 @@ interaction (string)
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, François-Xavier Lyonnet du Moutier.</p>
+    <p>&#169; Copyright 2024, François-Xavier Lyonnet du Moutier, Nan Pan, Sebastian Will.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
