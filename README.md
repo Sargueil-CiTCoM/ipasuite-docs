@@ -5,7 +5,7 @@ Documentation for https://github.com/Sargueil-CiTCoM/ipasuite snakemake pipeline
 An online version of the documentation is hosted at
 https://sargueil-citcom.github.io/ipasuite-docs/index.html
 
-# Build
+# Build the documentation
 
 We describe building the documentation using commands from a Linux/Mac
 terminal. We require git, python, pip, and conda to be installed.
