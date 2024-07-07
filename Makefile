@@ -11,6 +11,7 @@ BUILDDIR      = build
 .PHONY: html gh-pages
 
 html: Makefile
+	git submodule update ipasuite
 	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" "$(SPHINXOPTS)" 
 	if [ ! -e docs ] ; then mkdir docs ; fi
 
