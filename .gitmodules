@@ -1,0 +1,3 @@
+[submodule "ipasuite"]
+	path = ipasuite
+	url = git@github.com:Sargueil-CiTCoM/ipasuite.git

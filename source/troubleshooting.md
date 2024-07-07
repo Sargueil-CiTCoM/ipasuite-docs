@@ -3,19 +3,19 @@
 
 ## Rnasique fail on wayland.
 
-Due to a bug in python library Matplotlib, rnasique might fail uder Wayland.
+Due to a bug in python library Matplotlib, ipasuite might fail under Wayland.
 
-in this case, you can still use rnasique with 
+in this case, you can still use ipasuite with 
 ```
-QT_QPA_PLATFORM=xcb rnasique run
+QT_QPA_PLATFORM=xcb ipasuite run
 ```
 
 ## Use of old qushape file
 
-To use rnasique you must use the .qushapey file format.
+To use ipasuite you must use the .qushapey file format.
 If you got some old qushape file, you must convert them.
 
-To do so, run `rnasique convert_qushape`
+To do so, run `ipasuite convert_qushape`
 
 Importation using samples.tsv with old .qushape file is not supported
 

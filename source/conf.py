@@ -13,15 +13,11 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath("../../../.."))
-# sys.path.insert(0, os.path.abspath("../../scripts/tools"))
-print(sys.path)
-
 # -- Project information -----------------------------------------------------
 
-project = "RNASique"
-copyright = "2021, François-Xavier Lyonnet du Moutier"
-author = "François-Xavier Lyonnet du Moutier"
+project = "Ipanemap Suite"
+copyright = "2024, François-Xavier Lyonnet du Moutier, Nan Pan, Sebastian Will"
+author = "François-Xavier Lyonnet du Moutier, Nan Pan, Sebastian Will"
 
 
 # -- General configuration ---------------------------------------------------

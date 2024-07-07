@@ -3,8 +3,8 @@
 2. Open a terminal
 1. If you are using debian, install libdb-dev : `sudo apt install libdb-dev`
 4. Install QuShape : `conda create -n qushape -c free -c sargueil-citcom qushape`
-5. Install RNASique `conda create -n rnasique -c conda-forge -c bioconda -c
-   sargueil-citcom rnasique` 
+5. Install Ipanemap Suite `conda create -n ipasuite -c conda-forge -c bioconda -c
+   sargueil-citcom ipasuite` 
 
 ## Basic usage
 
@@ -13,21 +13,19 @@
 2. Enter qushape conda env : `conda activate qushape`
 3. Launch QuShape : `qushape`
 
-### Use rnasique :
+### Use ipasuite :
 1. Open a terminal
-2. Enter rnasique conda env : `conda activate rnasique`
-3. Launch an RNASique command : `rnasique [command]`
-You can list available command using : `rnasique --help`
+2. Enter ipasuite conda env : `conda activate ipasuite`
+3. Launch an Ipanemap Suite command : `ipasuite [command]`
+You can list available command using : `ipasuite --help`
 
 ## Update
 
-RNASique `conda update -n rnasique rnasique -c Sargueil-CiTCoM -c conda-forge -c bioconda `
+Ipanemap Suite `conda update -n ipasuite ipasuite -c Sargueil-CiTCoM -c conda-forge -c bioconda `
 
 QuShape `conda update -n qushape qushape -c Sargueil-CiTCoM -c free`
 
 ## Using a virtual machine (Windows user)
 
-If your main operating système is Microsoft Windows, 
-you can use RNASique through a virtual machine.
+Users of Microsoft Windows can use Ipanemap Suite through a virtual machine with a Linux (e.g. Debian or Ubuntu) operating system.
 
-The preferred VM plateform is VirtualBox, with a debian operating system.

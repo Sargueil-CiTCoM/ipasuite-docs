@@ -1,0 +1,6 @@
+sphinx
+myst_parser
+sphinxcontrib-autoyaml
+sphinx-jsonschema
+sphinx_rtd_theme
+
