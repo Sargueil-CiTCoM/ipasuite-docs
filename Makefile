@@ -22,5 +22,6 @@ publish: html
 	cp build/html docs -r
 	touch docs/.nojekyll
 	git add docs
-	git commit -am "Update docs"
-	git push && git checkout main
+	git commit -m "Update docs"
+	git push
+	git checkout main
