@@ -11,17 +11,18 @@ BUILDDIR      = build
 .PHONY: html gh-pages
 
 html: Makefile
-	git submodule update ipasuite
+	echo "Build html documenation."
+	@git submodule update ipasuite
 	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" "$(SPHINXOPTS)" 
-	if [ ! -e docs ] ; then mkdir docs ; fi
+	@if [ ! -e docs ] ; then mkdir docs ; fi
 
 
 publish: html
-	git checkout gh-pages
-	rm -rf docs
+	echo "Publish html documentation online."
+	@git checkout gh-pages
+	@rm -rf docs
 	cp build/html docs -r
 	touch docs/.nojekyll
-	git add docs
-	git commit -m "Update docs"
-	git push
-	git checkout main
+	@git add docs
+	@if ! ( git commit -m "Update docs" && git push ) ; then echo "Publishing failed." ; fi
+	@git checkout main
