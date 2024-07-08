@@ -56,10 +56,10 @@
 <p class="caption" role="heading"><span class="caption-text">Go further</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Step by step Description</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#data-importation">Data importation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-import">Data import</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#data-conversion">Data conversion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#qushape-project-generation">QuShape project generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#qushape">QuShape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#qushape-treatment-of-shape-ce-data">QuShape treatment of SHAPE-CE data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#qushape-reactivity-extraction">QuShape reactivity extraction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#reactivity-normalization">Reactivity Normalization</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#steps">Steps :</a></li>
@@ -105,18 +105,16 @@
   <section id="step-by-step-description">
 <h1>Step by step Description<a class="headerlink" href="#step-by-step-description" title="Link to this heading"></a></h1>
 <p>[Work in progress]</p>
-<section id="data-importation">
-<h2>Data importation<a class="headerlink" href="#data-importation" title="Link to this heading"></a></h2>
-<p>If no input file are found in  <code class="docutils literal notranslate"><span class="pre">resources/1.1-fluo-ceq8000</span></code> or <code class="docutils literal notranslate"><span class="pre">resources/1.2-fluo-ceq8000</span></code>, the Ipanemap Suite will try to import them using a path constructed as following : <code class="docutils literal notranslate"><span class="pre">raw_data:prefix_path</span></code> from <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> concatenated with <code class="docutils literal notranslate"><span class="pre">probe_file</span></code> and <code class="docutils literal notranslate"><span class="pre">control_file</span></code> column from <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code>.</p>
-<p>If the <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> <code class="docutils literal notranslate"><span class="pre">qushape_file</span></code> column is filled, and no QuShape file are found in <code class="docutils literal notranslate"><span class="pre">results/2.1-qushape</span></code>, the Ipanemap Suite will import qushape files using a path constructed as following : <code class="docutils literal notranslate"><span class="pre">raw_data:prefix_path</span></code> from <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> concatenated with <code class="docutils literal notranslate"><span class="pre">qushape_file</span></code> column from <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code>.</p>
+<section id="data-import">
+<h2>Data import<a class="headerlink" href="#data-import" title="Link to this heading"></a></h2>
+<p>If no input files are found in  <code class="docutils literal notranslate"><span class="pre">resources/1.1-fluo-ceq8000</span></code> or <code class="docutils literal notranslate"><span class="pre">resources/1.2-fluo-ceq8000</span></code>, Ipanemap Suite will import them using a path constructed as following : <code class="docutils literal notranslate"><span class="pre">raw_data:prefix_path</span></code> from <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> concatenated with <code class="docutils literal notranslate"><span class="pre">probe_file</span></code> and <code class="docutils literal notranslate"><span class="pre">control_file</span></code> column from <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> specifies a QuShape file (<code class="docutils literal notranslate"><span class="pre">qushape_file</span></code> column), and no QuShape file is already present in <code class="docutils literal notranslate"><span class="pre">results/2.1-qushape</span></code>, the Ipanemap Suite will import it. The file name is interpreted relative to <code class="docutils literal notranslate"><span class="pre">prefix_path</span></code> as defined in the configuration.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> specifies a Map file (<code class="docutils literal notranslate"><span class="pre">map_file</span></code> column), the Ipanemap Suite will import it to the normalized reactivity folder; all previous steps of data import are overriden. The file name is interpreted relative to <code class="docutils literal notranslate"><span class="pre">prefix_path</span></code> as defined in the configuration.</p>
 <p>:::{warning}
-Importing QuShape file created without the use of the Ipanemap Suite is discouraged. However, it can be useful start using Ipanemap Suite after your project begun.</p>
-<p>If you do so, you must unsure that you used the exact same sequence file as provided in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> and that data are coherents between the <code class="docutils literal notranslate"><span class="pre">qushape</span></code> section of your <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code>, columns of <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> (ex: ddNTP column, rt_start and rt_stop)
-:::</p>
-<ul class="simple">
-<li><p>If QuShape projects does not exist, it will created using sequencer data.</p></li>
-<li><p>If QuShape projects exists, it will try extract reactivity and go on until structures are generated</p></li>
-</ul>
+Importing QuShape files and Map files created outside of Ipanemap Suite should be done with special care.</p>
+<p>If you want to import such files, you must ensure that you used the exact same sequence file as provided in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> and that data are coherents between the <code class="docutils literal notranslate"><span class="pre">qushape</span></code> section of your <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code>, columns of <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> (e.g.: ddNTP column, rt_start and rt_stop)</p>
+<p>Ipanemap Suite avoids to overwrite existing QuShape project files. It will created a new project using sequencer
+data, only if no QuShape project file exists yet in the corresponding results folder. If a QuShape project exists, the pipeline extracts its reactivities (with the exception of direct import from Map files).</p>
 </section>
 <section id="data-conversion">
 <h2>Data conversion<a class="headerlink" href="#data-conversion" title="Link to this heading"></a></h2>
@@ -124,14 +122,15 @@ Importing QuShape file created without the use of the Ipanemap Suite is discoura
 </section>
 <section id="qushape-project-generation">
 <h2>QuShape project generation<a class="headerlink" href="#qushape-project-generation" title="Link to this heading"></a></h2>
-<p>To avoid QuShape manual setting, A complete QuShape project is generated, with <code class="docutils literal notranslate"><span class="pre">probe_file</span></code> <code class="docutils literal notranslate"><span class="pre">control_file</span></code>, <code class="docutils literal notranslate"><span class="pre">sequence</span></code> , <code class="docutils literal notranslate"><span class="pre">ddNTP</span></code> and a reference project if set in the sample file.
-All QuShape options used for generation are controlable through the <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file</p>
+<p>To simplify the use of QuShape (saving many manual configuration steps), the pipeline generates a complete QuShape project with <code class="docutils literal notranslate"><span class="pre">probe_file</span></code> <code class="docutils literal notranslate"><span class="pre">control_file</span></code>, <code class="docutils literal notranslate"><span class="pre">sequence</span></code> , <code class="docutils literal notranslate"><span class="pre">ddNTP</span></code>. Optionally, it uses a reference project, if specified in the sample file.
+All QuShape options used for generation can be controlled through the configuration dialog or the <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file.</p>
 </section>
-<section id="qushape">
-<h2>QuShape<a class="headerlink" href="#qushape" title="Link to this heading"></a></h2>
-<p>While most of the pipeline is automated, this is the only manual step.
-User must open eache QuShape project, and perform treatement up to the reactivity step.</p>
-<p>Once the file is treated, the pipeline will be able to extract reactivity which will be use in the further steps.</p>
+<section id="qushape-treatment-of-shape-ce-data">
+<h2>QuShape treatment of SHAPE-CE data<a class="headerlink" href="#qushape-treatment-of-shape-ce-data" title="Link to this heading"></a></h2>
+<p>Treatment of the SHAPE-CE data in QuShape is the only remaining truly manual step in Ipanemap Suite, even if the pipeline can facilitate it by preparing the project files.
+The user must open each QuShape project, and perform treatment to allow the calculation of reactivities.</p>
+<p>Once the file is treated, the pipeline will be able to extract the reactivities,
+which will be used in downstream steps.</p>
 </section>
 <section id="qushape-reactivity-extraction">
 <h2>QuShape reactivity extraction<a class="headerlink" href="#qushape-reactivity-extraction" title="Link to this heading"></a></h2>
@@ -139,7 +138,7 @@ User must open eache QuShape project, and perform treatement up to the reactivit
 </section>
 <section id="reactivity-normalization">
 <h2>Reactivity Normalization<a class="headerlink" href="#reactivity-normalization" title="Link to this heading"></a></h2>
-<p>Reactivity is Normalized from raw reactivity extracted from QuShape.</p>
+<p>Reactivity is normalized from raw reactivity extracted from QuShape.</p>
 <p>Parameters :</p>
 <dl class="simple myst">
 <dt>reactive_nucleotides</dt><dd><p>Nucleotides which are affected by the SHAPE probe used</p>

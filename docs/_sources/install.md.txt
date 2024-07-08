@@ -25,7 +25,7 @@ Ipanemap Suite `conda update -n ipasuite ipasuite -c Sargueil-CiTCoM -c conda-fo
 
 QuShape `conda update -n qushape qushape -c Sargueil-CiTCoM -c free`
 
-## Using a virtual machine (Windows user)
+## Using a virtual machine (Windows users)
 
-Users of Microsoft Windows can use Ipanemap Suite through a virtual machine with a Linux (e.g. Debian or Ubuntu) operating system.
+Users of Microsoft Windows can use Ipanemap Suite through a virtual machine running Linux (e.g. Debian or Ubuntu).
 
