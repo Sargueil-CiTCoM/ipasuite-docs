@@ -58,21 +58,20 @@ To go futher : [](config_yaml_ref)
 For each condition declared in `ipasuite config` you must create a column with the same
 identifier in samples.tsv
 
-In addition, You can add as many columns to your `samples.tsv` as you wish, to help you classify and
-caracterize your data. Each column must have un unique name. Those "comments" columns may contains arbitrary value, including empty on.
+In addition, you can add arbitrary other columns to your file `samples.tsv`. These additional columns can contain useful annotations and comments that help to classify and characterize your data, but are otherwise ignored by the Ipanemap Suite. Each column must have a unique name.
 
 3. Create a row for each of your experiments:
 For each experiment, you must create a corresponding row, and fill in the following
 informations
 
     id (string)
-    : a unique number to identity experiment
+    : a unique number as experiment identifier
     
     rna_id (string)
     : The identifier for RNA fragment used in this experiment, as declared in the `sequences` section of `ipasuite config`
     
     ddNTP (ddA, ddT, ddG, ddC)
-    : Indicate the ddNTP used for the sequencing condition of capillary eletrophorese
+    : Indicate the ddNTP used for the sequencing condition of capillary eletrophoresis
     
     date (date)
     : Date of the experiment. use YYYY-MM-DD 
@@ -91,12 +90,13 @@ If you activated «subsequence» in `ipasuite config`, you must also fill in `rt
     : Position of the last nucleotide reachable by the reverse transcriptase (which is
     most of the time 0)
 
-Since Reverse transcription occur from 3' to 5' `rt_begin_pos > rt_end_pos`
+Since Reverse transcription occurs from 3' to 5' `rt_begin_pos > rt_end_pos`
+
 
 You must fill in every condition column declared in `ipasuite config`.
 
 
-(A missing value one of the mandatory or condition column will lead to a error when launching `ipasuite run`)
+(A missing value in one of the mandatory or condition columns will cause an error when launching `ipasuite run`)
 
 4. Fill in file information
 
@@ -111,9 +111,21 @@ control_file (relative file path)
 reference_qushape_file (file path) (optional)
 : If using Reference QuShape project : will be used in QuShape to pre-generate peak calling and alignment
 
-qushape_file (relative file path) (optional)
-: QuShape project : If you already treated the data outside ipasuite, and want to import
-those data, you can fillup this field.  If this field is filled in and no file is present for this sample in `results/2-qushape` ipasuite will try to import this file. `path_prefix` (from `ipasuite config`) is prefixed with the content of the to construct fullpath. This field overwrite probe_file and control_file
+qushape_file (optional)
+: Direct import of QuShape projects : Filling this field let you to import readily treated QuShape data. If this field specifies a file, Ipanemap Suite will try to import it as QuShape file, unless there is already a corresponding file in `results/2-qushape`. If a QuShape file is specified, `probe_file` and `control_file` are ignored.
+The file can be specified with a path relative to the path prefix as
+specified in the configuration of the project.
+
+reference_qushape_file
+: Specify a reference file for QuShape. Use this to specify a template for QuShape.
+
+map_file
+: Direct import of map files : This field let you to import normalized reactivity data from other sources (e.g. ShapeMapper2) as map files. If a file is specified, Ipanemap Suite imports it and ignores all other specifications of data for the experiment.
+The file can be specified with a path relative to the path prefix as
+specified in the configuration of the project.
+
+discard
+: This columns allows you to mark experiment data rows that should be ignored by Ipanemap Suite. This can help to keep a record of disregarded data in `samples.tsv` or temporarily take out data.
 
 <!--
 For each type of experimental condition, you must declare it in the `condition_names` of `config.yaml` file the name declared in the config file must be the same as the on in `samples.tsv`

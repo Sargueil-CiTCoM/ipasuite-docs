@@ -36,10 +36,10 @@ Two commands can help debugging :
 ipasuite check
 ```
 Will check :
-- If some input file are missing
-- If all necessary samples are available to run ipanemap and footprint
+- If some input files are missing
+- If all necessary samples are available to run Ipanemap and the footprint analysis
 - If samples are duplicated
-- If some raw files are identicals
+- If some raw files are identical
 
 ```bash
 ipasuite log

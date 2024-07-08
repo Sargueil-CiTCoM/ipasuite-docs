@@ -2,10 +2,4 @@
 
 ## Operating system
 
-The pipeline should work on any system suporting Conda. 
-However, some packages (ViennaRNA, scikit-bio) are not available in Windows using conda, you will have install them manually.
-
-Tested Operating system :
-- Archlinux
-- Debian 11 (Bulleyes)
-- Ubuntu 16.4 to 20.4
+The pipeline should run on most recent Linux systems (Debian, Ubuntu, ...) and Mac OS x86. Installation on Windows is currently unsupported; on Windows systems, we recommend to install the software in a Virtual Machine running Linux.

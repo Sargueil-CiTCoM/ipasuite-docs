@@ -2,20 +2,22 @@
 
 [Work in progress]
 
-## Data importation
-If no input file are found in  `resources/1.1-fluo-ceq8000` or `resources/1.2-fluo-ceq8000`, the Ipanemap Suite will try to import them using a path constructed as following : `raw_data:prefix_path` from `config.yaml` concatenated with `probe_file` and `control_file` column from `samples.tsv`.
+## Data import
+If no input files are found in  `resources/1.1-fluo-ceq8000` or `resources/1.2-fluo-ceq8000`, Ipanemap Suite will import them using a path constructed as following : `raw_data:prefix_path` from `config.yaml` concatenated with `probe_file` and `control_file` column from `samples.tsv`.
 
-If the `samples.tsv` `qushape_file` column is filled, and no QuShape file are found in `results/2.1-qushape`, the Ipanemap Suite will import qushape files using a path constructed as following : `raw_data:prefix_path` from `config.yaml` concatenated with `qushape_file` column from `samples.tsv`.
+If `samples.tsv` specifies a QuShape file (`qushape_file` column), and no QuShape file is already present in `results/2.1-qushape`, the Ipanemap Suite will import it. The file name is interpreted relative to `prefix_path` as defined in the configuration.
+
+If `samples.tsv` specifies a Map file (`map_file` column), the Ipanemap Suite will import it to the normalized reactivity folder; all previous steps of data import are overriden. The file name is interpreted relative to `prefix_path` as defined in the configuration.
+
 
 :::{warning}
-Importing QuShape file created without the use of the Ipanemap Suite is discouraged. However, it can be useful start using Ipanemap Suite after your project begun.
+Importing QuShape files and Map files created outside of Ipanemap Suite should be done with special care.
 
-If you do so, you must unsure that you used the exact same sequence file as provided in `config.yaml` and that data are coherents between the `qushape` section of your `config.yaml`, columns of `samples.tsv` (ex: ddNTP column, rt_start and rt_stop)
-:::
+If you want to import such files, you must ensure that you used the exact same sequence file as provided in `config.yaml` and that data are coherents between the `qushape` section of your `config.yaml`, columns of `samples.tsv` (e.g.: ddNTP column, rt_start and rt_stop)
 
+Ipanemap Suite avoids to overwrite existing QuShape project files. It will created a new project using sequencer
+data, only if no QuShape project file exists yet in the corresponding results folder. If a QuShape project exists, the pipeline extracts its reactivities (with the exception of direct import from Map files).
 
--   If QuShape projects does not exist, it will created using sequencer data.
--   If QuShape projects exists, it will try extract reactivity and go on until structures are generated
 
 ## Data conversion
 
@@ -23,15 +25,17 @@ Files from CEQ8015 sequencer must converted to be used with QuShape. Headers are
 
 ## QuShape project generation
 
-To avoid QuShape manual setting, A complete QuShape project is generated, with `probe_file` `control_file`, `sequence` , `ddNTP` and a reference project if set in the sample file.
-All QuShape options used for generation are controlable through the `config.yaml` file
+To simplify the use of QuShape (saving many manual configuration steps), the pipeline generates a complete QuShape project with `probe_file` `control_file`, `sequence` , `ddNTP`. Optionally, it uses a reference project, if specified in the sample file.
+All QuShape options used for generation can be controlled through the configuration dialog or the `config.yaml` file.
 
-## QuShape
 
-While most of the pipeline is automated, this is the only manual step.
-User must open eache QuShape project, and perform treatement up to the reactivity step.
+## QuShape treatment of SHAPE-CE data
 
-Once the file is treated, the pipeline will be able to extract reactivity which will be use in the further steps.
+Treatment of the SHAPE-CE data in QuShape is the only remaining truly manual step in Ipanemap Suite, even if the pipeline can facilitate it by preparing the project files.
+The user must open each QuShape project, and perform treatment to allow the calculation of reactivities.
+
+Once the file is treated, the pipeline will be able to extract the reactivities,
+which will be used in downstream steps.
 
 ## QuShape reactivity extraction
 
@@ -40,14 +44,14 @@ Reactivity is retrieved from fully treated QuShape projects.
 
 ## Reactivity Normalization
 
-Reactivity is Normalized from raw reactivity extracted from QuShape.
+Reactivity is normalized from raw reactivity extracted from QuShape.
 
 Parameters :
 
-reactive_nucleotides 
+reactive_nucleotides
 :  Nucleotides which are affected by the SHAPE probe used
 
-low_norm_reactivity_threshold 
+low_norm_reactivity_threshold
 :  normalized reactivity threshold above which reactivity
    is not considered as significant, and then clipped to 0
 
