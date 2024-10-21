@@ -1,6 +1,6 @@
 # Introduction 
 
-Ipanemap suite workflow intend to provide automation in the data treatment of SHAPE Capillary Electrophorese.
+IPANEMAP suite workflow intend to provide automation in the data treatment of SHAPE Capillary Electrophorese.
 
 It relies on : 
 
