@@ -8,7 +8,7 @@
    sargueil-citcom ipasuite`
 
 ### For MacOS osx-64 Systems:
-Please follow the same steps as for Linux and install `gcc` via Homebrew before installing the IPANEMAP Suite.
+Please follow the same steps as for Linux, and install `gcc` via Homebrew before installing QuShape and the IPANEMAP Suite.
 
 
 ## Basic usage
