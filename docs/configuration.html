@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Configuration &mdash; Ipanemap Suite  documentation</title>
+  <title>Configuration &mdash; IPANEMAP Suite  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -34,7 +34,7 @@
           
           
           <a href="index.html" class="icon icon-home">
-            Ipanemap Suite
+            IPANEMAP Suite
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -72,7 +72,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Ipanemap Suite</a>
+          <a href="index.html">IPANEMAP Suite</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -142,7 +142,7 @@ To go futher : [](config_yaml_ref)
 </ol>
 <p>For each condition declared in <code class="docutils literal notranslate"><span class="pre">ipasuite</span> <span class="pre">config</span></code> you must create a column with the same
 identifier in samples.tsv</p>
-<p>In addition, you can add arbitrary other columns to your file <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code>. These additional columns can contain useful annotations and comments that help to classify and characterize your data, but are otherwise ignored by the Ipanemap Suite. Each column must have a unique name.</p>
+<p>In addition, you can add arbitrary other columns to your file <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code>. These additional columns can contain useful annotations and comments that help to classify and characterize your data, but are otherwise ignored by the IPANEMAP Suite. Each column must have a unique name.</p>
 <ol class="arabic" start="3">
 <li><p>Create a row for each of your experiments:
 For each experiment, you must create a corresponding row, and fill in the following
@@ -186,17 +186,17 @@ most of the time 0)
 </dd>
 <dt>reference_qushape_file (file path) (optional)</dt><dd><p>If using Reference QuShape project : will be used in QuShape to pre-generate peak calling and alignment</p>
 </dd>
-<dt>qushape_file (optional)</dt><dd><p>Direct import of QuShape projects : Filling this field let you to import readily treated QuShape data. If this field specifies a file, Ipanemap Suite will try to import it as QuShape file, unless there is already a corresponding file in <code class="docutils literal notranslate"><span class="pre">results/2-qushape</span></code>. If a QuShape file is specified, <code class="docutils literal notranslate"><span class="pre">probe_file</span></code> and <code class="docutils literal notranslate"><span class="pre">control_file</span></code> are ignored.
+<dt>qushape_file (optional)</dt><dd><p>Direct import of QuShape projects : Filling this field let you to import readily treated QuShape data. If this field specifies a file, IPANEMAP Suite will try to import it as QuShape file, unless there is already a corresponding file in <code class="docutils literal notranslate"><span class="pre">results/2-qushape</span></code>. If a QuShape file is specified, <code class="docutils literal notranslate"><span class="pre">probe_file</span></code> and <code class="docutils literal notranslate"><span class="pre">control_file</span></code> are ignored.
 The file can be specified with a path relative to the path prefix as
 specified in the configuration of the project.</p>
 </dd>
 <dt>reference_qushape_file</dt><dd><p>Specify a reference file for QuShape. Use this to specify a template for QuShape.</p>
 </dd>
-<dt>map_file</dt><dd><p>Direct import of map files : This field let you to import normalized reactivity data from other sources (e.g. ShapeMapper2) as map files. If a file is specified, Ipanemap Suite imports it and ignores all other specifications of data for the experiment.
+<dt>map_file</dt><dd><p>Direct import of map files : This field let you to import normalized reactivity data from other sources (e.g. ShapeMapper2) as map files. If a file is specified, IPANEMAP Suite imports it and ignores all other specifications of data for the experiment.
 The file can be specified with a path relative to the path prefix as
 specified in the configuration of the project.</p>
 </dd>
-<dt>discard</dt><dd><p>This columns allows you to mark experiment data rows that should be ignored by Ipanemap Suite. This can help to keep a record of disregarded data in <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> or temporarily take out data.</p>
+<dt>discard</dt><dd><p>This columns allows you to mark experiment data rows that should be ignored by IPANEMAP Suite. This can help to keep a record of disregarded data in <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> or temporarily take out data.</p>
 </dd>
 </dl>
 <!--
