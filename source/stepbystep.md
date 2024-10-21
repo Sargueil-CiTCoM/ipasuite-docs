@@ -3,12 +3,12 @@
 [Work in progress]
 
 ## Data importation
-If no input file are found in  `resources/1.1-fluo-ceq8000` or `resources/1.2-fluo-ceq8000`, the Ipanemap Suite will try to import them using a path constructed as following : `raw_data:prefix_path` from `config.yaml` concatenated with `probe_file` and `control_file` column from `samples.tsv`.
+If no input file are found in  `resources/1.1-fluo-ceq8000` or `resources/1.2-fluo-ceq8000`, the IPANEMAP Suite will try to import them using a path constructed as following : `raw_data:prefix_path` from `config.yaml` concatenated with `probe_file` and `control_file` column from `samples.tsv`.
 
-If the `samples.tsv` `qushape_file` column is filled, and no QuShape file are found in `results/2.1-qushape`, the Ipanemap Suite will import qushape files using a path constructed as following : `raw_data:prefix_path` from `config.yaml` concatenated with `qushape_file` column from `samples.tsv`.
+If the `samples.tsv` `qushape_file` column is filled, and no QuShape file are found in `results/2.1-qushape`, the IPANEMAP Suite will import qushape files using a path constructed as following : `raw_data:prefix_path` from `config.yaml` concatenated with `qushape_file` column from `samples.tsv`.
 
 :::{warning}
-Importing QuShape file created without the use of the Ipanemap Suite is discouraged. However, it can be useful start using Ipanemap Suite after your project begun.
+Importing QuShape file created without the use of the IPANEMAP Suite is discouraged. However, it can be useful start using IPANEMAP Suite after your project begun.
 
 If you do so, you must unsure that you used the exact same sequence file as provided in `config.yaml` and that data are coherents between the `qushape` section of your `config.yaml`, columns of `samples.tsv` (ex: ddNTP column, rt_start and rt_stop)
 :::
