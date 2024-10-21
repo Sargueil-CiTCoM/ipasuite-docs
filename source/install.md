@@ -8,7 +8,7 @@
 5. Install IPANEMAP Suite `conda create -n ipasuite -c conda-forge -c bioconda -c
    sargueil-citcom ipasuite`
 
-### For MacOS osx-64 Systems:
+### For MacOS x64 Systems:
 Please follow the same steps as for Linux and install `gcc` via Homebrew before installing the IPANEMAP Suite.
 
 ## Basic usage
