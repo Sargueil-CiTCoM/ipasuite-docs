@@ -3,19 +3,19 @@
 [Work in progress]
 
 ## Data import
-If no input files are found in  `resources/1.1-fluo-ceq8000` or `resources/1.2-fluo-ceq8000`, Ipanemap Suite will import them using a path constructed as following : `raw_data:prefix_path` from `config.yaml` concatenated with `probe_file` and `control_file` column from `samples.tsv`.
+If no input files are found in  `resources/1.1-fluo-ceq8000` or `resources/1.2-fluo-ceq8000`, IPANEMAP Suite will import them using a path constructed as following : `raw_data:prefix_path` from `config.yaml` concatenated with `probe_file` and `control_file` column from `samples.tsv`.
 
-If `samples.tsv` specifies a QuShape file (`qushape_file` column), and no QuShape file is already present in `results/2.1-qushape`, the Ipanemap Suite will import it. The file name is interpreted relative to `prefix_path` as defined in the configuration.
+If `samples.tsv` specifies a QuShape file (`qushape_file` column), and no QuShape file is already present in `results/2.1-qushape`, the IPANEMAP Suite will import it. The file name is interpreted relative to `prefix_path` as defined in the configuration.
 
-If `samples.tsv` specifies a Map file (`map_file` column), the Ipanemap Suite will import it to the normalized reactivity folder; all previous steps of data import are overriden. The file name is interpreted relative to `prefix_path` as defined in the configuration.
+If `samples.tsv` specifies a Map file (`map_file` column), the IPANEMAP Suite will import it to the normalized reactivity folder; all previous steps of data import are overriden. The file name is interpreted relative to `prefix_path` as defined in the configuration.
 
 
 :::{warning}
-Importing QuShape files and Map files created outside of Ipanemap Suite should be done with special care.
+Importing QuShape files and Map files created outside of IPANEMAP Suite should be done with special care.
 
 If you want to import such files, you must ensure that you used the exact same sequence file as provided in `config.yaml` and that data are coherents between the `qushape` section of your `config.yaml`, columns of `samples.tsv` (e.g.: ddNTP column, rt_start and rt_stop)
 
-Ipanemap Suite avoids to overwrite existing QuShape project files. It will created a new project using sequencer
+IPANEMAP Suite avoids to overwrite existing QuShape project files. It will created a new project using sequencer
 data, only if no QuShape project file exists yet in the corresponding results folder. If a QuShape project exists, the pipeline extracts its reactivities (with the exception of direct import from Map files).
 
 
@@ -31,7 +31,7 @@ All QuShape options used for generation can be controlled through the configurat
 
 ## QuShape treatment of SHAPE-CE data
 
-Treatment of the SHAPE-CE data in QuShape is the only remaining truly manual step in Ipanemap Suite, even if the pipeline can facilitate it by preparing the project files.
+Treatment of the SHAPE-CE data in QuShape is the only remaining truly manual step in IPANEMAP Suite, even if the pipeline can facilitate it by preparing the project files.
 The user must open each QuShape project, and perform treatment to allow the calculation of reactivities.
 
 Once the file is treated, the pipeline will be able to extract the reactivities,
