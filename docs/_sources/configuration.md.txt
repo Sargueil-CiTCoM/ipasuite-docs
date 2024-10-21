@@ -58,7 +58,7 @@ To go futher : [](config_yaml_ref)
 For each condition declared in `ipasuite config` you must create a column with the same
 identifier in samples.tsv
 
-In addition, you can add arbitrary other columns to your file `samples.tsv`. These additional columns can contain useful annotations and comments that help to classify and characterize your data, but are otherwise ignored by the Ipanemap Suite. Each column must have a unique name.
+In addition, you can add arbitrary other columns to your file `samples.tsv`. These additional columns can contain useful annotations and comments that help to classify and characterize your data, but are otherwise ignored by the IPANEMAP Suite. Each column must have a unique name.
 
 3. Create a row for each of your experiments:
 For each experiment, you must create a corresponding row, and fill in the following
@@ -112,7 +112,7 @@ reference_qushape_file (file path) (optional)
 : If using Reference QuShape project : will be used in QuShape to pre-generate peak calling and alignment
 
 qushape_file (optional)
-: Direct import of QuShape projects : Filling this field let you to import readily treated QuShape data. If this field specifies a file, Ipanemap Suite will try to import it as QuShape file, unless there is already a corresponding file in `results/2-qushape`. If a QuShape file is specified, `probe_file` and `control_file` are ignored.
+: Direct import of QuShape projects : Filling this field let you to import readily treated QuShape data. If this field specifies a file, IPANEMAP Suite will try to import it as QuShape file, unless there is already a corresponding file in `results/2-qushape`. If a QuShape file is specified, `probe_file` and `control_file` are ignored.
 The file can be specified with a path relative to the path prefix as
 specified in the configuration of the project.
 
@@ -120,12 +120,12 @@ reference_qushape_file
 : Specify a reference file for QuShape. Use this to specify a template for QuShape.
 
 map_file
-: Direct import of map files : This field let you to import normalized reactivity data from other sources (e.g. ShapeMapper2) as map files. If a file is specified, Ipanemap Suite imports it and ignores all other specifications of data for the experiment.
+: Direct import of map files : This field let you to import normalized reactivity data from other sources (e.g. ShapeMapper2) as map files. If a file is specified, IPANEMAP Suite imports it and ignores all other specifications of data for the experiment.
 The file can be specified with a path relative to the path prefix as
 specified in the configuration of the project.
 
 discard
-: This columns allows you to mark experiment data rows that should be ignored by Ipanemap Suite. This can help to keep a record of disregarded data in `samples.tsv` or temporarily take out data.
+: This columns allows you to mark experiment data rows that should be ignored by IPANEMAP Suite. This can help to keep a record of disregarded data in `samples.tsv` or temporarily take out data.
 
 <!--
 For each type of experimental condition, you must declare it in the `condition_names` of `config.yaml` file the name declared in the config file must be the same as the on in `samples.tsv`
