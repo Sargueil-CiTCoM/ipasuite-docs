@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Step by step Description &mdash; IPANEMAP Suite  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+  <title>Data import &mdash; IPANEMAP Suite  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
   
@@ -55,23 +55,20 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Go further</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Step by step Description</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#data-import">Data import</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#data-conversion">Data conversion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#qushape-project-generation">QuShape project generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#qushape-treatment-of-shape-ce-data">QuShape treatment of SHAPE-CE data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#qushape-reactivity-extraction">QuShape reactivity extraction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#reactivity-normalization">Reactivity Normalization</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#steps">Steps :</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#simple-normalization-method">Simple normalization method</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#interquartile-method">Interquartile method</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#data-conversion">Data conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#qushape-project-generation">QuShape project generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#qushape-treatment-of-shape-ce-data">QuShape treatment of SHAPE-CE data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#qushape-reactivity-extraction">QuShape reactivity extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#reactivity-normalization">Reactivity Normalization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#steps">Steps :</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#simple-normalization-method">Simple normalization method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interquartile-method">Interquartile method</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#reactivity-aggregation">Reactivity Aggregation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#structure-generation-ipanemap">Structure generation - IPANEMAP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#footprinting">Footprinting</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="#reactivity-aggregation">Reactivity Aggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#structure-generation-ipanemap">Structure generation - IPANEMAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#footprinting">Footprinting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="config_yaml_ref.html">Workflow configuration reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="folders.html">Folder structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
@@ -92,7 +89,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Step by step Description</li>
+      <li class="breadcrumb-item active">Data import</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/stepbystep.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -102,11 +99,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="step-by-step-description">
-<h1>Step by step Description<a class="headerlink" href="#step-by-step-description" title="Link to this heading"></a></h1>
+  <p>Step by step Description</p>
 <p>[Work in progress]</p>
 <section id="data-import">
-<h2>Data import<a class="headerlink" href="#data-import" title="Link to this heading"></a></h2>
+<h1>Data import<a class="headerlink" href="#data-import" title="Link to this heading"></a></h1>
 <p>If no input files are found in  <code class="docutils literal notranslate"><span class="pre">resources/1.1-fluo-ceq8000</span></code> or <code class="docutils literal notranslate"><span class="pre">resources/1.2-fluo-ceq8000</span></code>, IPANEMAP Suite will import them using a path constructed as following : <code class="docutils literal notranslate"><span class="pre">raw_data:prefix_path</span></code> from <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> concatenated with <code class="docutils literal notranslate"><span class="pre">probe_file</span></code> and <code class="docutils literal notranslate"><span class="pre">control_file</span></code> column from <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code>.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> specifies a QuShape file (<code class="docutils literal notranslate"><span class="pre">qushape_file</span></code> column), and no QuShape file is already present in <code class="docutils literal notranslate"><span class="pre">results/2.1-qushape</span></code>, the IPANEMAP Suite will import it. The file name is interpreted relative to <code class="docutils literal notranslate"><span class="pre">prefix_path</span></code> as defined in the configuration.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> specifies a Map file (<code class="docutils literal notranslate"><span class="pre">map_file</span></code> column), the IPANEMAP Suite will import it to the normalized reactivity folder; all previous steps of data import are overriden. The file name is interpreted relative to <code class="docutils literal notranslate"><span class="pre">prefix_path</span></code> as defined in the configuration.</p>
@@ -117,27 +113,27 @@ Importing QuShape files and Map files created outside of IPANEMAP Suite should b
 data, only if no QuShape project file exists yet in the corresponding results folder. If a QuShape project exists, the pipeline extracts its reactivities (with the exception of direct import from Map files).</p>
 </section>
 <section id="data-conversion">
-<h2>Data conversion<a class="headerlink" href="#data-conversion" title="Link to this heading"></a></h2>
+<h1>Data conversion<a class="headerlink" href="#data-conversion" title="Link to this heading"></a></h1>
 <p>Files from CEQ8015 sequencer must converted to be used with QuShape. Headers are removed to obtain a tabular file</p>
 </section>
 <section id="qushape-project-generation">
-<h2>QuShape project generation<a class="headerlink" href="#qushape-project-generation" title="Link to this heading"></a></h2>
+<h1>QuShape project generation<a class="headerlink" href="#qushape-project-generation" title="Link to this heading"></a></h1>
 <p>To simplify the use of QuShape (saving many manual configuration steps), the pipeline generates a complete QuShape project with <code class="docutils literal notranslate"><span class="pre">probe_file</span></code> <code class="docutils literal notranslate"><span class="pre">control_file</span></code>, <code class="docutils literal notranslate"><span class="pre">sequence</span></code> , <code class="docutils literal notranslate"><span class="pre">ddNTP</span></code>. Optionally, it uses a reference project, if specified in the sample file.
 All QuShape options used for generation can be controlled through the configuration dialog or the <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file.</p>
 </section>
 <section id="qushape-treatment-of-shape-ce-data">
-<h2>QuShape treatment of SHAPE-CE data<a class="headerlink" href="#qushape-treatment-of-shape-ce-data" title="Link to this heading"></a></h2>
+<h1>QuShape treatment of SHAPE-CE data<a class="headerlink" href="#qushape-treatment-of-shape-ce-data" title="Link to this heading"></a></h1>
 <p>Treatment of the SHAPE-CE data in QuShape is the only remaining truly manual step in IPANEMAP Suite, even if the pipeline can facilitate it by preparing the project files.
 The user must open each QuShape project, and perform treatment to allow the calculation of reactivities.</p>
 <p>Once the file is treated, the pipeline will be able to extract the reactivities,
 which will be used in downstream steps.</p>
 </section>
 <section id="qushape-reactivity-extraction">
-<h2>QuShape reactivity extraction<a class="headerlink" href="#qushape-reactivity-extraction" title="Link to this heading"></a></h2>
+<h1>QuShape reactivity extraction<a class="headerlink" href="#qushape-reactivity-extraction" title="Link to this heading"></a></h1>
 <p>Reactivity is retrieved from fully treated QuShape projects.</p>
 </section>
 <section id="reactivity-normalization">
-<h2>Reactivity Normalization<a class="headerlink" href="#reactivity-normalization" title="Link to this heading"></a></h2>
+<h1>Reactivity Normalization<a class="headerlink" href="#reactivity-normalization" title="Link to this heading"></a></h1>
 <p>Reactivity is normalized from raw reactivity extracted from QuShape.</p>
 <p>Parameters :</p>
 <dl class="simple myst">
@@ -157,7 +153,7 @@ are used as to calculate normalization term</p>
 </dd>
 </dl>
 <section id="steps">
-<h3>Steps :<a class="headerlink" href="#steps" title="Link to this heading"></a></h3>
+<h2>Steps :<a class="headerlink" href="#steps" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>Substracting background luminescence</p></li>
 <li><p>Removing top 10% - considered as Reverse transcriptase stop sites.</p></li>
@@ -168,7 +164,7 @@ are used as to calculate normalization term</p>
 </ol>
 </section>
 <section id="simple-normalization-method">
-<h3>Simple normalization method<a class="headerlink" href="#simple-normalization-method" title="Link to this heading"></a></h3>
+<h2>Simple normalization method<a class="headerlink" href="#simple-normalization-method" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>Remove top 2% (simpleoutlier_percentile) reactivity which are considered as outliers</p></li>
 <li><p>Get top 8% (simplenorm_term_avg_percentile) following. the avg of those values
@@ -176,7 +172,7 @@ constitues the normalization term.</p></li>
 </ol>
 </section>
 <section id="interquartile-method">
-<h3>Interquartile method<a class="headerlink" href="#interquartile-method" title="Link to this heading"></a></h3>
+<h2>Interquartile method<a class="headerlink" href="#interquartile-method" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>Compute interquartile threshold defined as $Ir = 1.5 \times (Q_3 - Q_1)$ all values above $Q_3 + Ir$
 this threshold are considered as outliers</p></li>
@@ -185,17 +181,16 @@ this threshold are considered as outliers</p></li>
 </section>
 </section>
 <section id="reactivity-aggregation">
-<h2>Reactivity Aggregation<a class="headerlink" href="#reactivity-aggregation" title="Link to this heading"></a></h2>
+<h1>Reactivity Aggregation<a class="headerlink" href="#reactivity-aggregation" title="Link to this heading"></a></h1>
 </section>
 <section id="structure-generation-ipanemap">
-<h2>Structure generation - IPANEMAP<a class="headerlink" href="#structure-generation-ipanemap" title="Link to this heading"></a></h2>
+<h1>Structure generation - IPANEMAP<a class="headerlink" href="#structure-generation-ipanemap" title="Link to this heading"></a></h1>
 <ul class="simple">
 <li><p>Added reactivity</p></li>
 </ul>
 </section>
 <section id="footprinting">
-<h2>Footprinting<a class="headerlink" href="#footprinting" title="Link to this heading"></a></h2>
-</section>
+<h1>Footprinting<a class="headerlink" href="#footprinting" title="Link to this heading"></a></h1>
 </section>
 
 

@@ -3,7 +3,7 @@
 ## QuShape :
 - Paper
 
-## IPANEMAP
+## Ipanemap
 
 ## ViennaRNA
 

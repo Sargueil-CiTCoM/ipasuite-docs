@@ -2,7 +2,15 @@
 
 IPANEMAP suite workflow intend to provide automation in the data treatment of SHAPE Capillary Electrophoresis.
 
-It relies on : 
+The workflow will enable you to generate structure data for a RNA fragment analysed using SHAPE with a set of conditions (Temperature, Magnesium, Probes.)
+
+## Tutorial
+
+The usage of the software is as well described in the [IPANEMAP Tutorial](IPANEMAP_Suite_tutorial.pdf).
+
+## Integrated software
+
+The software integrates 
 
 - QuShape
 - IPANEMAP
@@ -10,9 +18,12 @@ It relies on :
 - VARNA. 
 - Custom scripts for file conversion, reactivity normalization and aggregation.
 
-The workflow will enable you to generate structure data for a RNA fragment analysed using SHAPE with a set of conditions (Temperature, Magnesium, Probes.)
+Note that all these requirements can be installed automatically.
 
-The workflow is available at [https://github.com/Sargueil-CiTCoM/ipasuite](https://github.com/Sargueil-CiTCoM/ipasuite).
+
+## Availability
+
+The software source code is available at [https://github.com/Sargueil-CiTCoM/ipasuite](https://github.com/Sargueil-CiTCoM/ipasuite).
 
 The source code for this documentation is available at [https://github.com/Sargueil-CiTCoM/ipasuite-docs](https://github.com/Sargueil-CiTCoM/ipasuite-docs)
 
