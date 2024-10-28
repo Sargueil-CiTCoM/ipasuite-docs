@@ -37,7 +37,7 @@ ipasuite check
 ```
 Will check :
 - If some input files are missing
-- If all necessary samples are available to run Ipanemap and the footprint analysis
+- If all necessary samples are available to run IPANEMAP and the footprint analysis
 - If samples are duplicated
 - If some raw files are identical
 

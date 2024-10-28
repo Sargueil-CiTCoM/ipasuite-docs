@@ -15,7 +15,7 @@ import sys
 
 # -- Project information -----------------------------------------------------
 
-project = "Ipanemap Suite"
+project = "IPANEMAP Suite"
 copyright = "2024, François-Xavier Lyonnet du Moutier, Nan Pan, Sebastian Will"
 author = "François-Xavier Lyonnet du Moutier, Nan Pan, Sebastian Will"
 
