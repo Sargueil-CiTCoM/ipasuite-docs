@@ -1,4 +1,4 @@
-# Ipanemap suite documentation
+# IPANEMAP Suite documentation
 
 Documentation for https://github.com/Sargueil-CiTCoM/ipasuite snakemake pipeline.
 
