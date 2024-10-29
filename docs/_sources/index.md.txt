@@ -8,6 +8,18 @@ The workflow will enable you to generate structure data for a RNA fragment analy
 
 The usage of the software is as well described in the [IPANEMAP Tutorial](IPANEMAP_Suite_tutorial.pdf).
 
+## Example projects
+
+We provide several example project directories with input, configuration and results.
+
+* [01-SAM-I-aptamer-Bsubtilis](examples/01-SAM-I-aptamer-Bsubtilis.tar.xz)
+
+* [02-SAM-IV-aptamer-Mycobacterium](examples/02-SAM-IV-aptamer-Mycobacterium.tar.xz)
+
+* [03-SAM-I-aptamer-Bsubtilis-footprint](examples/03-SAM-I-aptamer-Bsubtilis-footprint.tar.xz)
+
+Note: tar.xz archives can be extracted e.g. using 7-zip (Windows) or using xz (Linux, Mac).
+
 ## Integrated software
 
 The software integrates 
