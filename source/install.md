@@ -7,6 +7,7 @@
 4. Install QuShape : `conda create -n qushape -c free -c sargueil-citcom qushape`
 5. Install IPANEMAP Suite `conda create -n ipasuite -c conda-forge -c bioconda -c
    sargueil-citcom ipasuite`
+6. Install VarnaAPI `conda activate ipasuite; pip install varnaapi`
 
 ### For MacOS x64 Systems:
 Please follow the same steps as for Linux and install `gcc` via Homebrew before installing the IPANEMAP Suite.
