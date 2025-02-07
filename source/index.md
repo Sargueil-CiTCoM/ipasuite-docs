@@ -18,6 +18,14 @@ We provide several example project directories with input, configuration and res
 
 * [03-SAM-I-aptamer-Bsubtilis-footprint](examples/03-SAM-I-aptamer-Bsubtilis-footprint.zip)
 
+* [3L0U](examples/3L0U.zip)
+
+* [7OQC](examples/7OQC.zip)
+
+* [3Q1A](examples/3Q1Q.zip)
+
+* [6DNR](examples/6DNR.zip)
+
 
 ## Integrated software
 
